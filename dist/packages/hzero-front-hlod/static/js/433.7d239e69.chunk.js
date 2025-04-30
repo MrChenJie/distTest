@@ -1,0 +1,1 @@
+(window["webpackJsonp_packages/hzero-front-hlod"]=window["webpackJsonp_packages/hzero-front-hlod"]||[]).push([[433],{485:function(e,a,n){"use strict";n.r(a),a["default"]=function(){return{fields:[{label:"\u5e94\u7528\u540d\u79f0",name:"appName",type:"string",required:!0},{label:"\u5e94\u7528\u7f16\u7801",name:"appCode",type:"string"}],autoCreate:!0}}}}]);

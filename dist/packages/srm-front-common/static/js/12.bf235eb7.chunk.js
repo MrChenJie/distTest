@@ -1,0 +1,1 @@
+(window["webpackJsonp_packages/srm-front-common"]=window["webpackJsonp_packages/srm-front-common"]||[]).push([[12],{642:function(o,a,n){o.exports=n.p+"static/media/readme.361a4bd5.txt"}}]);

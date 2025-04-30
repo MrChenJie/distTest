@@ -1,0 +1,1 @@
+(window["webpackJsonp_packages/hzero-front-hlod"]=window["webpackJsonp_packages/hzero-front-hlod"]||[]).push([[467],{328:function(e,t,n){"use strict";n.r(t),t["default"]={title:"\u5217\u8868\u64cd\u4f5c\u533a",action:"\u6dfb\u52a0\u65b0\u6309\u94ae",content:{edit:{key:"edit",defaultContent:"\u7f16\u8f91"},delete:{key:"DELETE_VIEW",defaultContent:"\u5220\u9664"}}}}}]);

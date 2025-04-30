@@ -1,0 +1,1 @@
+(window["webpackJsonp_packages/srm-front-ssrp-hk"]=window["webpackJsonp_packages/srm-front-ssrp-hk"]||[]).push([[20],{574:function(s,p,a){s.exports=a.p+"static/media/readme.361a4bd5.txt"}}]);

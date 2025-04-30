@@ -1,0 +1,1 @@
+(window["webpackJsonp_packages/srm-front-dict"]=window["webpackJsonp_packages/srm-front-dict"]||[]).push([[36],{661:function(a,t,p){a.exports=p.p+"static/media/readme.361a4bd5.txt"}}]);

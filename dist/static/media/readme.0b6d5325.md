@@ -1,0 +1,5 @@
+RenderEmptyPage 空页面
+RenderPointGridLayout 布局宽度以栅格为基准
+RenderPointPxLayout 布局宽度以px为基准，代码逻辑有滞后，因为没对接
+
+RenderLayout 已经废弃，多维数组无限嵌套的布局方式

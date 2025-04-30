@@ -1,0 +1,1 @@
+(window["webpackJsonp_packages/hzero-front-hlod"]=window["webpackJsonp_packages/hzero-front-hlod"]||[]).push([[465],{417:function(e,n,o){"use strict";o.r(n);var t=o(1),r=o.n(t);n["default"]=function(e){var n=e.title;return r.a.createElement("div",{style:{fontSize:"16px",fontFamily:"PingFangSC-Medium",color:"#333435",lineHeight:"22px",border:"none"}},n)}}}]);

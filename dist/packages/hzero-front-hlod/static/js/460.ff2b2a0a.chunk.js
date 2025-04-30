@@ -1,0 +1,1 @@
+(window["webpackJsonp_packages/hzero-front-hlod"]=window["webpackJsonp_packages/hzero-front-hlod"]||[]).push([[460],{307:function(a,e,n){"use strict";n.r(e),n.d(e,"GeneralParamDS",function(){return r});var r={fields:[{name:"paramName",type:"string",label:"\u53c2\u6570\u540d\u79f0"},{name:"paramValue",type:"string",label:"\u53c2\u6570\u503c"}]}}}]);
