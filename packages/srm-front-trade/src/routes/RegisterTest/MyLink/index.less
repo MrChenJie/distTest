@@ -1,0 +1,320 @@
+/* ========== 布局容器相关 ========== */
+
+.register-container {
+  // position: relative;
+  top: 100px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.register-container .register-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background: #e5edf9;
+  border-radius: 16px 16px 0 0;
+}
+
+.register-container .register-title span {
+  margin-left: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18.75px;
+}
+
+.register-form {
+  max-width: 550px;
+  margin-left: 30px;
+}
+
+/* ========== 注册按钮与其他UI元素 ========== */
+button.ant-btn.ant-btn-primary {
+  background-color: #2f85ff;
+}
+.register-btn {
+  width: 300px;
+  min-width: 250px;
+  height: 48px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 52px;
+}
+
+.register-back {
+  gap: 10px;
+  justify-content: center;
+  width: 200px;
+  height: 48px;
+  margin-top: 80px;
+  border-radius: 52px;
+}
+
+.upload-dragger {
+  width: 250px;
+}
+
+/* ========== 响应式布局 ========== */
+.success-container-mobile {
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.success-container-web {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+/* ========== antd 组件自定义样式 ========== */
+
+/* ========== 通用样式 ========== */
+.select-input {
+  gap: 8px;
+  /* height: 48px; */
+  min-width: 250px;
+  max-width: 330px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.font-link {
+  margin: 20px 30px;
+  color: #333;
+  font-weight: 24px;
+  font-size: 16px;
+}
+
+.responsive-link {
+  color: #1890ff;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+/* ========== 注册成功页面样式 ========== */
+.register-success-web {
+  width: 100%;
+  height: 440px;
+  padding-top: 40px;
+  padding-left: 140px;
+  background-image: url('../../../../src/assets/register/bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-success-web .message {
+  margin: 10px 10px;
+  color: #333;
+  font-size: 16px;
+}
+.register-success-web .top {
+  display: flex;
+  padding: 20px;
+}
+.register-success-web h2 {
+  margin: 0;
+  color: #52c41a;
+  font-weight: 400;
+  font-size: 32px;
+  font-family: HarmonyOS Sans SC;
+  line-height: 40px;
+  text-align: left;
+}
+.register-success-mobile {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background-image: url('../../../../src/assets/register/mobile-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-success-mobile .message {
+  margin: 10px 10px;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+}
+.register-success-mobile .message .register-back {
+  width: 100%;
+}
+.register-success-mobile .top {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.register-success-mobile .top img {
+  width: 32px;
+  height: 32px;
+}
+.register-success-mobile h2 {
+  margin: 0;
+  color: #52c41a;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: HarmonyOS Sans SC;
+  line-height: 32px;
+  text-align: left;
+}
+
+.register-form {
+  :global {
+    .ant-form-item .ant-form-item-label {
+      display: flex;
+      line-height: 20px;
+      label {
+        margin: 0 !important;
+        color: #262729 !important;
+        font-weight: 500;
+        // font-size: 14px !important;
+        line-height: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+        margin-left: 4px;
+        position:relative;
+        top: -4px;
+      }
+    }
+    .ant-form-item .ant-form-item-label > label {
+      height: auto;
+    }
+    .ant-form-item-control {
+      display: block;
+    }
+    .ant-select-arrow::before {
+      content: '';
+    }
+    .ant-select-arrow * {
+      display: block;
+    }
+    .anticon-info-circle:before {
+      content: '';
+    }
+
+    .ant-form-item .ant-form-item-explain-error {
+      color: #d6197f;
+    }
+
+    .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input {
+      border-color: #d6197f;
+    }
+
+    .ant-form-item
+      .ant-form-item-label
+      > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+      // display: none;
+    }
+    .ant-form-item
+      .ant-form-item-label
+      > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::after {
+      display: inline-block;
+      color: #ff4d4f;
+      font-weight: 400;
+      font-size: 16px;
+      font-family: HarmonyOS Sans SC;
+      line-height: 18.75px;
+      visibility: visible;
+      content: '*';
+      margin-inline-end: 4px;
+    }
+    .ant-form-item-required
+      .ant-form-item-label
+      > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::after {
+      margin-left: 4px; /* 控制星号与文本的间距 */
+      color: red; /* 设置颜色 */
+      content: ' *'; /* 添加星号 */
+    }
+    .ant-input-outlined {
+      gap: 10px;
+      width: 250px;
+      height: 48px;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+    }
+    .ant-form-item-control-input {
+      width: 250px;
+    }
+
+    .ant-select-status-error:not(.ant-select-disabled):not(.ant-select-customize-input):not(
+        .ant-pagination-size-changer
+      )
+      .ant-select-selector {
+      border-color: #d6197f;
+    }
+
+    .ant-upload.ant-upload-drag {
+      height: 100%;
+      margin-top: 5px;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+    }
+    .ant-col-12 {
+      height: 90px;
+      
+    }
+    .ant-col-24 {
+      height: 90px;
+    }
+    .upload-col{
+      height: 100%;
+    }
+    .ant-upload-text{
+      margin: 0 !important;
+      color: #262729 !important;
+      // font-weight: 500 !important ;
+      font-weight: bold;
+      // font-size: 14px !important;
+      line-height: 20px;
+    }
+    .anticon-paper-clip:before{
+      display: none;
+    }
+    .anticon-delete:before{
+      display: none;
+    }
+    .ant-upload-wrapper .ant-upload-list .ant-upload-list-item-container::before{
+      display: none;
+    }
+    .anticon-spin:before{
+      display: none;
+    }
+    .ant-tooltip .ant-tooltip-inner{
+      display: none;
+    }
+    .ant-tooltip-placement-top{
+      display: none;
+    }
+
+  }
+}
+.anticon-loading:before{
+  display: none;
+}
+.anticon-close:before{
+  display: none;
+}
+.anticon-check:before{
+  display: none;
+}
+@media (max-width: 420px) { /* 假设420px以下为移动端 */
+  .register-btn-container {
+      display: flex;
+      justify-content: center;
+  }
+}
+

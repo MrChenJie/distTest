@@ -1,0 +1,68 @@
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+
+.labelStyle {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+}
+
+:global {
+  .ant-input-number {
+    width: 100% !important;
+  }
+}
+
+.cus-upload-header {
+  display: flex;
+  margin-bottom: 16px;
+  & > span {
+    color: #1f2329;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 32px;
+  }
+  .cus-upload {
+    margin-left: auto;
+  }
+}
+
+.cus-upload-file-tag {
+  display: flex;
+  align-items: center;
+  .ant-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 0;
+    margin-left: 8px;
+    color: #f54a45;
+    font-size: 8px !important;
+    background-color: rgba(245, 74, 69, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: default;
+  }
+}
+
+
+.borderBolder  {
+  border-left-width: 3px !important;
+}
+
+.borderRightBolder {
+  border-right: 3px solid #dee0e3 !important;
+}
+
+.borderNone {
+  border-left: none !important;
+}

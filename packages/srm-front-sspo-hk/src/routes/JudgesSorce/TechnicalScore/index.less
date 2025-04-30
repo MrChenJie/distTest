@@ -1,0 +1,51 @@
+.priceEntry {
+  :global {
+    .ant-modal-header {
+      border-bottom: none !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+
+      .ant-modal-title {
+        font-size: 16px !important;
+      }
+    }
+
+    .ant-modal-body {
+      padding-top: 5px !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+
+    .ant-divider-with-text-left {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .ant-divider-with-text-left:before {
+      border-top: 1px solid #000 !important;
+    }
+
+    .ant-divider-with-text-left:after {
+      border-top: 1px solid #000 !important;
+    }
+  }
+}
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+
+.db-list {
+  :global {
+    .ant-table-footer {
+      border: 0  !important;
+      padding: 0  !important;
+      background: center  !important;
+    }
+  }
+}

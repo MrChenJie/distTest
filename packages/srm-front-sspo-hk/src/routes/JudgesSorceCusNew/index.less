@@ -1,0 +1,386 @@
+.page-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+// 左右两块面板的背景色统一
+.pageBackground {
+  background-color: #f7f9fa;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 16px;
+  :global{
+    .page-wrapper-content {
+      padding: 0 !important;
+      // height: calc(100vh - 32px);
+      overflow: hidden;
+    }
+    .page-wrapper-content:hover {
+      overflow-y: overlay; // 左侧滚动条内部显示
+    }
+    .ant-collapse-item {
+      /* 设置所有 Panel 的 z-index 属性 */
+      z-index: 0;
+    }
+  }
+}
+
+// 置灰下拉底色边框色
+.selectDisable {
+  :global(.ant-select-selector) {
+    background-color: #EFF0F1 !important;
+    border: 1px solid #d0d3d6 !important;
+  }
+}
+
+// 技术评分表最后两行汇总背景色白底
+.scoreTableStyle {
+  :global {
+    .ant-table-tbody tr:nth-last-child(-n+2) td {
+      background-color: #FFFFFF !important;
+    }
+    .ant-form-item {
+      margin-bottom: 0 !important;
+      .ant-form-item-control {
+        line-height: 0 !important;
+      }
+    }
+  }
+}
+
+.cusTableHeader {
+  :global {
+    // cusTable多级表头下边框
+    .ant-table-thead .border_bottom {
+      border-bottom: 1px solid #dee0e3 !important;
+    }
+    // cusTable多级表头第二行第一个单元格左上圆角0
+    .ant-table .ant-table-thead > tr > th:first-child {
+      border-top-left-radius: 0 !important;
+      border-start-start-radius: 0 !important;
+    }
+  }
+}
+
+// 技术评分表-导出按钮位置
+.ExportButton {
+  :global {
+    // 调整表格【暂无数据】宽度，bug:无数据悬浮显示滚动条<CusTable>
+    .ant-table-expanded-row-fixed {
+      max-width: 1471px !important;
+    }
+  }
+}
+
+// 调整表格【暂无数据】宽度，bug:无数据悬浮显示滚动条<Table>
+.antdTableNo {
+  :global {
+    .ant-btn {
+      position: absolute;
+      margin-top: -44px;
+      right: 44px;
+    }
+    .ant-table-expanded-row-fixed {
+      max-width: 1407px !important;
+    }
+  }
+}
+
+// 调整表格【暂无数据】宽度，bug:无数据悬浮显示滚动条<CusTable>
+.cusTableHeader {
+  :global {
+    .ant-table-expanded-row-fixed {
+      max-width: 1400px !important;
+    }
+  }
+}
+
+// 右侧折叠时的图标样式
+._cus_fold {
+  position: absolute;
+  top: 100px;
+  width: 32px;
+  height: 32px;
+  right: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+// 右侧展开时的图标样式
+._cus_expand {
+  position: absolute;
+  top: 120px;
+  width: 32px;
+  height: 32px;
+  right: 339px;
+  z-index: 999;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px 0px rgba(219, 219, 219, 0.5);
+}
+
+// 左侧展开栏提示信息样式
+.leftTipBox {
+  padding-right: 16px;
+  :global {
+    .page-wrapper {
+      height: auto;
+    }
+  }
+}
+
+// 右侧展开栏提示信息样式
+.rightTipBox {
+  // width: 18.9%;
+  width: 340px;
+  position: fixed;
+  right: 16px;
+  :global {
+    .ant-collapse-content-box {
+      padding-bottom: 16px !important;
+    }
+  }
+  .opinionBox {
+    margin-bottom: 16px;
+  }
+  .tipButton {
+    margin: 15px 0 0 0 !important;
+  }
+
+  .tipBox {
+    min-height: 420px;
+    font-size: 14px;
+    color: #8F959E;
+    // margin-top: 16px !important;
+    border-radius: 4px;
+    opacity: 1;
+    background: ~"url('../../assets/explainbg.png')" center no-repeat;
+    background-size: 100% 100%;
+    border: 1px dashed #D0D3D6;
+    padding: 16px 0 8px 16px;
+
+    p {
+      margin-bottom: 16px !important;
+    }
+
+    .p-tip-box {
+      overflow: scroll;
+      height: 420px;
+      padding-right: 8px;
+      overflow: hidden;
+      &:hover {
+        opacity: 1;
+        // overflow: overlay;
+        overflow: scroll;
+        padding-right: 8px;
+      }
+    }
+  }
+}
+
+// 三个文件表格的文件名鼠标悬浮字变蓝
+.fileFontColor {
+  cursor: pointer;
+  color: #3271FE;
+}
+
+.fileFontColor:hover {
+  color: #3271FE;
+}
+
+// 查看附件弹框表格的左边距
+.tableLeftNone {
+  :global(.ant-modal-body) {
+    margin-bottom: 16px !important;
+  }
+
+  :global(.customize-table) {
+    padding-left: 0 !important;
+  }
+}
+
+.react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  right: 0;
+  // bottom: 0;
+  z-index: 1;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+}
+
+// tag标签框样式(文件表格内的tag)
+.tagClassStyle {
+  line-height: 12px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 7px;
+  height: 20px;
+  margin-right: 0 !important;
+  font-weight: normal !important;
+}
+
+.tagClassStyle :global(.ant-tag-green) {
+  background: rgba(245, 74, 69, 0.1);
+  .tagStyle {
+    color: #34C724;
+  }
+}
+
+.tagClassStyle :global(.ant-tag-red) {
+  background: rgba(52, 199, 36, 0.1);
+  .tagStyle {
+    color: #F54A45;
+  }
+}
+
+// tag标签内的字样式(文件表格内的tag)
+.tagStyle {
+  font-size: 10px;
+  font-weight: normal;
+  display: inline-block;
+  -webkit-text-size-adjust: none;
+  // -webkit-transform: scale(0.83, 0.83);
+}
+
+// tag标签框样式(uploadFile.js)
+.uploadFileTag {
+  height: 18px;
+  width: 18px;
+  line-height: 17px;
+  text-align: center;
+  margin-left: 8px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+// 多级表头缺失边框线
+.border_top {
+  border-top: 1px solid #dee0e3;
+}
+
+.border_left {
+  border-left: 1px solid #dee0e3;
+}
+
+// 技术澄清提问小标题文本样式
+.twoLevelTitle {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #1f2329;
+  padding-left: 0;
+}
+
+// 技术评分表二级表头-分值单元格左上radius置为0
+.HeaderButton, .antdTableNo {
+  :global(.customize-table .ant-table .ant-table-thead > tr > th:first-child) {
+    border-radius: 0 !important;
+    border-start-start-radius: 0 !important;
+  }
+
+  :global(.ant-table-content) {
+    border-radius: 4px !important;
+  }
+
+  :global(.ant-table-bordered .ant-table-thead > tr > th, .ant-table-bordered .ant-table-tbody > tr > td) {
+    border-right: 0 !important;
+  }
+}
+
+.tableLastTwoCol:nth-last-child(2) td {
+  border-top: 1px solid #dee0e3;
+  border-bottom: 1px solid #dee0e3 !important;
+}
+
+// 多级表头的二级表头必填*号
+.theTwoHeaderCol {
+  padding: 0 16px 0 28px !important;
+}
+
+.theTwoHeaderCol::before {
+  content: '*' !important;
+  color: #F54A45 !important;
+  opacity: 0.7 !important;
+  font-size: 14px !important;
+  inset-inline-end: auto !important;
+  background: none !important;
+  display: inline-table;
+  top: 48% !important;
+  left: 16px;
+  margin-right: 5px;
+}
+
+// 技术评分表技术比例td样式
+.antdTableNo {
+  :global(.ant-table-tbody > tr > td) {
+    border-radius: 0;
+  }
+}
+
+.font-span {
+  line-height: 32px;
+  font-weight: normal;
+  color: #646A73;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.roundForm {
+  :global {
+    .ant-form-item {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+// 技术评分表分值inputNumber右侧上下箭头隐藏
+.inputNumber {
+  :global {
+    .ant-input-number-handler-wrap {
+      display: none;
+    }
+    input {
+      height: 27px !important;
+      vertical-align: middle !important;
+    }
+  }
+}
+
+.wrapper {
+  height: calc(100vh - 32px);
+}
+
+// 技术评分表加粗供应商之间的拖动线
+.borderBolder  {
+  border-left-width: 3px !important;
+}
+
+.borderRightBolder {
+  border-right: 3px solid #dee0e3 !important;
+}
+
+.borderNone {
+  border-left: none !important;
+}
+
+// 处理意见的文本框样式
+.textarea-wrapper {
+  position: relative;
+}
+
+#myTextarea {
+  resize: none;
+}

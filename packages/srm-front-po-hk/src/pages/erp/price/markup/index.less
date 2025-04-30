@@ -1,0 +1,70 @@
+.search-table {
+  :global {
+    th.c7n-pro-table-cell {
+      text-align: left !important;
+    }
+  }
+}
+
+:global {
+  // Lov Modal样式调整
+  .c7n-pro-modal-container {
+    .c7n-pro-mask {
+      display: none;
+    }
+    .c7n-pro-mask + div {
+      background-color: rgba(0, 0, 0, 0.288) !important;
+      & ~ div {
+        background-color: transparent !important;
+      }
+    }
+    .c7n-pro-mask ~ div {
+      position: fixed;
+      width: 100vw !important;
+      height: 100vh !important;
+      display: flex !important;
+      overflow: auto !important;
+    }
+
+    .c7n-pro-modal {
+      max-height: none !important;
+      margin-top: 100px !important;
+      position: static !important;
+      max-width: 90vw !important;
+      width: auto;
+      .c7n-pro-modal-content {
+        height: auto !important;
+        min-height: unset !important;
+        margin: 0 auto;
+        margin-bottom: 20px !important;
+        width: auto;
+        max-width: 90vw;
+        min-width: 300px;
+      }
+      .c7n-pro-modal-header {
+        border: none !important;
+        padding-bottom: 0;
+      }
+      .c7n-pro-modal-body {
+        padding: 16px !important;
+        max-height: 10000px !important;
+        .c7n-pro-field-label {
+          // &::after {
+          //   content: ':' !important;
+          // }
+          & + td {
+            padding-right: 20px;
+          }
+        }
+      }
+      .c7n-pro-modal-title {
+        font-size: 18px !important;
+      }
+      .c7n-pro-modal-header-buttons {
+        .icon-close {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# ssrc　多语言　－　通用
+# 首字母请按照顺序排列
+
+ssrc.common:
+  company: 公司
+  companyName: 公司名称
+  companyNum: 公司编号
+
+  demandDate: 需求日期
+
+  goodsName: 物品名称
+  goodsNum: 物品编码
+  goodsSorts: 物品分类
+  goodsDescription: 物品描述
+
+  itemName: 物料名称
+  itemNum: 物料编码
+  itemSorts: 物料分类
+  itemDescription: 物料描述
+
+  supplier: 供应商
+  supplierName: 供应商名称
+  startDate: 开始时间
+
+  taxRate: 税率

@@ -1,0 +1,26 @@
+.input-money {
+  :global {
+    .ant-input-number-handler-wrap {
+      &:hover {
+        & + div {
+          input {
+            padding-right: 25px;
+          }
+        }
+      }
+    }
+
+    input:disabled {
+      text-align: right;
+      &:hover {
+        padding-right: 11px;
+      }
+    }
+    input {
+      text-align: right;
+      &:hover {
+        padding-right: 25px;
+      }
+    }
+  }
+}

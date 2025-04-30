@@ -1,0 +1,101 @@
+.fileViewer-style-zh {
+  background-color: #525659;
+  height: 500px;
+  :global {
+    .pg-viewer-wrapper-common;
+    .pg-viewer-wrapper .loading-container .loading {
+      &::after {
+        content: '加载中...';
+      }
+    }
+  }
+}
+
+.fileViewer-style-us {
+  background-color: #525659;
+  height: 500px;
+  :global {
+    .pg-viewer-wrapper-common;
+    .pg-viewer-wrapper .loading-container .loading {
+      &::after {
+        content: 'Loading...';
+      }
+    }
+  }
+}
+
+.pg-viewer-wrapper-common {
+  .pg-viewer-wrapper {
+    overflow-y: hidden;
+    .pg-viewer{
+      background-color: white;
+      #docx{
+        background-color: #525659;
+      }
+    }
+    // doc
+    .document-container {
+      min-height: 100%;
+    }
+    // xlsx
+    .spreadsheet-viewer {
+      height: 100%;
+      .sheet-names {
+        background-color: white;
+      }
+    }
+    // csv
+    .react-grid-Container {
+      margin: 0;
+      height: calc(100% - 27px);
+      .react-grid-Main {
+        height: 100%;
+        .react-grid-Grid {
+          height: 100%;
+          min-height: 0 !important;
+          .react-grid-Header {
+            .react-grid-HeaderCell-sortable {
+              pointer-events: none !important;
+              cursor: unset !important;
+            }
+          }
+          .react-grid-Canvas {
+            overflow: overlay !important;
+            height: 438px !important;
+          }
+          .react-grid-Canvas > div:last-child {
+            pointer-events: none !important;
+          }
+        }
+      }
+    }
+    // pdf
+    .pdf-canvas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading-container .loading {
+      position: relative;
+      background-image: url(../../assets/cmi_loading.gif);
+      background-size: 78px;
+      background-position: 30px 16px;
+      animation: none;
+      -webkit-animation: none;
+      width: 140px;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px 0px rgba(219, 219, 219, 0.5);
+      border-radius: 4px;
+      &::after {
+        position: absolute;
+        top: 50px;
+        right: 40px;
+        color: #1f2329;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: normal;
+      }
+    }
+  }
+}

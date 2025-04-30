@@ -1,0 +1,133 @@
+/*
+ * index.less - 工作台样式
+ * @date: 2022-03-10
+ * @author: HB <bin.huang02@hand-china.com>
+ * @version: 0.0.1
+ * @copyright Copyright (c) 2018, Hand
+ */
+ .page-content {
+    // background-color: #cccccc;
+    .dasbord-data-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 40px;
+      .topPage {
+        display: flex;
+        border-radius: 5px;
+        height: 110px;
+        align-items: center;
+        justify-content: space-around;
+        // box-shadow: 0px 0px 5px 1px #cccccc;
+        border: 1px solid #cccccc;
+        .echart-img {
+          text-align: center;
+        }
+        .number {
+          text-align: center;
+          .val {
+            color: #0085d0;
+            font-size: 24px;
+          }
+          .num {
+            color: #0085d0;
+            font-size: 14px;
+          }
+          .name {
+            color: #333333;
+            font-size: 14px;
+          }
+        }
+      }
+      // .topPage_left {
+      //   width: 70%;
+      //   margin-right: 16px;
+      // }
+      .topPage_left {
+        width: 100%;
+      }
+      .topPage_right {
+        width: 30%;
+      }
+    }
+  }
+  
+  .search-btn-more {
+    text-align: right;
+    .btn-reset {
+      margin-right: 8px;
+    }
+  }
+  
+  .export-class {
+    .export-img {
+      width: 15px;
+    }
+  }
+  
+  .customize-buttons {
+    text-align: right;
+    button {
+      border: none;
+      padding-right: 0;
+      background-color: transparent !important;
+      &:hover {
+        border: none;
+      }
+      img {
+        margin-right: 5px;
+        width: 15px;
+      }
+    }
+  }
+  .ant-menu-item-selected {
+    border-bottom: none !important;
+    line-height: 22px !important;
+    &::after {
+      border-radius: 2px;
+    }
+  } 
+  .ant-menu-item-selected:hover {
+    color: #3271FE !important;
+  } 
+  .ant-menu-item-selected:hover::after {
+    border-bottom: 3px solid #3271FE !important;
+    border-radius: 2px;
+  } 
+
+  .ant-menu-item-active:hover {
+    color: #3271FE !important;
+  }
+  .ant-menu-item-active::after {
+    border-bottom: 3px solid #3271FE !important;
+  }
+
+  // 状态标记样式
+  .spanStatus {
+    border: none!important;
+    border-radius: 2px!important;
+    font-size: 10px!important;
+    font-weight: normal!important;
+    text-align: center;
+    line-height: 12px;
+    padding: 4px 7px;
+    display: table-cell;
+    height: 20px;
+  }
+  .ant-tag-green{
+    color: #34C724 !important;
+    background: rgba(52, 199, 36, 0.1) !important;
+  }
+  .ant-tag-blue{
+    color: #3271FE !important;
+    background-color:rgba(50, 113, 254, 0.1) !important;
+  }
+
+  .tabs-pad {
+    :global {
+      .ant-tabs {
+        padding: 1px;
+      }
+    }
+  }
+  

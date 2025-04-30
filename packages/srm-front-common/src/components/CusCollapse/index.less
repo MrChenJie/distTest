@@ -1,0 +1,94 @@
+.customize-collapse {
+  background-color: #f7f9fa;
+  border: none;
+  border-radius: 4px;
+  .ant-collapse-header {
+    padding: 0 !important;
+  }
+  .ant-collapse-item-disabled > .ant-collapse-header{
+    cursor: default;
+  }
+  .ant-collapse-item {
+    border: 1px solid #d0d3d6;
+    border-radius: 4px;
+    background: #ffffff;
+    &:last-child {
+      border-radius: 4px;
+    }
+    &[data-border='false'] {
+      border: none;
+    }
+    &[data-padding = "false"] > .ant-collapse-content > .ant-collapse-content-box{
+      padding: 0;
+    }
+  }
+  .ant-collapse-item:not(:first-child) {
+    margin-top: 16px;
+    &[data-border='false'] {
+      margin-top: 0;
+      &::before {
+        content: "";
+        display: block;
+        height: 1px;
+        width: calc(100% - 32px);
+        margin: 0 16px;
+        background-color: #DEE0E3;
+      }
+    }
+  }
+  .customize-panel-header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .ant-collapse-content{
+    position: relative;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    overflow: visible; // 提示文字需要使用-margin，扩大元素的区域,不隐藏
+    .ant-collapse-content-box {
+      padding-top: 0;
+      padding-bottom: 24px;
+      padding-left: 16px;
+    }
+  }
+}
+
+.customize-panel-header {
+  display: flex;
+  align-items: center;
+  .customize-panel-header-wrap {
+    width: 100%;
+    //margin-left: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      // 二级标题样式
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 600;
+      color: #1f2329 !important;
+      white-space: nowrap;
+    }
+    .cus-operations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px 0px;
+      margin-left: auto;
+    }
+  }
+}
+
+.cus-vertical-line {
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 3px;
+    height: 12px;
+    background-color: #3271fe;
+    border-radius: 1.5px;
+    margin-right: 8px;
+  }
+}

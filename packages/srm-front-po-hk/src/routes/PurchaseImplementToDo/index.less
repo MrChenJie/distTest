@@ -1,0 +1,26 @@
+// 切换tab样式
+.tabStyle {
+  :global {
+    .ant-tabs-tab {
+      padding: 12px 0 !important;
+      padding-top:0 !important;
+      margin-right: 0 !important;
+      color: #1f2329 !important;
+    }
+
+    .ant-tabs-tab:hover,
+    .ant-tabs-tab-btn:focus,
+    .ant-tabs-tab-btn:active {
+      color: #3271fe !important;
+    }
+
+    .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: #3271fe !important;
+    }
+
+    .ant-tabs .ant-tabs-ink-bar {
+      height: 3px !important;
+      background: #3271fe !important;
+    }
+  }
+}

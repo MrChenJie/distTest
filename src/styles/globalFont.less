@@ -1,0 +1,85 @@
+/*
+ * @date: 2020/12/28 14:32:11
+ * @author: Xukuan <kuan.xu@hand-china.com>
+ * @version: 0.0.1
+ * @copyright: Copyright (c) 2019, Hand
+ */
+
+@basicColor: #1F2329; // 基础字体颜色
+@basicFontSize: 14px; // 基础字体大小
+@tagColor: #666; // 字段名标签颜色
+@tipColor: #ccc; // 表单提示信息颜色
+@tipFontSize: 12px; // 提示信息字体大小
+@inputColor: #000; // 表单输入颜色
+
+:global {
+  html,
+  body {
+    color: @basicColor !important;
+  }
+
+  // 基础字体大小
+  body,
+  input,
+  .c7n-pro-table,
+  .ant-pagination,
+  .ant-form-item,
+  .ant-table-placeholder,
+  .ant-select-dropdown,
+  .ant-table,
+  .ant-select,
+  .ant-input,
+  .ant-form label,
+  .ant-btn,
+  .ant-tag,
+  .ant-tabs,
+  .c7n-pro-input,
+  .c7n-pro-modal-body,
+  .c7n-pro-btn,
+  .ant-collapse,
+  .c7n-card,
+  .c7n-card-head-title,
+  .c7n-pro-table-thead > tr > th,
+  .ant-table-wrapper .ant-table .ant-table-thead > tr > th {
+    font-size: @basicFontSize !important;
+  }
+
+  // 表头小标题加粗
+  .c7n-pro-table .c7n-pro-table-thead > tr > th,
+  .ant-table-thead > tr > th,
+  .ant-card-head-title > h3,
+  .ant-tag,
+  .ant-collapse-header,
+  .c7n-card-head-title {
+    font-weight: bolder !important;
+  }
+
+  // 表单字段颜色
+  .c7n-pro-field-label,
+  .ant-form-item-label label {
+    color: @tagColor !important;
+  }
+
+  // 输入框颜色
+  .c7n-pro-textarea-disabled .c7n-pro-textarea,
+  .c7n-pro-textarea-disabled label:hover .c7n-pro-textarea,
+  .c7n-pro-textarea:disabled,
+  .c7n-pro-field-wrapper .c7n-pro-calendar-picker-disabled .c7n-pro-calendar-picker,
+  .c7n-pro-field-wrapper .c7n-pro-input-disabled .c7n-pro-input,
+  .c7n-pro-field-wrapper .c7n-pro-select-disabled .c7n-pro-select,
+  .ant-input,
+  html .ant-input-disabled,
+  body .ant-input-disabled,
+  #root .ant-input-disabled,
+  html .ant-select-disabled,
+  body .ant-select-disabled,
+  #root .ant-select-disabled,
+  input {
+    color: @basicColor !important;
+
+    &::placeholder {
+      color: @tipColor;
+      font-size: @tipFontSize;
+    }
+  }
+}

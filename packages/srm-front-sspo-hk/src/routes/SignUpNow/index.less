@@ -1,0 +1,75 @@
+/*
+ * index.less - 工作台样式
+ * @date: 2022-03-10
+ * @author: HB <bin.huang02@hand-china.com>
+ * @version: 0.0.1
+ * @copyright Copyright (c) 2018, Hand
+ */
+.page-content {
+  // background-color: #cccccc;
+  .dasbord-data-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    .topPage {
+      display: flex;
+      border-radius: 5px;
+      height: 110px;
+      align-items: center;
+      justify-content: space-around;
+      // box-shadow: 0px 0px 5px 1px #cccccc;
+      border: 1px solid #cccccc;
+      .echart-img {
+        text-align: center;
+      }
+      .number {
+        text-align: center;
+        .val {
+          color: #0085d0;
+          font-size: 24px;
+        }
+        .num {
+          color: #0085d0;
+          font-size: 14px;
+        }
+        .name {
+          color: #333333;
+          font-size: 14px;
+        }
+      }
+    }
+    .topPage_left {
+      width: 90%;
+    }
+  }
+}
+
+.search-btn-more {
+  text-align: right;
+  .btn-reset {
+    margin-right: 8px;
+  }
+}
+
+.export-class {
+  .export-img {
+    width: 15px;
+  }
+}
+
+.customize-buttons {
+  text-align: right;
+  button {
+    border: none;
+    padding-right: 0;
+    background-color: transparent !important;
+    &:hover {
+      border: none;
+    }
+    img {
+      margin-right: 5px;
+      width: 15px;
+    }
+  }
+}

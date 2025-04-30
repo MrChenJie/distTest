@@ -1,0 +1,116 @@
+/**
+ * @Description: 白名单配置汇总界面
+ * @date 2023-02-16
+ * @author <xinyi.he02@hand-china.com>
+ * @version 1.0.0
+ * @copyright Copyright (c) 2022, Hand
+ */
+import React from 'react';
+import { Form, LocaleProvider } from 'hzero-ui';
+import { connect } from 'dva';
+import zhCN from 'hzero-ui/lib/locale-provider/zh_CN';
+import { routerRedux } from 'dva/router';
+import { Bind } from 'lodash-decorators';
+import { Content } from 'components/Page';
+import formatterCollections from 'utils/intl/formatterCollections';
+import { fastCodeLoader } from '@/utils/decorators';
+import { getCurrentLanguage } from 'utils/utils';
+import FilterForm from './FilterForm';
+import ListTable from './ListTable';
+
+@Form.create({ fieldNameProp: null })
+@connect(({ whiteListConfig, loading }) => ({
+  whiteListConfig,
+  loading: { query: loading.effects['whiteListConfig/queryData'] },
+}))
+@fastCodeLoader(['HPFM.FLAG', 'SPUB.WHITE_INTERFACE_TYPE'])
+@formatterCollections({ code: ['spub.whiteListConfig'] })
+export default class WhiteListConfig extends React.Component {
+  constructor(props) {
+    super(props);
+    const {
+      location: { pathname },
+    } = props;
+
+    this.state = {
+      isPub: pathname.includes('/pub'),
+    };
+  }
+
+  componentDidMount() {
+    this.fetchList();
+  }
+
+  @Bind()
+  fetchList(page = {}) {
+    const { dispatch, form } = this.props;
+    const fieldValues = form.getFieldsValue();
+    dispatch({
+      type: 'whiteListConfig/queryData',
+      payload: {
+        page,
+        ...fieldValues,
+      },
+    });
+  }
+
+  @Bind()
+  handleAdd() {
+    const { dispatch } = this.props;
+    const { isPub } = this.state;
+    dispatch(
+      routerRedux.push({
+        pathname: `${isPub ? '/pub' : ''}/spub/white-list-config/detail/create`,
+      })
+    );
+  }
+
+
+  @Bind()
+  handleEdit(record) {
+    const { dispatch } = this.props;
+    const { isPub } = this.state;
+    dispatch(
+      routerRedux.push({
+        pathname: `${isPub ? '/pub' : ''}/spub/white-list-config/detail/${record.whiteListConfigId}`,
+      })
+    );
+  }
+
+
+  render() {
+    const {
+      form,
+      idpValueMap = {},
+      loading,
+      whiteListConfig: { dataSource, pagination },
+    } = this.props;
+    const filterProps = {
+      form,
+      idpValueMap,
+      search: this.fetchList,
+    };
+    const listProps = {
+      idpValueMap,
+      pagination,
+      dataSource,
+      loading: loading.query,
+      onChange: (page) => this.fetchList(page),
+      onAdd: this.handleAdd,
+      onEdit: this.handleEdit,
+    };
+
+    return (
+      <React.Fragment>
+        <LocaleProvider locale={getCurrentLanguage() === 'zh_CN' ? zhCN : undefined}>
+          <Content>
+            <div className="table-list-search">
+              <FilterForm {...filterProps} />
+            </div>
+            <ListTable {...listProps} />
+          </Content>
+        </LocaleProvider>
+      </React.Fragment>
+    )
+  }
+}

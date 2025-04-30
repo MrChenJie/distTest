@@ -1,0 +1,16 @@
+diff --git a/node_modules/srm-front-smdm/lib/routes/Materiel/FilterForm.js b/node_modules/srm-front-smdm/lib/routes/Materiel/FilterForm.js
+index 4368ccb..833757d 100644
+--- a/node_modules/srm-front-smdm/lib/routes/Materiel/FilterForm.js
++++ b/node_modules/srm-front-smdm/lib/routes/Materiel/FilterForm.js
+@@ -121,7 +121,10 @@ function (_PureComponent) {
+         layout: "inline",
+         className: "more-fields-form"
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+-        span: 18
++        span: 18,  
++        style: {
++                width: '75%' 
++              }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(_Form.Item, Object.assign({}, formItemLayout, {

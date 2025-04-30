@@ -1,0 +1,109 @@
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+
+.conmi {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+  :global(.ant-form-item-label > label:first-child::before) {
+      display: inline-block;
+      color: #f5222d;
+      font-family: SimSun;
+      line-height: 1;
+      margin-right: 4px;
+      font-size: 12px;
+      content: '*';
+    }
+}
+
+.content-bottom {
+  padding-bottom: 80px;
+}
+.labelStyle {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+}
+.approval-btn {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f1f6fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn {
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+    .text {
+      text-align: center;
+      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.zDialog_div_bottom{
+  position: relative;
+  float: left;
+}
+
+.btn {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.emailModel{
+  :global{
+    .c7n-pro-modal-content {
+      min-width: 22vw;
+      max-width: 40vw;
+      height: 90% !important;
+      .c7n-pro-modal-container-moveable {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+    }
+    .c7n-pro-modal-body{
+      max-height: none !important;
+      height: calc(100% - 108px);
+    }
+  }
+}
+
+// 遮罩层用来禁止富文本编辑
+.tinymacClass {
+  position: initial;
+  left: 0;
+  top: 0;
+  opacity: .8;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 998;
+  pointer-events: none;
+}

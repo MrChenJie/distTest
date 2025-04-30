@@ -1,0 +1,68 @@
+.customize-notification {
+  box-sizing: border-box;
+  width: 384px;
+  min-height: 54px;
+  max-height: 95vh;
+  border-radius: 6px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 10px 0 rgba(219, 219, 219, 0.5);
+  transform: translateX(-50%);
+  .ant-notification-notice-content {
+    .ant-notification-notice-icon {
+      margin: 0;
+      img {
+        margin-top: 1px;
+        width: 20px;
+      }
+    }
+    .ant-notification-notice-message {
+      font-size: 14px;
+      font-weight: bold;
+      height: 22px;
+      line-height: 22px;
+      letter-spacing: 0;
+      color: #1f2329;
+      padding-right: 0;
+      margin-left: 24px;
+      margin-right: 24px;
+      margin-bottom: 0;
+    }
+    .ant-notification-notice-with-icon .ant-notification-notice-description {
+      font-size: 14px;
+      line-height: 22px;
+      color: #1F2329;
+      margin: 0 24px;
+    }
+  }
+  .ant-notification-notice-close {
+    top: 16px;
+    right: 20px;
+    display: inline-block;
+    width: 16px;
+    height: 22px;
+    line-height: 20px;
+    &:hover {
+      background-color: unset;
+    }
+    .anticon-close:before {
+      content: none;
+    }
+  }
+}
+
+.cus-success {
+  background: #f0fbef;
+  border: 1px solid #34c724;
+}
+.cus-error {
+  background: #fef1f1;
+  border: 1px solid #f54a45;
+}
+.cus-warn {
+  background: #F8F2E7;
+  border: 1px solid #ffb938;
+}
+.cus-info {
+  background: #EAF0FE;
+  border: 1px solid #3271fe;
+}

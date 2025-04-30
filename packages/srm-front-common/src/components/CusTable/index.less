@@ -1,0 +1,67 @@
+.scrollbars-custom > div:first-child {
+  overflow-y: hidden !important;
+  margin-right: 0 !important;
+}
+
+.react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  right: 0;
+  // bottom: 0;
+  z-index: 1;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+  background: #f5f6f7;
+}
+
+.track-horizontal{
+  position: absolute;
+  transition: opacity 200ms ease 0s;
+  bottom: 0.5px;
+  left: 0;
+  width: 100%;
+  height: auto !important;
+  border-radius: 4px;
+  z-index: 11;
+  .thumb-horizontal{
+    position: relative;
+    display: block;
+    height: 8px !important;
+    border-radius: inherit;
+    background-color: #dee0e3;
+    &:hover{
+      height: 12px !important;
+      border-radius: 12px !important;
+      background-color: #bbbfc4;
+    }
+  }
+}
+
+.track-vertical{
+  position: absolute;
+  transition: opacity 200ms ease 0s;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto !important;
+  border-radius: 4px;
+  z-index: 11;
+  .thumb-vertical{
+    position: relative;
+    display: block;
+    width: 8px !important;
+    border-radius: inherit;
+    background-color: #dee0e3;
+    &:hover{
+      width: 12px !important;
+      border-radius: 12px !important;
+      background-color: #bbbfc4;
+    }
+  }
+}

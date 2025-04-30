@@ -1,0 +1,21 @@
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+
+.labelStyle {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+}
+
+:global {
+  .ant-input-number {
+    width: 100% !important;
+  }
+}

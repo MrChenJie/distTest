@@ -1,0 +1,173 @@
+.priceAssistant-title {
+    margin-bottom: 16px;
+  }
+  
+  .priceAssistant-header-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  
+    .info-wrapper {
+      width: 49%;
+      background-color: #EAF0FE;
+      padding: 16px;
+  
+      .info-item-top {
+        height: 22px;
+        line-height: 22px;
+  
+        .info-item-price {
+          font-size: 24px;
+        }
+      }
+  
+      .info-item-bottom {
+        height: 22px;
+        line-height: 22px;
+  
+        .info-item-supplier {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  
+  :global {
+    .priceAssistant-filter {
+      margin: 16px 0;
+      display: flex;
+      justify-content: flex-end;
+  
+      a {
+        width: 87px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        color: #666;
+        text-decoration: none;
+      }
+  
+      a:hover {
+        background-color: #eee;
+      }
+    }
+  }
+  
+  .quoteInfo-icon {
+    display: inline-block;
+    margin-left: 24px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    cursor: pointer;
+  
+    img {
+      width: 100%;
+      margin-bottom: 4px;
+      height: 100%;
+    }
+  }
+  
+  .config-modal {
+    :global {
+      .ant-tag-checkable {
+        margin: 4px 4px;
+        border: 1px solid rgb(213, 218, 224);
+        color: rgb(102, 102, 102);
+      }
+  
+      .ant-tag-checkable:hover {
+        color: #2774dc;
+      }
+  
+      .ant-tag-checkable:active {
+        background: #2774dc;
+      }
+  
+      .ant-tag-checkable-checked {
+        background: #fff;
+        color: #2774dc;
+        border: 1px solid #2774dc;
+        // background-image: url('../../../../');
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 12px;
+      }
+    }
+  }
+  
+  :global {
+    .priceAssistant-filter-item,
+    .priceAssistant-filter-supplier {
+      padding: 12px 0 !important;
+      max-height: 300px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+      overflow: auto;
+  
+      :global {
+        .ant-menu-item:not(:last-child) {
+          margin-bottom: 0 !important;
+        }
+  
+        .ant-menu-item {
+          height: 28px !important;
+          line-height: 28px !important;
+        }
+      }
+  
+      a {
+        display: inline-block;
+        margin-left: 12px;
+        height: 18px;
+        width: 28px;
+        line-height: 18px;
+        color: #999;
+      }
+    }
+  }
+  
+  .supplier-title {
+    margin: 16px 0;
+  }
+  
+  .latest-title {
+    margin-bottom: 20px;
+    height: 20px;
+    line-height: 20px;
+  
+    .latest-title-btn {
+      float: right;
+      border: 0;
+    }
+  }
+  
+  .chart-empty {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    color: rgba(0, 0, 0, 0.45);
+  }
+  
+  .history-analysis-table {
+    margin-top: 32px;
+  
+    .history-analysis-table-title {
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+  }
+  
+  .sidebar-menu {
+    width: 190px;
+    padding-left: 16px;
+    max-height: 332px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  
+    .sidebar-menu-item {
+      font-size: 12px;
+      padding: 6px 0;
+      cursor: pointer;
+    }
+  }
+  

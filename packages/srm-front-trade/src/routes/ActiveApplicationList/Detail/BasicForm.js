@@ -1,0 +1,268 @@
+/*
+ * @Author: 陈杰 jie.chen06@hand-china.com
+ * @Date: 2024-07-15 09:47:05
+ * Copyright (c) 2024, All Rights Reserved. 
+ */
+import React from 'react';
+import { Col, Input } from 'antd';
+import { Form } from 'hzero-ui';
+import intl from 'utils/intl';
+import dayjs from 'dayjs';
+import moment from 'moment';
+import uuidv4 from 'uuid/v4';
+import CusSelect from '_cus_components/CusSelect';
+import CusDatePicker from '_cus_components/CusDatePicker';
+import CusInput from '_cus_components/CusInput';
+import GenerateFormGrid from '_cus_utils/generate/GenerateFormGrid';
+import { getDFormGridSpan } from '_cus_utils/utils';
+import { DEFAULT_DATETIME_FORMAT } from 'utils/constants';
+import {
+  getCurrentUser,
+} from 'utils/utils';
+import { getEditTableData } from 'hzero-front/lib/utils/utils';
+
+const prompt = 'spub.interfaceErrors';
+const gridSpan = getDFormGridSpan();
+const { realName, loginName } = getCurrentUser();
+
+@Form.create()
+export default class BasicForm extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    props?.onRef(this);
+  }
+
+  render() {
+    const {
+      form,
+      readyOnly = false,
+      dispatch,
+      idpValueMap,
+      headerInfo,
+      activeApplicationListModal,
+    } = this.props;
+    const { getFieldDecorator } = form;
+
+    const { productDetailSource } = activeApplicationListModal;
+    return (
+      <div className="customize-form">
+        <Form>
+          <GenerateFormGrid isPackUp={true} defaultPackUp={false}>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityID`).d('活动ID')}
+              >
+                {getFieldDecorator('actId', {
+                  initialValue: headerInfo?.actId,
+                })(
+                  <Input disabled />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityAppStat`).d('申请状态')}
+              >
+                {getFieldDecorator('statusMeaning', {
+                  initialValue: headerInfo?.statusMeaning,
+                })(
+                  <Input disabled />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityName`).d('活动名称')}
+              >
+                {getFieldDecorator('actName', {
+                  initialValue: headerInfo?.actName,
+                  rules: [
+                    {
+                      required: true,
+                      message: intl.get('hzero.common.validation.notNull', {
+                        name: intl.get(`spfmhk.trade.field.ActivityName`).d('活动名称'),
+                      })
+                    }
+                  ]
+                })(
+                  <Input disabled={readyOnly} />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityStat`).d('活动状态')}
+              >
+                {getFieldDecorator('actStatus', {
+                  initialValue: headerInfo?.actStatus ? headerInfo?.actStatus : 'NotStarted',
+                })(
+                  <CusSelect
+                    options={idpValueMap['HKTB.ACTIVITY_STATUS']}
+                    disabled
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.QuotatDeadl`).d('报价截止时间')}
+              >
+                {getFieldDecorator('quoteEndTime', {
+                  initialValue: headerInfo?.quoteEndTime ? dayjs(moment(headerInfo?.quoteEndTime).format(DEFAULT_DATETIME_FORMAT)) : '',
+                  rules: [
+                    {
+                      required: true,
+                      message: intl.get('hzero.common.validation.notNull', {
+                        name: intl.get(`spfmhk.trade.field.QuotatDeadl`).d('报价截止时间'),
+                      })
+                    }
+                  ]
+                })(
+                  <CusDatePicker 
+                    showTime={{ format: DEFAULT_DATETIME_FORMAT }}
+                    disabled={readyOnly}
+                    disabledDate={(currentDate) => {
+                      return (
+                        currentDate && currentDate < dayjs().startOf('day')
+                      );
+                    }}
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.BidAll`).d('是否全量商品出价')}
+              >
+                {getFieldDecorator('isFullQuote', {
+                  initialValue: headerInfo?.isFullQuote || 'N',
+                  rules: [
+                    {
+                      required: true,
+                      message: intl.get('hzero.common.validation.notNull', {
+                        name: intl.get(`spfmhk.trade.field.BidAll`).d('是否全量商品出价'),
+                      })
+                    }
+                  ]
+                })(
+                  <CusSelect
+                    disabled={readyOnly}
+                    options={idpValueMap['HKTB.HEAD_BIDALL']}
+                    lazyLoad={false}
+                    allowClear
+                    onChange={(value) => {
+                      console.log('productDetailSource', productDetailSource, value)
+                      const newDataSource = (productDetailSource || []).map((item) => ({
+                        ...item,
+                        rowKey: uuidv4(),
+                        quoteRule: value === 'Y' ? 'Bundled' : 'Singleton'
+                      }))
+                      dispatch({
+                        type: 'activeApplicationListModal/updateState',
+                        payload: {
+                          productDetailSource: newDataSource
+                        }
+                      })
+                    }}
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityStartD`).d('活动开启时间')}
+              >
+                {getFieldDecorator('actStartTime', {
+                  initialValue: headerInfo?.actStartTime ? dayjs(moment(headerInfo?.actStartTime).format(DEFAULT_DATETIME_FORMAT)) : '',
+                })(
+                  <CusDatePicker
+                    showTime={{ format: DEFAULT_DATETIME_FORMAT }}
+                    disabled
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityEndD`).d('活动结束时间')}
+              >
+                {getFieldDecorator('actEndTime', {
+                  initialValue: headerInfo?.actEndTime ? dayjs(moment(headerInfo?.actEndTime).format(DEFAULT_DATETIME_FORMAT)) : '',
+                })(
+                  <CusDatePicker
+                    showTime={{ format: DEFAULT_DATETIME_FORMAT }}
+                    disabled
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col span={24}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityRule`).d('活动规则')}
+              >
+                {getFieldDecorator('actRule', {
+                  initialValue: headerInfo?.actRule,
+                  rules: [
+                    {
+                      required: true,
+                      message: intl.get('hzero.common.validation.notNull', {
+                        name: intl.get(`spfmhk.trade.field.ActivityRule`).d('活动规则'),
+                      })
+                    }
+                  ]
+                })(
+                  <CusInput.TextArea
+                    rows={6}
+                    autoSize={{ minRows: 6, maxRows: 6 }}
+                    maxLength={1000}
+                    showCharacter
+                    disabled={readyOnly}
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col span={24}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityNote`).d('备注')}
+              >
+                {getFieldDecorator('actRemark', {
+                  initialValue: headerInfo?.actRemark,
+                })(
+                  <CusInput.TextArea
+                    rows={3}
+                    autoSize={{ minRows: 3, maxRows: 3 }}
+                    maxLength={500}
+                    showCharacter
+                    disabled={readyOnly}
+                  />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityCreator`).d('活动创建人')}
+              >
+                {getFieldDecorator('createrName', {
+                  initialValue: headerInfo?.createrName || realName,
+                })(
+                  <Input disabled />
+                )}
+              </Form.Item>
+            </Col>
+            <Col {...gridSpan} style={{display: 'none'}}>
+              <Form.Item
+                label={intl.get(`spfmhk.trade.field.ActivityCreator`).d('活动创建人编码')}
+              >
+                {getFieldDecorator('createrCode', {
+                  initialValue: headerInfo?.createrCode || loginName,
+                })(
+                  <Input disabled />
+                )}
+              </Form.Item>
+            </Col>
+          </GenerateFormGrid>
+        </Form>
+      </div>
+    );
+  }
+}

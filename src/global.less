@@ -1,0 +1,648 @@
+@header-color: #f7f7f7;
+@primary-color: #0085d0;
+@half-primary-color: #7fb8e4;
+
+:global {
+
+  // 首次加载页面时，顶部进度条颜色
+  #nprogress .bar {
+    background: #3271fe !important;
+  }
+
+  .ant-tabs-tab-active {
+    color: @primary-color !important;
+  }
+
+  .layouts-components-default-menu-styles-main-menu-item-content::before {
+    border-left: 5px solid @primary-color !important;
+  }
+
+  .layouts-components-default-menu-styles-main-menu-item-hover
+  .hzero-main-menu-item-hover
+  .hzero-main-menu-item-tab-active {
+    color: @primary-color !important;
+    background-color: @primary-color !important;
+  }
+
+  .hzero-normal-container .hzero-normal-header {
+    //background-image: -webkit-gradient(linear, left top, right top, from(@half-primary-color), to(@primary-color)) !important;
+    //background-image: -webkit-linear-gradient(left, @half-primary-color, @primary-color) !important;
+    //background-image: linear-gradient(to right, @half-primary-color, @primary-color) !important;
+    background-image: url('assets/topbg.png');
+  }
+
+  //.ant-table-thead > tr > th{
+  //  font-size: 15px !important;
+  //}
+  .hzero-normal-header-container .hzero-normal-header-right-item-select {
+    color: #fff !important;
+  }
+
+  .hzero-normal-header-container .hzero-normal-header-right-item-select .ant-select-arrow {
+    color: #fff !important;
+  }
+
+  .hzero-normal-header-container .hzero-normal-header-right-item-avatar-name {
+    color: #fff !important;
+  }
+
+  .hzero-normal-header-container {
+    height: 40px !important;
+  }
+
+  .hzero-normal-container .hzero-normal-header {
+    height: 40px !important;
+  }
+
+  .hzero-normal-container .hzero-normal-body .hzero-normal-collapsed-trigger {
+    top: -29px !important;
+  }
+
+  .hzero-normal-header-container .hzero-normal-header-right-item-avatar {
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+
+  .hzero-normal-header-container .hzero-normal-header-right-item-last {
+    display: flex;
+  }
+
+  .hzero-normal-header-container .hzero-normal-header-right-item-avatar-img {
+    align-self: center;
+  }
+
+  .hzero-normal-header-logo > a {
+    height: 40px !important;
+  }
+
+  .hzero-normal-content-container
+  > .ant-tabs.ant-tabs-top
+  > .ant-tabs-bar
+  > .ant-tabs-nav-container
+  > .ant-tabs-nav-wrap
+  > .ant-tabs-nav-scroll
+  > .ant-tabs-nav
+  > div
+  > .ant-tabs-tab:first-child {
+    background-color: #e3e3e3 !important;
+    color: #4c4c4c !important;
+  }
+
+  .hzero-normal-content-container
+  > .ant-tabs.ant-tabs-top
+  > .ant-tabs-bar
+  > .ant-tabs-nav-container
+  > .ant-tabs-nav-wrap
+  > .ant-tabs-nav-scroll
+  > .ant-tabs-nav
+  > div
+  > .ant-tabs-tab.ant-tabs-tab-active:first-child {
+    background-color: #f0f0f0 !important;
+    color: @primary-color !important;
+  }
+
+  .page-head-operator .ant-btn-primary {
+    background-color: @primary-color !important;
+    border: @primary-color !important;
+    color: #fff !important;
+  }
+
+  button.ant-btn.ant-btn-primary {
+    background-color: @primary-color;
+    border: @primary-color;
+    color: #fff;
+  }
+
+  // 菜单搜索框
+  .hzero-normal-side-search .hzero-normal-side-search-input {
+    background-color: #425370;
+  }
+
+  .hzero-normal-nav-container {
+    background-color: #f6f9fc !important;
+  }
+
+  .layouts-components-default-menu-styles-main-menu {
+    background-color: @header-color !important;
+  }
+
+  .layouts-components-default-menu-styles-main-menu-item-content {
+    color: #242424 !important;
+  }
+
+  .layouts-components-default-menu-styles-main-menu-item-hover
+  .layouts-components-default-menu-styles-main-menu-item-content {
+    //background-image: -webkit-gradient(linear, left top, right top, from(#fff), to(@primary-color)) !important;
+    //background-image: -webkit-linear-gradient(left, #fff, @primary-color) !important;
+    //background-image: linear-gradient(to right, #fff, @primary-color) !important;
+    //background-color: @half-primary-color !important;
+    background-image: none !important;
+    color: @primary-color !important;
+  }
+
+  .layouts-components-default-menu-styles-main-menu-item-active
+  .layouts-components-default-menu-styles-main-menu-item-content {
+    //background-image: -webkit-gradient(linear, left top, right top, from(#fff), to(@primary-color)) !important;
+    //background-image: -webkit-linear-gradient(left, #fff, @primary-color) !important;
+    //background-image: linear-gradient(to right, #fff, @primary-color) !important;
+    //background-color: @half-primary-color !important;
+    background-image: none !important;
+    color: @primary-color !important;
+  }
+
+  .hzero-normal-side-search .hzero-normal-side-search-input {
+    background-color: #fff !important;
+  }
+
+  .ant-select-selection__placeholder {
+    color: #4c4c4c !important;
+  }
+
+  .hzero-normal-side-search-popover .hzero-normal-side-search .hzero-normal-side-search-input {
+    color: #4c4c4c !important;
+  }
+
+  .hzero-normal-side-search .hzero-normal-side-search-history-content > .ant-tag {
+    background-color: @primary-color !important;
+  }
+
+  // 二级菜单相关内容
+  .layouts-components-default-menu-styles-sub-menu {
+    background-color: @header-color !important;
+  }
+
+  // 二级菜单字体颜色
+  .layouts-components-default-menu-styles-sub-menu-item-content
+  .layouts-components-default-menu-styles-sub-menu-item-title {
+    color: #333;
+  }
+
+  // 以下为二级菜单hover的情况
+  .layouts-components-default-menu-styles-sub-menu-item-hover
+  .layouts-components-default-menu-styles-sub-menu-item-content {
+    //background-color: @half-primary-color !important;
+    background-image: none !important; // 需要将原来的样式覆盖为none
+    color: @primary-color;
+  }
+
+  .layouts-components-default-menu-styles-sub-menu-item-hover
+  .layouts-components-default-menu-styles-sub-menu-item-content
+  .layouts-components-default-menu-styles-sub-menu-item-title {
+    color: @primary-color !important;
+  }
+
+  //
+  .layouts-components-default-menu-styles-sub-menu-item-active
+  .layouts-components-default-menu-styles-sub-menu-item-content {
+    //background-color: @half-primary-color !important;
+    background-image: none !important;
+  }
+
+  .layouts-components-default-menu-styles-sub-menu-item-active
+  .layouts-components-default-menu-styles-sub-menu-item-content
+  .layouts-components-default-menu-styles-sub-menu-item-title {
+    color: @primary-color !important;
+  }
+
+  .layouts-components-default-menu-styles-sub-menu-item-content-only:hover {
+    background-image: none !important;
+  }
+
+  .layouts-components-default-menu-styles-sub-menu-item-content-only:hover
+  .layouts-components-default-menu-styles-sub-menu-item-title {
+    color: @primary-color !important;
+  }
+
+  // 三级菜单相关内容
+  .layouts-components-default-menu-styles-leaf-menu {
+    background-color: @header-color !important;
+  }
+
+  .layouts-components-default-menu-styles-leaf-menu-item {
+    color: #333 !important;
+  }
+
+  .layouts-components-default-menu-styles-leaf-menu-item-active {
+    background-image: none !important;
+    color: @primary-color !important;
+  }
+
+  .layouts-components-default-menu-styles-leaf-menu-item:hover,
+  .layouts-components-default-menu-styles-leaf-menu-item-active {
+    background-image: none !important;
+    color: @primary-color !important;
+  }
+
+  .hzero-normal-side-search-select-wrap .ant-select-dropdown-menu-item {
+    background-color: #fafafa !important;
+    color: #000 !important;
+  }
+
+  .hzero-normal-side-search-select-wrap .ant-select-dropdown-menu-item-active,
+  .hzero-normal-side-search-select-wrap .ant-select-dropdown-menu-item-active:hover {
+    background-color: @half-primary-color !important;
+    background-image: none !important;
+  }
+
+  .c7n-pro-btn-primary {
+    background-color: @primary-color !important;
+    border-color: #0d9ce6 !important;
+    color: #fff !important;
+  }
+
+  button.hiam-routes-api-management-index-customize-button-style {
+    background-color: @primary-color !important;
+    border-color: @primary-color !important;
+    color: #fff !important;
+  }
+
+  a {
+    color: @primary-color;
+  }
+
+  // 第二个布局样式
+  .hzero-layout .hzero-header-content {
+    justify-content: space-between;
+  }
+
+  // 搜索历史字体颜色
+  .ant-btn-background-ghost {
+    color: #a5adbb !important;
+  }
+
+  // 菜单栏背景颜色
+  .ant-menu-dark,
+  .ant-menu-dark .ant-menu-sub {
+    background: #f6f9fc !important;
+  }
+
+  // 根目录菜单字体颜色
+  .ant-menu-submenu-title {
+    color: #242424;
+  }
+
+  // 根目录菜单后方箭头
+  .ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow:after,
+  .ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow:before {
+    background: #242424 !important;
+  }
+
+  //.ant-menu-dark .ant-menu-sub .ant-menu-submenu-title .ant-menu-submenu-arrow:before
+  //.ant-menu-dark .ant-menu-sub .ant-menu-submenu-title .ant-menu-submenu-arrow:after,
+
+  // 根目录hover
+  .ant-menu-dark .ant-menu-submenu-title:hover {
+    color: @primary-color !important;
+  }
+
+  // 子菜单
+  .ant-menu-dark .ant-menu-item,
+  .ant-menu-dark .ant-menu-item-group-title,
+  .ant-menu-dark .ant-menu-item > a {
+    color: #242424 !important;
+  }
+
+  .ant-menu-dark .ant-menu-item:hover {
+    color: @primary-color !important;
+    background-color: #ddeaf7 !important;
+  }
+
+  // 二级菜单
+  .ant-menu-item .ant-menu-item-active {
+    color: @primary-color !important;
+  }
+
+  .ant-menu-dark .ant-menu-inline.ant-menu-sub {
+    background: #000c17;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) inset !important;
+  }
+
+  // 激活的tab的菜单路径的样式
+  .hzero-normal-tab-active > .ant-menu-submenu-title {
+    color: @primary-color !important;
+    background: #ddeaf7;
+    font-weight: bold;
+  }
+
+  li.ant-menu-item.hzero-normal-tab-active {
+    color: @primary-color !important;
+    background: #ddeaf7;
+    font-weight: bold;
+  }
+
+  .ant-menu-dark .ant-menu-submenu-title:hover {
+    background-color: #ddeaf7 !important;
+  }
+
+  // 菜单的margin，以及文字大小
+  .ant-menu-inline .ant-menu-submenu-title {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-size: 16px !important;
+  }
+
+  .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    height: 38px !important;
+    vertical-align: middle;
+  }
+
+  // 子菜单中的margin
+  .ant-menu-inline .ant-menu-item {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-size: 16px !important;
+  }
+
+  .hzero-normal-container .hzero-normal-side-search-icon {
+    background-color: #fff !important;
+  }
+
+  .hzero-normal-container-collapsed
+  .hzero-normal-body
+  .hzero-normal-nav
+  .hzero-normal-side-search-icon {
+    top: 49px;
+  }
+
+  .hzero-normal-container-collapsed .hzero-normal-body .hzero-normal-nav-normal-search {
+    height: 42px !important;
+  }
+
+  .hzero-normal-container-collapsed
+  .hzero-normal-body
+  .hzero-normal-nav
+  .hzero-normal-side-search-icon {
+    left: 20px !important;
+  }
+
+  // primary按钮的字体颜色
+  .c7n-btn-raised.c7n-btn-primary {
+    color: #fff;
+  }
+
+  // 鼠标悬浮某一行时，背景色统一
+  .c7n-pro-table-row-current {
+    & > td {
+      background-color: #f5f8ff !important;
+    }
+  }
+
+  .c7n-pro-table-row-hover {
+    & > td {
+      background-color: #eff0f1 !important;
+    }
+  }
+
+  table .ant-table-thead > tr.ant-table-row-hover > td,
+  table .ant-table-tbody > tr.ant-table-row-hover > td,
+  table .ant-table-thead > tr:hover > td,
+  table .ant-table-tbody > tr:hover > td {
+    background-color: #eff0f1;
+  }
+
+  .c7n-pro-table-row {
+    &:hover {
+      & > td {
+        background-color: #eff0f1 !important;
+      }
+    }
+  }
+
+  .c7n-pro-table-empty-row {
+    border-right: 1px solid rgb(232, 232, 232);
+  }
+
+  // c7n自定义查询头
+  .custmize-querybar-buttons {
+    text-align: right;
+    padding: 10px 0;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+
+  // c7n分页器样式
+  .c7n-pro-pagination-pager-page {
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-width: 32px;
+    text-align: center;
+    list-style: none;
+    border: 1px solid #d9d9d9 !important;
+    background-color: #fff !important;
+    // font-family: Arial;
+    padding: 0 !important;
+    outline: 0;
+
+    &:hover {
+      transition: all 0.3s;
+      border-color: #1890ff !important;
+      color: #1890ff;
+    }
+
+    &.c7n-pro-btn-raised {
+      border-color: #1890ff !important;
+      color: #1890ff !important;
+      border-radius: 4px !important;
+    }
+  }
+
+  .c7n-pro-pagination-pager-prev,
+  .c7n-pro-pagination-pager-next {
+    border: 1px solid #d9d9d9 !important;
+    border-radius: 4px !important;
+
+    &:hover {
+      transition: all 0.3s;
+      border-color: #1890ff !important;
+      color: #1890ff;
+      background-color: #fff !important;
+    }
+
+    &.c7n-pro-btn-disabled:hover {
+      border-color: #d9d9d9 !important;
+      color: #333;
+    }
+
+    & > i {
+      line-height: 100% !important;
+    }
+  }
+
+  .c7n-pro-pagination .c7n-pro-select-wrapper {
+    width: 0.9rem !important;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    vertical-align: inherit;
+
+    & input.c7n-pro-select:focus {
+      box-shadow: none !important;
+    }
+
+    & input.c7n-pro-select {
+      height: 26px !important;
+      cursor: pointer;
+    }
+  }
+
+  .page-content {
+    margin: 0 !important;
+  }
+
+  .customize-buttons {
+    text-align: right;
+
+    button {
+      border: none;
+      padding-right: 0;
+      background-color: transparent !important;
+
+      &:hover {
+        border: none;
+      }
+
+      // 去除点击后边框
+      &.ant-btn-clicked::after {
+        border: none;
+      }
+
+      img {
+        margin-right: 5px;
+        width: 15px;
+      }
+    }
+  }
+
+  // c7n自定义查询头
+  .custmize-querybar-buttons {
+    text-align: right;
+    padding: 6px 0;
+
+    button {
+      margin-left: 8px;
+    }
+  }
+
+  .page-head {
+    border-bottom: none !important;
+  }
+
+  #root .c7n-pro-table-cell-inner {
+    height: 24px !important;
+    line-height: 24px !important;
+  }
+
+  #root .c7n-pro-table-cell {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  // 去除页面下方空白
+  #root .hzero-normal-container .hzero-normal-body {
+    height: 100%;
+
+    & .hzero-normal-content-container > .ant-tabs.ant-tabs-top > .ant-tabs-content {
+      height: 100%;
+
+      .page-content {
+        min-height: 100%;
+      }
+    }
+  }
+
+  .ant-notification,
+  .c7n-notification {
+    z-index: 1100;
+    margin: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 180px !important;
+    bottom: 0 !important;
+    width: 0 !important;
+    display: flex;
+    overflow: visible;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateX(0) !important;
+
+    & > span {
+      display: flex;
+      width: auto;
+      min-width: 384px;
+      flex-direction: column;
+      justify-content: flex-end;
+      max-height: 100vh;
+      transform: translateX(0) !important;
+    }
+
+    & .ant-notification-notice,
+    & .c7n-notification-notice {
+      flex-shrink: 0;
+      max-height: 95vh;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  th.required-header {
+    &::before {
+      content: '*';
+      color: #d50000;
+      margin-right: 3px;
+      font-weight: bolder;
+    }
+  }
+
+  .ant-calendar .ant-calendar-ok-btn {
+    color: #fff !important;
+  }
+
+  // 提示的样式，英文自动换行
+  .ant-tooltip-inner {
+    word-break: break-word !important;
+  }
+
+  .current-hedge-row {
+    background: #e8e8e8;
+  }
+}
+
+// hzero-中英文环境表单label右对齐
+// hzero-表单去除 冒号
+.ant-form-item-label {
+  text-align: right !important;
+
+  label {
+    margin-right: 10px !important;
+
+    &::after {
+      content: none !important;
+    }
+  }
+}
+
+// c7n-表单去除 冒号
+.c7n-pro-field-label,
+.c7n-pro-field-label-useColon {
+  label {
+    margin-right: 10px !important;
+  }
+
+  &::after {
+    content: none !important;
+  }
+}
+
+// 嵌套表头边框缺失问题
+.customize-table .ant-table .ant-table-container .ant-table-content .ant-table-thead > tr .cus-table-tr-th-border {
+  border-left: 1px solid #dee0e3;
+}

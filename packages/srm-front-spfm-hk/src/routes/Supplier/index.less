@@ -1,0 +1,58 @@
+.list-info-message {
+  display: flex;
+  .info-message-all {
+    &:nth-of-type(1) {
+      margin-left: 0;
+    }
+    margin-left: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    .info-message-label {
+      padding-right: 4px;
+      color: #1F2329;
+    }
+    .info-message-value {
+      color: #1F2329;
+    }
+  }
+}
+
+// 对比信息去除表单边框
+.no-border-form {
+  .ant-form-item {
+    .ant-input {
+      border-width: 0!important;
+    }
+  }
+}
+
+// 对比信息文字颜色
+.customize-form {
+  .tips-input-text-color {
+    .ant-input {
+      color: red!important;
+    }
+  }
+}
+
+.after-border {
+  position: relative;
+  &:after {
+    display: table;
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: #cccccc;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.checkbox-group-item {
+  :global {
+    .ant-checkbox-inner {
+      background: red !important;
+    }
+  }
+}

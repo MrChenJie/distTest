@@ -1,0 +1,395 @@
+.nativeLable {
+  display: flex;
+
+  .nativeText {
+    min-width: 1000px;
+    min-height: 500px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+}
+
+.table-thead-required>span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+
+.approval-btn {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f1f6fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .btn {
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .text {
+      text-align: center;
+      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.btn {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.c7n-pro-modal-container-moveable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  :global {
+    .c7n-pro-modal-body {
+      padding-bottom: 0 !important;
+      max-height: none !important;
+      height: calc(100% - 55px);
+      overflow: hidden !important;
+    }
+  }
+}
+.c7n-pro-modal-container {
+  :global {
+    .c7n-pro-modal-body {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+// 遮罩层用来禁止富文本编辑
+.tinymacClass {
+  position: relative;
+  left: 0;
+  top: 0;
+  opacity: .8;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 998;
+  pointer-events: none;
+}
+
+.page-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+// 左右两块面板的背景色统一
+.pageBackground {
+  background-color: #f7f9fa;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  // 左侧边框和内边距
+  :global {
+    .page-wrapper-content {
+      // margin: 16px;
+      // border: 1px solid #D0D3D6;
+      padding: 0 !important;
+      // height: calc(100vh - 32px);
+      // overflow: hidden;
+      // &:hover {
+      //   overflow: overlay;
+      // }
+    }
+    .ant-collapse-item {
+      /* 设置所有 Panel 的 z-index 属性 */
+      z-index: 0;
+    }
+  }
+}
+
+// 右侧折叠时的图标样式
+._cus_fold {
+  position: absolute;
+  top: 100px;
+  width: 32px;
+  height: 32px;
+  right: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+// 右侧展开时的图标样式
+._cus_expand {
+  position: absolute;
+  top: 100px;
+  width: 32px;
+  height: 32px;
+  right: 25%;
+  z-index: 999;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px 0px rgba(219, 219, 219, 0.5);
+}
+
+// 右侧展开栏提示信息样式
+.rightTipBox {
+  // position: absolute;
+  // right: 16px;
+  // top: 16px;
+  width: 25.4%;
+  .tipButton {
+    opacity: 1;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    border: 1px solid #D0D3D6;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 0 !important;
+    :global {
+      .ant-collapse-item {
+        border: none;
+      }
+      .customize-panel-header {
+        padding: 0 0 12px 0 !important;
+      }
+      .ant-collapse-content-box {
+        padding: 0 0 8px 0 !important;
+      }
+      // 流转区域按钮间距
+      .ant-col {
+        padding: 0 16px 0 0 !important;
+      }
+      .ant-col:last-child {
+        padding-right: 0 !important;
+      }
+    }
+  }
+  .ant-collapse-content{
+    .ant-collapse-content-box{
+      padding-bottom: 16px;
+    }
+  }
+  :global {
+    // 右侧背景图的设置 
+    .operationType_backgrond{
+      background-color: none !important;
+      background-image: url(./img/bgImage.png) !important;
+      background-position: center center;
+      margin: 16px 0 !important;
+      :global {
+        .ant-collapse-content {
+          background-color: rgba(255, 255, 255, 0)
+        }
+        .ant-collapse-content{
+          .ant-collapse-content-box{
+            padding-bottom: 16px;
+            .operationType-box {
+              overflow: hidden;
+            }
+            .operationType-box {
+              &:hover {
+                overflow: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// tabs样式
+.tabStyle {
+  border: 1px solid #D0D3D6;
+  border-radius: 4px;
+  margin-top: 16px;
+  background: #FFFFFF;
+  height: calc(100vh - 62px);
+  overflow: hidden;
+  &:hover {
+    overflow: overlay;
+  }
+  :global {
+    .ant-tabs-nav {
+      width: 95%;
+      margin: 16px;
+      border-radius: 4px;
+      border: 1px solid #D0D3D6;
+    }
+    .ant-tabs-tab:first-child, .ant-tabs-tab-active {
+      border-radius: 4px 0 0 4px !important;
+    }
+    .ant-tabs-tab:last-child, .ant-tabs-tab-active {
+      border-radius: 0 4px 4px 0 !important;
+    }
+    // 隐藏tab标签编号
+    .ant-tabs-label-circle {
+      display: none !important;
+    }
+    .ant-tabs-content-holder {
+      padding: 0 16px;
+    }
+    .ant-row {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .ant-form-item-required {
+      max-width: 95px;
+    }
+  }
+}
+
+//步骤条的连接线设置为虚线
+._cus_custom-step {
+  padding-top: 5px;
+  .ant-steps-item{
+    .ant-steps-item-container{
+      position: relative;
+    }
+  }
+  :global {
+    .ant-steps-item-tail {
+      top: 2px !important;
+      padding: 20px 0 0 !important;
+      inset-inline-start: 16px !important;
+      &::after {
+        width: 1px;
+        height: 100%;
+        background-image: linear-gradient(transparent 0%, transparent 50%, #DEE0E3 50%);
+        background-size: 1px 7px;
+        background-repeat: repeat-y;
+        display: block;
+        background-color: transparent !important;
+      }
+    }
+
+    .ant-steps-item-icon {
+      margin-inline-end: 12px !important;
+      position: absolute;
+      top: -5px;
+      span{
+        img{
+          margin-bottom: 7px;
+        }
+      }
+    }
+
+    .ant-steps-item-content{
+      margin-left: 44px;
+    }
+
+    .ant-steps-item-title,
+    .ant-steps-item-description {
+      font-size: 14px;
+      line-height: 20px !important;
+    }
+
+    .ant-steps-item-description {
+      padding-bottom: 16px !important;
+    }
+
+    .ant-steps-item:last-child {
+      .ant-steps-item-description {
+        padding-bottom: 0 !important;
+      }
+    }
+
+    .ant-steps-item-title {
+      color: #646A73 !important;
+      margin-bottom: 8px;
+    }
+  }
+
+  :global(.ant-steps-item-description) {
+    .op-lable {
+      color: #1F2329;
+      margin-bottom: 8px;
+    }
+    .op-time {
+      font-size: 12px;
+      line-height: 18px;
+      color: #8F959E;
+    }
+  }
+}
+
+//步骤条title的字体的粗细设置
+:global(.ant-badge-status-text) {
+  font-weight: normal;
+}
+
+.collapse-right {
+  .ant-collapse-content .ant-collapse-content-box {
+    padding-left: 16px;
+  }
+}
+
+// 头部静态提示框样式
+.tipTitleStyle {
+  width: 100%;
+  background-color: rgba(234, 240, 254, 1);
+  box-sizing: border-box;
+  border-color: rgba(234, 240, 254, 1);
+  border-radius: 4px;
+  box-shadow: none;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  :global(.ant-card-body) {
+    padding: 0;
+  }
+  p {
+    opacity: 1;
+    margin-bottom: 0;
+    color: #1F2329;
+    letter-spacing: 0px;
+    font-weight: normal;
+  }
+  .title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .content {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+// 解决由于CusButton组件的Tooltip的img引起的重复渲染...图标，去掉button生成的imgicon，保留Dropdown自带的...icon
+.dropIcon {
+  :global {
+    .ant-btn-icon {
+      margin-inline-start: 4px !important;
+      margin-inline-end: 4px !important;
+      .anticon::before {
+        content: '' !important;
+      }
+    }
+  }
+}

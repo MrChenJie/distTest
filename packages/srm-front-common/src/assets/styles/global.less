@@ -1,0 +1,68 @@
+@import './scrollbar.less';
+@import './table.less';
+@import './form.less';
+@import './tabs.less';
+@import './anchor.less';
+
+// 左边菜单栏滚动条显示隐藏（移入区域显示）
+.hzero-normal-container {
+    .hzero-normal-body {
+        .hzero-normal-nav-menu {
+          overflow: overlay !important;
+          &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+          }
+          &:hover{
+            &::-webkit-scrollbar {
+              width: 8px;
+              height: 8px;
+            }
+          }
+        }
+    }
+}
+
+// 全局背景色
+.page-container {
+  background-color: #f7f9fa;
+  overflow-y: overlay;
+  position: unset;
+}
+
+:global {
+  * {
+    .customize-scrollbar;
+    font-family: "PingFang SC", sans-serif !important;
+  }
+
+  // 光标选中文本颜色
+  ::selection {
+    background-color: #3271FE;
+  }
+  // 提示文字颜色
+  ::placeholder {
+    font-size: 14px !important;
+    color: #8F959E !important;
+  }
+  a {
+    color: #3271FE;
+    &:hover {
+      color: #3271FE;
+    }
+  }
+
+  // bage颜色
+  .ant-badge.ant-badge-status{
+    .ant-badge-status-success{
+      background-color: #34c724;
+    }
+    .ant-badge-status-text {
+      font-size: 14px;
+      color: #1F2329;
+    }
+    .ant-badge-status-error{
+      background-color: #f54a45;
+    }
+  }
+}

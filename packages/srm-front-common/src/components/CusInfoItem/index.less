@@ -1,0 +1,65 @@
+@padding-size: 8px;
+@base-height: 32px; // 高
+@base-line-height: @base-height; // 行高
+@label-color: #646a73;
+@value-color: #1F2329;
+@border-color: #d0d3d6;
+@background-color: #eff0f1;
+@base-border: 1px solid @border-color; // 边框
+@margin-bottom: 16px; // 外边距
+
+.cus-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: @margin-bottom;
+}
+
+.cus-info-item-label {
+  line-height: 0;
+  height: @base-height;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+  & > span {
+    text-align: right;
+    word-break: break-all;
+    color: @label-color;
+    height: auto;
+    line-height: 16px;
+    // 超过两行隐藏
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2; // 行数
+    -webkit-box-orient: vertical; // 盒子中内容竖直排列
+
+    margin-right: 8px;
+    margin-left: 16px;
+  }
+}
+
+.cus-info-item-value {
+  flex: 1;
+  height: 32px;
+  line-height: 0;
+  color: @value-color;
+  border: @base-border;
+  border-radius: 4px;
+  background-color: @background-color;
+  padding: 4px @padding-size;
+  overflow: hidden;
+  & > span {
+    white-space: nowrap;
+    cursor: not-allowed;
+    display: inline-block;
+    line-height: 22px;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

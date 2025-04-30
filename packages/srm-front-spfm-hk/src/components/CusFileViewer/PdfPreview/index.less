@@ -1,0 +1,49 @@
+.pdf-view {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 0;
+  overflow: auto;
+  .react-pdf__Page__textContent {
+    display: none;
+  }
+}
+.page-tool {
+  position: fixed;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: white;
+  background: rgb(66, 66, 66);
+  border-radius: 19px;
+  .page-tool-item {
+    padding: 8px 15px;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+
+  .page-input {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 24px;
+    margin-right: 30px;
+    text-align: center;
+    input {
+      width: 50px;
+    }
+  }
+  .page-input::-webkit-outer-spin-button,
+  .page-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .page-input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+

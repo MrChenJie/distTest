@@ -1,0 +1,127 @@
+.price-entry-query {
+  :global {
+    .ant-form-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .ant-form-item-label {
+        text-align: right !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: flex;
+
+        label {
+          display: inline-block;
+          width: calc(100% - 10px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &.ant-form-item-required {
+            span {
+              max-width: calc(100% - 10px);
+            }
+          }
+
+          span {
+            display: inline-block;
+            max-width: 100%;
+
+            div {
+              display: flex;
+
+              div {
+                width: calc(100% - 20px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+              }
+
+              img {
+                width: 18px;
+                height: 18px;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-label-overflow {
+  :global {
+    .ant-form-item-label {
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // white-space: nowrap !important;
+      word-wrap: break-word;
+    }
+
+    // label {
+    //   display: inline !important;
+    // }
+    .ant-form-item {
+      display: flex;
+      // align-items: center;
+    }
+
+    .ant-input-number {
+      width: 100% !important;
+    }
+  }
+}
+
+.outer-link {
+  position: absolute;
+  left: 9px;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 19px;
+  display: block;
+  line-height: 19px;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.title {
+  :global {
+    .ant-card-head-title {
+      font-weight: bold;
+    }
+
+    .anticon-calendar::before {
+      content: '' !important;
+    }
+
+    .anticon-close-circle::before {
+      content: '' !important;
+    }
+  }
+}
+
+.axis-tip {
+  display: none;
+  position: absolute;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 5px 5px;
+  max-width: 200px;
+  height: fit-content;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  bottom: 0;
+  left: 0;
+}

@@ -1,0 +1,145 @@
+.price-entry-query {
+  :global {
+    .ant-form-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .ant-form-item-label {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: right !important;
+        text-overflow: ellipsis;
+
+        label {
+          display: inline-block;
+          width: calc(100% - 10px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &.ant-form-item-required {
+            span {
+              max-width: calc(100% - 10px);
+            }
+          }
+
+          span {
+            display: inline-block;
+            max-width: 100%;
+
+            div {
+              display: flex;
+
+              div {
+                display: block;
+                width: calc(100% - 20px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              img {
+                width: 18px;
+                height: 18px;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-label-overflow {
+  :global {
+    .ant-form-item-label {
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // white-space: nowrap !important;
+      word-wrap: break-word;
+    }
+
+    // label {
+    //   display: inline !important;
+    // }
+    .ant-form-item {
+      display: flex;
+      // align-items: center;
+    }
+
+    .ant-input-number {
+      width: 100% !important;
+    }
+  }
+}
+
+.out-div-tab {
+  :global {
+    .ant-tabs-nav {
+      .ant-tabs-nav-wrap {
+        .ant-tabs-nav-list {
+          .ant-tabs-tab {
+            flex: 0.2 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.out-div-tab {
+  :global {
+    .ant-tabs-nav {
+      .ant-tabs-nav-wrap {
+        background-color: #f2f3f5;
+        .ant-tabs-nav-list {
+          .ant-tabs-tab:last-child {
+            border-right: 1px solid #d0d3d6;
+          }
+        }
+      }
+    }
+  }
+}
+
+.out-div-pageWrapper {
+  :global {
+    .page-wrapper {
+      min-height: 0;
+    }
+  }
+}
+
+.show-border {
+  :global {
+    .ant-collapse-item {
+      border-color: #dee0e3 !important;
+      border-right: none !important;
+      border-left: none !important;
+      border-radius: 0px !important;
+    }
+    .ant-collapse-item:not(:first-child) {
+      margin-top: 0 !important;
+      border-top: none !important;
+    }
+    .ant-collapse-item:last-child {
+      border-bottom: none !important;
+      .ant-collapse-content-box {
+        padding-bottom: 0 !important;
+      }
+    }
+    .customize-panel-header {
+      padding: 12px 0px 16px !important;
+    }
+    .ant-collapse-content-box {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+    .ant-collapse-item:not(.ant-collapse-item-active) {
+      .customize-panel-header {
+        padding: 12px 0px !important;
+      }
+    }
+  }
+}

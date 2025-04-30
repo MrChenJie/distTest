@@ -1,0 +1,217 @@
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+
+.conmi {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+  :global(.ant-form-item-label > label:first-child::before) {
+      display: inline-block;
+      color: #f5222d;
+      font-family: SimSun;
+      line-height: 1;
+      margin-right: 4px;
+      font-size: 12px;
+      content: '*';
+    }
+}
+
+.content-bottom {
+  padding-bottom: 80px;
+}
+.labelStyle {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+}
+.approval-btn {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f1f6fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn {
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+    .text {
+      text-align: center;
+      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.zDialog_div_bottom{
+  position: relative;
+  float: left;
+}
+
+.btn {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.emailModel{
+  :global{
+    .c7n-pro-modal-content {
+      min-width: 22vw;
+      max-width: 40vw;
+      height: 90% !important;
+      .c7n-pro-modal-container-moveable {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+    }
+    .c7n-pro-modal-body{
+      max-height: none !important;
+      height: calc(100% - 108px);
+    }
+  }
+}
+
+// 遮罩层用来禁止富文本编辑
+.tinymacClass {
+  position: initial;
+  left: 0;
+  top: 0;
+  opacity: .8;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 998;
+  pointer-events: none;
+}
+
+.staticBorder {
+  :global {
+    .cke_chrome {
+      border: none !important;
+      border-radius: 4px !important;
+      .cke_top {
+        border: 1px solid #d1d1d1 !important;
+        border-radius: 4px 4px 0 0 !important;
+      }
+      .cke_contents {
+        border-left: 1px solid #d1d1d1 !important;
+        border-right: 1px solid #d1d1d1 !important;
+      }
+      .cke_bottom {
+        border: 1px solid #d1d1d1 !important;
+        border-radius: 0 0 4px 4px !important;
+      }
+    }
+  }
+}
+
+.lov-input {
+  border-radius: 4px;
+  top: 0 !important;
+  input {
+    cursor: pointer;
+  }
+  .ant-input-group-wrapper {
+    vertical-align: middle;
+  }
+
+  .ant-input {
+    // 两个 icon 的位置
+    padding-right: 48px !important;
+    transition: padding 0s, background-color 0.3s, border 0.3s;
+    border: 1px solid #d0d3d6;
+  }
+
+  .ant-input-suffix {
+    > .cus-lov-clear{
+      display: none;
+      cursor: pointer;
+      &:before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../../../assets/clearIcon.svg');
+        background-size: cover;
+      }
+      &:hover:before{
+        background-image: url('../../../assets/clearIcon_active.svg');
+      }
+    }
+  }
+}
+
+.outer-link {
+  position: absolute;
+  left: 8px;
+  top: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 22px;
+  display: block;
+  line-height: 22px;
+}
+
+.cusTabs-panelBody {
+  padding: 0px 16px 16px;
+}
+
+.tab-panel {
+  display: flex;
+  margin-bottom: 12px;
+
+  .tab-panel-active,
+  .tab-panel-default {
+    margin-right: 32px;
+    cursor: pointer; 
+  }
+
+  .tab-panel-title {
+    margin-bottom: 4px;
+    line-height: 22px;
+  }
+
+  .tab-panel-active {
+    color: #3271fe;
+  }
+
+  .tab-panel-active-line {
+    width: 100%;
+    height: 3px;
+    background: #3271fe;
+    border-radius: 2px;
+    transition: width 0.3s,left 0.3s,right 0.3s;
+  }
+}
+
+.tab-style {
+  :global {
+    .ant-tabs-nav {
+      width: 500px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+
+.spo-basic-style {
+  :global {
+    .ant-form-item {
+      margin-bottom: 5px;
+      //height: 39px;
+      min-height: 39px;
+      display: flex;
+      align-items: center;
+      .ant-form-item-label {
+        text-align: right !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: flex;
+        label {
+          display: inline-block;
+          width: calc(100% - 10px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &.ant-form-item-required {
+            span {
+              max-width: calc(100% - 22px);
+            }
+          }
+          span {
+            display: inline-block;
+            max-width: 100%;
+            div {
+              display: flex;
+              div {
+                width: calc(100% - 22px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+              }
+              img {
+                width: 18px;
+                height: 18px;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

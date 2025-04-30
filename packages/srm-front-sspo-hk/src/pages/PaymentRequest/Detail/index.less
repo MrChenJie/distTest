@@ -1,0 +1,241 @@
+.basic-info {
+  :global {
+    .right-align {
+      text-align: right;
+      input {
+        text-align: right;
+      }
+    }
+    .center-algin {
+      text-align: center;
+      input {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.content-bottom {
+  padding-bottom: 75px;
+}
+
+.approval-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f1f6fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn {
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+    .text {
+      text-align: center;
+      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.content-bottom {
+  padding-bottom: 80px;
+}
+
+.approval-btn {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f1f6fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn {
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+    .text {
+      text-align: center;
+      font-size: 14px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 0;
+    }
+  }
+}
+
+:global {
+  .page-head-title {
+    line-height: 1.1em;
+  }
+  .c7n-pro-input-invalid,
+  .c7n-pro-select-invalid,
+  .c7n-pro-input-number-invalid,
+  .c7n-pro-calendar-picker-invalid {
+    background-color: #fff !important;
+    & input {
+      border-color: #f5222d !important;
+      // &:focus{
+      //   box-shadow: none;
+      // }
+    }
+  }
+  .c7n-pro-input-number-focused {
+    background-color: #fff !important;
+  }
+  .c7n-pro-table-cell-editable .c7n-pro-output-invalid {
+    background-color: #fff !important;
+    border-color: #f5222d !important;
+  }
+  .c7n-pro-input-focused {
+    box-shadow: none !important;
+    // input {
+    //   // &:focus{
+    //   // }
+    // }
+  }
+  // 去除数字输入框左上角三角
+  .c7n-pro-table-cell-dirty .c7n-pro-table-cell-inner::after {
+    border: none !important;
+  }
+  // 去除button阴影
+  button.c7n-pro-btn-raised {
+    box-shadow: none !important;
+  }
+  // Lov Modal样式调整
+  .c7n-pro-modal-container {
+    .c7n-pro-mask {
+      display: none;
+    }
+    .c7n-pro-mask + div {
+      background-color: rgba(0, 0, 0, 0.288) !important;
+      & ~ div {
+        background-color: transparent !important;
+      }
+    }
+    .c7n-pro-mask ~ div {
+      position: fixed;
+      width: 100vw !important;
+      height: 100vh !important;
+      display: flex !important;
+      overflow: auto !important;
+    }
+    .c7n-pro-modal {
+      max-height: none !important;
+      margin-top: 100px !important;
+      position: static !important;
+      max-width: 90vw !important;
+      width: auto;
+      .c7n-pro-modal-content {
+        height: auto !important;
+        min-height: unset !important;
+        margin: 0 auto;
+        margin-bottom: 20px !important;
+        width: auto;
+        max-width: 90vw;
+        min-width: 300px;
+      }
+      .c7n-pro-modal-header {
+        border: none !important;
+        padding-bottom: 0;
+      }
+      .c7n-pro-modal-body {
+        padding: 16px !important;
+        max-height: 10000px !important;
+        .c7n-pro-field-label {
+          // &::after {
+          //   content: ':' !important;
+          // }
+          & + td {
+            padding-right: 20px;
+          }
+        }
+      }
+      .c7n-pro-modal-title {
+        font-size: 18px !important;
+      }
+      .c7n-pro-modal-header-buttons {
+        .icon-close {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}
+
+.input-prefix {
+  :global {
+    .c7n-pro-input-prefix {
+      line-height: 20px;
+      padding-left: 10px;
+      padding-top: 0;
+    }
+    .c7n-pro-input {
+      text-indent: 1.76em;
+    }
+  }
+}
+
+.c7n-pro-modal-container-moveable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  :global{
+    .c7n-pro-modal-body{
+      max-height: none !important;
+      height: calc(100% - 55px);
+      overflow: hidden !important;
+    }
+  }
+}
+
+.error-message {
+  color: red;
+  padding: 1em;
+  border: 1px solid #d9d9d9;
+  margin-bottom: 12px;
+  // position: sticky;
+  // top: 0;
+  p {
+    margin-bottom: 0;
+    line-height: 1.5em;
+  }
+}
+
+.spin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 100vh;
+  z-index: 1000;
+  background-color: #fff;
+  opacity: 0.5;
+}

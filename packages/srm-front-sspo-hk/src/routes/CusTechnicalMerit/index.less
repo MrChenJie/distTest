@@ -1,0 +1,123 @@
+.active {
+  display: block;
+}
+
+.active1 {
+  display: none;
+}
+
+.tableMargin-top {
+  margin-top: 50px;
+}
+
+.tableMargin-bottom {
+  margin-bottom: 50px;
+}
+
+.price-btn-style {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #0085d0;
+}
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+td.cell-border-left:nth-child(2)::before {
+  border-left: none !important;
+}
+.lastTrNone {
+  :global {
+    tr:last-child {
+      display: none !important;
+    }
+  }
+}
+
+.labelStyle {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+}
+
+:global {
+  .ant-input-number {
+    width: 100% !important;
+  }
+}
+
+.compreReviewStyle {
+  :global {
+    // .ant-table-tbody tr:nth-last-child(-n+2) {
+    //   display: none;
+    // }
+  }
+}
+
+.cus-upload-header {
+  display: flex;
+  margin-bottom: 16px;
+  & > span {
+    color: #1f2329;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 32px;
+  }
+  .cus-upload {
+    margin-left: auto;
+  }
+}
+
+.cus-upload-file-tag {
+  display: flex;
+  align-items: center;
+  .ant-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 0;
+    margin-left: 8px;
+    color: #f54a45;
+    font-size: 8px !important;
+    background-color: rgba(245, 74, 69, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: default;
+  }
+}
+
+.revertClass:nth-last-child(-n+2) {
+  .reasonClass {
+    border-left: none !important;
+  }
+}
+
+.borderBolder  {
+  border-left-width: 3px !important;
+}
+
+.borderRightBolder {
+  border-right: 3px solid #dee0e3 !important;
+}
+
+.borderNone {
+  border-left: none !important;
+}
+
+// .customize-table .ant-table-tbody .tenFile .cus-upload-file-tag .ant-btn{
+//   width: 72px;
+//   height: 32px!important;
+// }
+
+.downLoadFile .ant-btn{
+  width: 44px;
+  height: 32px!important;
+}

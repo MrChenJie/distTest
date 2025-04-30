@@ -1,0 +1,61 @@
+.active {
+  display: block;
+}
+
+.active1 {
+  display: none;
+}
+
+.tableMargin-top {
+  margin-top: 50px;
+}
+
+.tableMargin-bottom {
+  margin-bottom: 50px;
+}
+
+.price-btn-style {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #0085d0;
+}
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+td.cell-border-left:nth-child(2)::before {
+  border-left: none !important;
+}
+.lastTrNone {
+  :global {
+    tr:last-child {
+      display: none !important;
+    }
+  }
+}
+
+.labelStyle {
+  :global(.ant-form-item-label) {
+    width: 7vw;
+  }
+}
+
+:global {
+  .ant-input-number {
+    width: 100% !important;
+  }
+}
+
+.compreReviewStyle {
+  :global {
+    // .ant-table-tbody tr:nth-last-child(-n+2) {
+    //   display: none;
+    // }
+  }
+}

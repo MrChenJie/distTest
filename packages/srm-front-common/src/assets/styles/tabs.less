@@ -1,0 +1,263 @@
+// tabs默认背景色
+@tabs-default-color: #F2F3F5;
+// tabs默认字体色
+@tabs-default-font-color: #8F959E;
+// tabs默认圆圈背景色
+@tabs-default-circle-color: #BBBFC4;
+// tabs默认圆圈字体色
+@tabs-default-circle-font-color: #646A73;
+// tabs选中背景色
+@tabs-active-color: #FFFFFF;
+// tabs选中字体色
+@tabs-active-font-color: #1F2329;
+// tabs选中圆圈背景色
+@tabs-active-circle-color: #3271FE;
+// tabs选中圆圈字体色
+@tabs-active-circle-font-color: #FFFFFF;
+
+// tabs
+.customize-tabs {
+  border: 1px solid #d0d3d6;
+  border-radius: 4px;
+  background-color: #fff;
+  .ant-tabs {
+    border-radius: 4px;
+  }
+  .ant-tabs-nav {
+    border-radius: 4px;
+    .ant-tabs-nav-wrap {
+      margin: 0;
+      &::before {
+        box-shadow: none;
+      }
+      &::after {
+        box-shadow: none;
+      }
+      .ant-tabs-nav-list {
+        display: flex;
+        flex: 1;
+        border-radius: 4px;
+        .ant-tabs-tab {
+          &:first-child {
+            border-left: none;
+            .ant-tabs-interval-none;
+          }
+          &:last-child {
+            border-right: none;
+          }
+          min-width: 180px;
+          margin: 0;
+          padding: 0;
+          background-color: @tabs-default-color;
+          border-bottom: 1px solid #D0D3D6;
+          .ant-tabs-tab-btn {
+            color: @tabs-default-font-color;
+            .ant-tabs-tab-btn-layout {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              .ant-tabs-interval {
+                display: block;
+                width: 1px;
+                height: 24px;
+                background-color: #D0D3D6;
+              }
+              .ant-tabs-label {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 13px 16px;
+                width: calc(100% - 1px);
+                .ant-tabs-label-circle {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50%;
+                  text-align: center;
+                  margin-right: 8px;
+                  background-color: @tabs-default-circle-color;
+                  .ant-tabs-label-circle-number {
+                    height: 14px;
+                    line-height: 14px;;
+                    color: @tabs-default-circle-font-color;
+                    font-size: 12px;
+                  }
+                }
+                .ant-tabs-label-text {
+                  margin: 0;
+                  line-height: 22px;
+                  text-align: center;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+              }
+            }
+          }
+        }
+        .ant-tabs-tab-active {
+          background-color: @tabs-active-color;
+          border-radius: 4px 4px 0 0;
+          border: 1px solid #D0D3D6;
+          border-bottom: 1px solid #fff;
+          border-top: none;
+          .ant-tabs-tab-btn {
+            color: @tabs-active-circle-color;
+            .ant-tabs-tab-btn-layout {
+              .ant-tabs-label {
+                .ant-tabs-label-circle {
+                  background-color: @tabs-active-circle-color;
+                  .ant-tabs-label-circle-number {
+                    color: @tabs-active-circle-font-color;
+                  }
+                }
+              }
+              .ant-tabs-interval {
+                display: none;
+              }
+            }
+          }
+          & + .ant-tabs-tab {
+            .ant-tabs-interval-none;
+          }
+        }
+      }
+      .ant-tabs-ink-bar {
+        display: none;
+      }
+    }
+    .ant-tabs-nav-operations {
+      background-color: @tabs-default-color;
+      border-bottom: 1px solid #D0D3D6;
+      .ant-tabs-nav-more {
+        cursor: pointer;
+        padding: 8px;
+        span {
+          width: 32px;
+          height: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 4px;
+          img {
+            width: 16px;
+            height: 16px;
+          }
+          &::before {
+            display: none;
+          }
+          &:hover {
+            background-color: #DEE0E3;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-tabs-interval-none {
+  .ant-tabs-tab-btn {
+    .ant-tabs-tab-btn-layout {
+      .ant-tabs-interval {
+        display: none;
+      }
+    }
+  }
+}
+
+.customize-tabs-more {
+  background-color: #fff;
+  border-radius: 4px;
+  width: 152px;
+  ul.ant-tabs-dropdown-menu {
+    max-height: 426px;
+    li.ant-tabs-dropdown-menu-item {
+      padding: 9px 8px;
+      margin-left: 4px;
+      margin-right: 4px;
+      border-radius: 4px;
+      .ant-tabs-label {
+        max-width: 128px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .ant-tabs-label-circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          text-align: center;
+          margin-right: 8px;
+          background-color: @tabs-default-circle-color;
+          .ant-tabs-label-circle-number {
+            height: 14px;
+            line-height: 14px;;
+            color: @tabs-default-circle-font-color;
+            font-size: 12px;
+          }
+        }
+        .ant-tabs-label-text {
+          margin: 0;
+          line-height: 22px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      &:hover {
+        color: #3271FE;
+        background-color: #EAF0FE;
+        .ant-tabs-label {
+          .ant-tabs-label-circle {
+            background-color: @tabs-active-circle-color;
+            .ant-tabs-label-circle-number {
+              color: @tabs-active-circle-font-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 查询Tabs
+.customize-search-tabs {
+  .ant-tabs-nav {
+    .ant-tabs-nav-wrap {
+      .ant-tabs-nav-list {
+        .ant-tabs-tab {
+          min-width: 42px;
+          max-width: 186px;
+          height: 22px;
+          font-size: 14px;
+          font-weight: normal;
+          line-height: 22px;
+          padding: 0;
+          text-align: center;
+          .ant-tabs-tab-btn {
+            color: @tabs-active-font-color;
+          }
+          &:nth-child(1) {
+            margin-right: 0px;
+          }
+        }
+        .ant-tabs-tab-active {
+          margin-bottom: 7px;
+          .ant-tabs-tab-btn {
+            color: @tabs-active-circle-color;
+          }
+        }
+        .ant-tabs-ink-bar {
+          height: 3px;
+          background-color: #3271FE;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}

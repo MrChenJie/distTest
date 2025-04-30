@@ -1,0 +1,151 @@
+<% let HZERO_PUBLIC_URL = (process.env.PUBLIC_URL||'').replace(/\/$/,''); %> <%
+process.env.HZERO_PUBLIC_URL = HZERO_PUBLIC_URL %>
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+  <meta charset='utf-8' />
+  <!--  <title>HZERO</title>-->
+  <link rel='shortcut icon' href='<%= HZERO_PUBLIC_URL %>/manifest.json' />
+  <meta
+    name='viewport'
+    content='width=device-width, initial-scale=1, shrink-to-fit=no'
+  />
+  <meta name="theme-color" content="#000000" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+  <!-- 引入 H5-JS-SDK 飞书-->
+  <!-- <script type='text/javascript' src='https://lf1-cdn-tos.bytegoofy.com/goofy/lark/op/h5-js-sdk-1.5.23.js'></script> -->
+  <script type='text/javascript' src='<%= HZERO_PUBLIC_URL %>/h5-js-sdk-1.5.23.js'></script>
+  <script>document.title = '\u200E';</script>
+  <!--引入JSSDK 用于催办组件 避免发布有缓存，建议加上动态版本号 -->
+  <script>
+    function getDatetime() {  //获取当前日期String
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1;
+      var day = now.getDate();
+      var clock = year;
+      if (month < 10)
+        clock += '0';
+      clock += month.toString();
+      if (day < 10)
+        clock += '0';
+      clock += day;
+      return clock;
+    }
+
+    document.write('<script src="%NCOA_HOST%/components/lib/call.min.js?ver=' + getDatetime() + '"><\/script>');
+  </script>
+  <!--
+  manifest.json provides metadata used when your web app is installed on a
+  user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+-->
+  <!--
+  Notice the use of %PUBLIC_URL% in the tags above.
+  It will be replaced with the URL of the `public` folder during the build.
+  Only files inside the `public` folder can be referenced from the HTML.
+
+  Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+  work correctly both with client-side routing and a non-root public URL.
+  Learn how to configure a non-root public URL by running `npm run build`.
+-->
+  <!-- <script src="<%= HZERO_PUBLIC_URL %>/lib/es6-sham.min.js"></script>
+  <script src="<%= HZERO_PUBLIC_URL %>/lib/es6-shim.min.js"></script> -->
+  <style>
+    #loader-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 20%;
+    }
+
+    #loader-wrapper .hzero-logo {
+      position: relative;
+      width: 130px;
+      height: 40px;
+      background-image: url('<%= HZERO_PUBLIC_URL %>/cmi_loading.gif');
+      background-size: 130px 40px;
+      background-repeat: no-repeat;
+      margin-left: -52px;
+    }
+
+    #loader-wrapper .load {
+      width: 80px;
+      animation: loading 3s linear infinite;
+    }
+
+    #loader-wrapper .load .loading-inner {
+      animation: loading-circle 2s linear infinite,
+      colors 6s ease-in-out infinite;
+      fill: transparent;
+      stroke: #29bece;
+      stroke-dashoffset: 0;
+      stroke-dasharray: 300;
+      stroke-width: 10;
+      stroke-miterlimit: 10;
+      stroke-linecap: round;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes loading-circle {
+      0% {
+        stroke-dashoffset: 0;
+      }
+
+      100% {
+        stroke-dashoffset: -600;
+      }
+    }
+
+    @keyframes colors {
+      0% {
+        stroke: #0687ff;
+      }
+
+      25% {
+        stroke: #52a4f1;
+      }
+
+      75% {
+        stroke: #318ee4;
+      }
+
+      100% {
+        stroke: #0687ff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div id='loader-wrapper'>
+  <!--<svg class="load" x="0px" y="0px" viewBox="0 0 150 150">
+    <circle class="loading-inner" cx="75" cy="75" r="60" />
+  </svg>-->
+  <!--如需替换logo，请使用等比例的，比如24px X 24px，如不需要显示首屏加载前端loading中的logo，请删除下面一行代码 -->
+  <span class='hzero-logo'></span>
+</div>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id='root'></div>
+<!--
+This HTML file is a template.
+If you open it directly in the browser, you will see an empty page.
+
+You can add webfonts, meta tags, or analytics to this file.
+The build step will place the bundled scripts into the <body> tag.
+
+To begin the development, run `npm start` or `yarn start`.
+To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
+</html>

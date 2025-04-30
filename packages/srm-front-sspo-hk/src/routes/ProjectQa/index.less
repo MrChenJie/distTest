@@ -1,0 +1,243 @@
+.input-right {
+    text-align: right;
+    input {
+      text-align: right;
+    }
+  }
+  .labelStyle {
+    :global(.ant-form-item-label) {
+      width: 7vw;
+    }
+  } 
+  :global {
+    .ant-input-number {
+      width: 100% !important;
+    }
+  }
+  
+  .table-thead-required > span:first-child::before {
+    display: inline-block;
+    color: #f5222d;
+    font-family: SimSun;
+    line-height: 1;
+    margin-right: 4px;
+    font-size: 12px;
+    content: '*';
+  }
+  
+  .content-bottom {
+    padding-bottom: 80px;
+    padding-top: 0px;
+  }
+  
+  .approval-btn {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: #f1f6fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn {
+      margin: 10px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+      .icon {
+        width: 32px;
+        height: 32px;
+      }
+      .text {
+        text-align: center;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .spo-basic-style {
+    :global {
+      .ant-form-item {
+        margin-bottom: 5px;
+        //height: 39px;
+        min-height: 39px;
+        display: flex;
+        align-items: center;
+        .ant-form-item-label {
+          text-align: right !important;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: flex;
+          label {
+            display: inline-block;
+            width: calc(100% - 10px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &.ant-form-item-required {
+              span {
+                max-width: calc(100% - 22px);
+              }
+            }
+            span {
+              display: inline-block;
+              max-width: 100%;
+              div {
+                display: flex;
+                div {
+                  width: calc(100% - 22px);
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: block;
+                }
+                img {
+                  width: 18px;
+                  height: 18px;
+                  margin-left: 2px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .input-money {
+    :global {
+      .ant-input-number {
+        width: 100%;
+      }
+      .ant-input-number-handler-wrap {
+        &:hover {
+          & + div {
+            input {
+              padding-right: 25px;
+            }
+          }
+        }
+      }
+  
+      input:disabled {
+        text-align: right;
+        &:hover {
+          padding-right: 11px;
+        }
+      }
+      input {
+        text-align: right;
+        &:hover {
+          padding-right: 25px;
+        }
+      }
+    }
+  }
+  
+  .h-button-primary {
+    display: inline-block;
+    transform: translateY(-1px);
+    button {
+      // background-color: #0085d0 !important;
+      // border: #0085d0;
+      color: #333;
+      //margin-left: 8px;
+      border: none !important;
+      padding-right: 0 !important;
+      //padding-left: 7.5px !important;
+      background-color: transparent !important;
+      i {
+        display: none;
+      }
+      &:hover {
+        color: #23a0de;
+      }
+      &:active {
+        box-shadow: none !important;
+      }
+      & span[disabled] {
+        color: rgba(0, 0, 0, 0.25);
+      }
+    }
+    :global {
+      // .c7n-pro-btn-default {
+      //   &:focus {
+      //     color: #fff !important;
+      //   }
+      // }
+      .c7n-pro-upload-select {
+        margin-right: 0;
+      }
+    }
+  }
+  
+  .outer-link {
+    position: absolute;
+    left: 9px;
+    top: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 19px;
+    display: block;
+    line-height: 19px;
+  }
+  
+  .operations {
+    text-align: right;
+    button {
+      margin-left: 8px;
+    }
+  }
+  
+  .table-wraper-margin {
+    margin: 0 -16px;
+  }
+  
+  .poTitle-style {
+    padding-top: 10px;
+    .ant-form-item-label {
+      width: 12%;
+    }
+    .ant-form-item-control-wrapper {
+      width: 88%;
+    }
+  }
+  
+  .table-link {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #0085d0;
+  }
+  
+  .changeRecordTitle{
+    span{
+      display: block;
+      margin-right: 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  
+  .lovBackground {
+    :global {
+      // input {
+      //   background-color: #45ade3;
+      // }
+      .themed-input-inner .ant-input-affix-wrapper #cmiEntityLov {
+        color: white !important;
+        background-color: #45ade3 !important;
+      }
+    }
+  }
+  

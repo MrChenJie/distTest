@@ -1,0 +1,203 @@
+{
+  "name": "srm-front-core-2",
+  "private": true,
+  "devDependencies": {
+    "conventional-changelog-cli": "^2.0.12",
+    "lerna": "^3.13.1",
+    "standard-version": "^5.0.2",
+    "@typescript-eslint/parser": "2.19.0",
+    "@typescript-eslint/eslint-plugin": "2.19.2",
+    "typescript": "^3.7.4",
+    "yarn": "^1.13.0",
+    "hzero-cli": "~1.3.0",
+    "hzero-boot": "~1.3.0",
+    "@stomp/stompjs": "^2.3.3",
+    "@babel/cli": "*",
+    "@babel/plugin-proposal-class-properties": "7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "choerodon-ui": "*",
+    "echarts": "^4.3.0",
+    "hzero-front": "1.3.4-1",
+    "hzero-front-hadm": "1.3.0",
+    "hzero-front-hagd": "1.2.0",
+    "hzero-front-hcnf": "1.2.0",
+    "hzero-front-hcuz": "1.3.2-beta.2",
+    "hzero-front-hdtt": "1.2.0",
+    "hzero-front-hfile": "1.3.1",
+    "hzero-front-hiam": "1.3.4-1",
+    "hzero-front-himp": "1.3.1",
+    "hzero-front-hitf": "1.2.1",
+    "hzero-front-hmnt": "1.2.0",
+    "hzero-front-hmsg": "1.3.0",
+    "hzero-front-hpfm": "1.3.4",
+    "hzero-front-hrpt": "1.3.3-1",
+    "hzero-front-hsdr": "1.3.1",
+    "hzero-front-hsgp": "1.1.0",
+    "hzero-front-hwfp": "1.3.2-3",
+    "hzero-front-hmde": "1.3.1-beta-3",
+    "hzero-front-hlod": "1.3.1-beta-3",
+    "jsplumb": "^2.13.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-image-crop": "^8.2.0",
+    "srm-front-boot": "1.5.0",
+    "swiper": "4.5.0",
+    "srm-front-hiam": "1.5.0",
+    "srm-front-hips": "1.5.0",
+    "srm-front-scec": "1.5.0",
+    "srm-front-seci": "1.5.0",
+    "srm-front-sfin": "1.5.4",
+    "srm-front-sinv": "1.5.3",
+    "srm-front-sitf": "1.5.0",
+    "srm-front-smdm": "1.5.1",
+    "srm-front-sodr": "1.5.1",
+    "srm-front-spcm": "1.5.2",
+    "srm-front-sspo": "1.5.2",
+    "srm-front-spfm": "1.5.2",
+    "srm-front-sprm": "1.5.2",
+    "srm-front-sqam": "1.5.2",
+    "srm-front-sslm": "1.5.1",
+    "srm-front-ssrc": "1.5.6",
+    "srm-front-swfl": "1.5.0",
+    "srm-front-small": "1.5.2",
+    "srm-front-spfm-hk": "1.5.2"
+  },
+  "resolutions": {
+    "url-loader": "1.1.2",
+    "css-loader": "1.0.0",
+    "lerna": "3.20.2",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "file-loader": "2.0.0",
+    "mini-css-extract-plugin": "0.9.0",
+    "less-loader": "5.0.0",
+    "@babel/cli": "^7.8.4",
+    "webpack": "4.42.1",
+    "react": "16.12.0",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "react-dom": "16.12.0",
+    "html-webpack-plugin": "4.0.0-alpha.2",
+    "typescript": "3.8.2",
+    "choerodon-ui": "^0.8.58",
+    "hzero-ui": "1.0.73",
+    "react-dnd": "10.0.2",
+    "react-dnd-html5-backend": "10.0.2",
+    "conventional-changelog": "~3.0.6",
+    "browserslist": "4.6.0",
+    "caniuse-lite": "1.0.30000971",
+    "less": "~3.9.0",
+    "srm-front-boot": "1.5.0",
+    "hzero-front": "1.3.4-1",
+    "hzero-front-hcuz": "1.3.2-beta.2",
+    "hzero-front-himp": "1.3.1",
+    "hzero-front-hiam": "1.3.4-1",
+    "hzero-front-hpfm": "1.3.4",
+    "hzero-front-util": "^0.1.37",
+    "swiper": "4.5.0"
+  },
+  "description": "srm-front-core",
+  "author": "",
+  "version": "0.0.1",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.saas.hand-china.com/content/repositories/srm-npm-source/"
+  },
+  "scripts": {
+    "start": "hzero-cli start",
+    "start:mock": "cross-env NODE_PROFILE=mock hzero-cli start",
+    "build": "hzero-cli build --all-packages",
+    "build:production": "cross-env NODE_PROFILE=production hzero-cli build --only-build-micro --all-packages",
+    "build:all-ms": "hzero-cli build --only-build-micro --all-packages",
+    "build:ms": "cross-env NODE_OPTIONS='--max_old_space_size=8196' hzero-cli build --only-build-micro",
+    "build:ext-ms": "cross-env BUILD_PUBLIC_MS=true BUILD_DIST_PATH=./dist-ext BUILD_SKIP_PARENT=true hzero-cli build --only-build-micro",
+    "build:analyze": "cross-env ANALYZE=true hzero-cli build",
+    "build:dll": "hzero-cli build --build-dll",
+    "build:dll-dev": "hzero-cli build --build-dll --build-dll-dev",
+    "transpile": "hzero-cli transpile --all",
+    "lint": "eslint 'src/**/*.{js,jsx,tsx,ts}' && npm run lint:style && tsc --noEmit --emitDeclarationOnly false",
+    "lint:fix": "eslint --quiet --fix 'src/**/*.{js,jsx,tsx,ts}' && npm run lint:style",
+    "lint:style": "stylelint \"src/**/*.less\" --syntax less",
+    "lint-staged": "lint-staged && lerna run lint-staged",
+    "bootstrap": "yarn --registry http://nexus.saas.hand-china.com/content/groups/srm-npm-group",
+    "test": "node scripts/test.js",
+    "changelog": "node node_modules/.bin/conventional-changelog -p eslint -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "prettier": "prettier --write ./src/**/**/**/*",
+    "tree": "tree -I node_modules -L 3",
+    "release": "standard-version",
+    "fix-memory-limit": "cross-env LIMIT=8096 increase-memory-limit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged",
+      "post-merge": "git submodule update",
+      "post-checkout": "git submodule update"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "watchPlugins": [
+      "<rootDir>/node_modules/jest-watch-typeahead/filename.js",
+      "<rootDir>/node_modules/jest-watch-typeahead/testname.js"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,tsx,ts}": "eslint --quiet --fix",
+    "src/**/*.less": "stylelint --syntax less",
+    "src/**/*.{js,ts,tsx,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

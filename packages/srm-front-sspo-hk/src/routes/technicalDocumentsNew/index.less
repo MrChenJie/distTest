@@ -1,0 +1,144 @@
+.priceEntry {
+  :global {
+    .ant-modal-header {
+      border-bottom: none !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+
+      .ant-modal-title {
+        font-size: 16px !important;
+      }
+    }
+
+    .ant-modal-body {
+      padding-top: 5px !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+
+    .ant-divider-with-text-left {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .ant-divider-with-text-left:before {
+      border-top: 1px solid #000 !important;
+    }
+
+    .ant-divider-with-text-left:after {
+      border-top: 1px solid #000 !important;
+    }
+  }
+}
+.table-thead-required > span:first-child::before {
+  display: inline-block;
+  color: #f5222d;
+  font-family: SimSun;
+  line-height: 1;
+  margin-right: 4px;
+  font-size: 12px;
+  content: '*';
+}
+// tag标签框样式(文件表格内的tag)
+.tagClassStyle {
+  min-width: 38px;
+  line-height: 12px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  padding: 4px;
+}
+
+.tagClassStyle :global(.ant-tag-green) {
+  background: rgba(245, 74, 69, 0.1);
+  .tagStyle {
+    color: #34C724;
+  }
+}
+
+.tagClassStyle :global(.ant-tag-red) {
+  background: rgba(52, 199, 36, 0.1);
+  .tagStyle {
+    color: #F54A45;
+  }
+}
+
+// tag标签内的字样式(文件表格内的tag)
+.tagStyle {
+  font-size: 10px;
+  font-weight: normal;
+  display: inline-block;
+  -webkit-text-size-adjust: none;
+  -webkit-transform: scale(0.83, 0.83);
+}
+// tag标签框样式(uploadFile.js)
+.uploadFileTag {
+  height: 18px;
+  width: 18px;
+  line-height: 17px;
+  text-align: center;
+  margin-left: 8px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+// 技术评分表二级表头-分值单元格左上radius置为0
+.HeaderButton {
+  :global(.customize-table .ant-table .ant-table-thead > tr > th:first-child) {
+    border-radius: 0 !important;
+    border-start-start-radius: 0 !important;
+  }
+
+  :global(.ant-table-content) {
+    border-radius: 4px !important;
+  }
+
+  :global(.ant-table-bordered .ant-table-thead > tr > th, .ant-table-bordered .ant-table-tbody > tr > td) {
+    border-right: 0 !important;
+  }
+}
+// 技术评分表加粗供应商之间的拖动线
+.borderBolder  {
+  border-left-width: 3px !important;
+}
+.borderRightBolder {
+  border-right: 3px solid #dee0e3 !important;
+}
+
+.borderNone {
+  border-left: none !important;
+}
+
+.cus-upload-header {
+  display: flex;
+  margin-bottom: 16px;
+  & > span {
+    color: #1f2329;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 32px;
+  }
+  .cus-upload {
+    margin-left: auto;
+  }
+}
+
+.cus-upload-file-tag {
+  display: flex;
+  align-items: center;
+  .ant-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 0;
+    margin-left: 8px;
+    color: #f54a45;
+    font-size: 8px !important;
+    background-color: rgba(245, 74, 69, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: default;
+  }
+}

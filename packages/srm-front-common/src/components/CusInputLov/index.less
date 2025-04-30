@@ -1,0 +1,80 @@
+@import './variables.less';
+
+.antd-lov-modal {
+  width: 100%;
+  .customize-autoComplete {
+    .ant-select-selector {
+      border: none !important;
+      padding: 0 !important;
+    }
+  }
+
+  .ant-input-affix-wrapper .ant-input-suffix {
+    right: 8px;
+  }
+
+  // 覆盖原逻辑高度
+  .ant-select-auto-complete.ant-select .ant-input {
+    height: 32px;
+  }
+
+  .lov-input {
+    border-radius: 4px;
+    top: 0 !important;
+
+    .ant-input-group-wrapper {
+      vertical-align: middle;
+    }
+
+    .ant-input {
+      // 两个 icon 的位置
+      padding-right: 48px !important;
+      transition: padding 0s, background-color 0.3s, border 0.3s;
+      border: 1px solid #d0d3d6;
+    }
+
+    .ant-input-suffix {
+      > .cus-lov-clear{
+        display: none;
+        cursor: pointer;
+        &:before {
+          content: '';
+          display: block;
+          width: 16px;
+          height: 16px;
+          background-image: url('../../assets/clearIcon.svg');
+          background-size: cover;
+        }
+        &:hover:before{
+          background-image: url('../../assets/clearIcon_active.svg');
+        }
+      }
+    }
+  }
+
+  .lov-suffix {
+    .ant-input-suffix {
+      > .cus-lov-clear {
+        display: none;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      .ant-input-suffix {
+        > .cus-lov-clear {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .ant-form-item-required .lov-suffix {
+    &:hover {
+      .ant-input-suffix {
+        background: @hzero-form-required-color;
+        display: block;
+      }
+    }
+  }
+}

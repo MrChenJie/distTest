@@ -1,0 +1,53 @@
+.cus-anchor {
+  background-color: #f7f9fa;
+  height: 100%;
+  .ant-affix {
+    height: auto !important;
+  }
+  .ant-anchor-wrapper {
+    background-color: #f7f9fa;
+    .ant-anchor {
+      &::before {
+        width: 3px;
+        border-radius: 4px;
+        background: #EFF0F1;
+      }
+      .ant-anchor-ink {
+        width: 3px;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #3271FE;
+        &::before {
+          width: 3px;
+          height: 40px;
+          border-radius: 4px;
+          background-color: #3271FE;
+        }
+      }
+      .ant-anchor-link {
+        line-height: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        .ant-anchor-link-title {
+          width: calc(100% - 16px);
+          font-size: 14px;
+          color: #3D3D3D;
+          word-break: break-word;
+          // 超过两行隐藏
+          white-space: normal;
+          text-overflow: -o-ellipsis-lastline;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box !important;
+          -webkit-line-clamp: 2; // 行数
+          -webkit-box-orient: vertical; // 盒子中内容竖直排列
+        }
+      }
+      .ant-anchor-link-active {
+        .ant-anchor-link-title-active {
+          color: #3271FE;
+        }
+      }
+    }
+  }
+}

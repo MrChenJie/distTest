@@ -1,0 +1,51 @@
+.fileViewer-style {
+  background-color: #525659;
+  height: 500px;
+  :global {
+    .pg-viewer-wrapper {
+      overflow-y: auto;
+      // doc
+      .document-container {
+        min-height: 100%;
+      }
+      // xlsx
+      .spreadsheet-viewer {
+        height: 100%;
+        .sheet-names {
+          background-color: white;
+        }
+      }
+      // csv
+      .react-grid-Container {
+        margin: 0;
+        height: calc(100% - 27px);
+        .react-grid-Main {
+          height: 100%;
+          .react-grid-Grid {
+            height: 100%;
+            min-height: 0 !important;
+            .react-grid-Header {
+              .react-grid-HeaderCell-sortable {
+                pointer-events: none !important;
+                cursor: unset !important;
+              }
+            }
+            .react-grid-Canvas {
+              overflow: auto !important;
+              height: 438px !important;
+            }
+            .react-grid-Canvas > div:last-child {
+              pointer-events: none !important;
+            }
+          }
+        }
+      }
+      // pdf
+      .pdf-canvas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

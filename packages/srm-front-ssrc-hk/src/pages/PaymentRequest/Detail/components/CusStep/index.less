@@ -1,0 +1,145 @@
+.cus-steps {
+  display: flex;
+  margin-bottom: 10px;
+  .cus-steps-item {
+    position: relative;
+    display: inline-block;
+    flex: 1 1;
+    margin-right: 0.16rem;
+    white-space: nowrap;
+    vertical-align: top;
+    .cus-steps-item-icon {
+      display: inline-block;
+      width: 0.28rem;
+      height: 0.28rem;
+      margin-right: 0.08rem;
+      color: #fff;
+      line-height: 0.28rem;
+      text-align: center;
+      vertical-align: top;
+      background-color: #0085d0;
+      border-radius: 0.28rem;
+      .cus-icon-check {
+        display: inline-block;
+        width: 0.28rem;
+        height: 0.28rem;
+        font-size: 0.18rem;
+        font-family: 'icomoon', serif;
+        line-height: 0.28rem;
+        vertical-align: initial;
+        &:before {
+          content: '\E5CA';
+        }
+      }
+      .cus-icon {
+        position: relative;
+        top: -0.01rem;
+        font-size: 12px;
+        line-height: 1;
+      }
+    }
+    .cus-steps-item-content-warp {
+      display: inline-block;
+      width: calc(100% - 28px);
+      overflow: hidden;
+    }
+    .cus-steps-item-content {
+      display: inline-block;
+      vertical-align: top;
+      .cus-steps-item-title {
+        position: relative;
+        display: inline-block;
+        padding-right: 0.16rem;
+        color: #333;
+        font-size: 12px;
+        line-height: 0.28rem;
+      }
+    }
+    &:last-child {
+      flex: none;
+      margin-right: 0;
+    }
+    &:last-child .cus-steps-item-title {
+      padding-right: 0;
+    }
+    &:not(:last-child)
+      > .cus-steps-item-content-warp
+      > .cus-steps-item-content
+      > .cus-steps-item-title::after {
+      position: absolute;
+      top: 0.14rem;
+      left: 100%;
+      display: block;
+      width: 99.99rem;
+      height: 0.01rem;
+      background: rgba(0, 0, 0, 0.26);
+      content: '';
+    }
+    .item-detail {
+      position: absolute;
+      top: 38px;
+      z-index: 2;
+      padding: 10px 20px;
+      background: #fff;
+      border: 1px solid #f8f8f8;
+      border-radius: 8px;
+      box-shadow: 0 10px 70px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .cus-steps-item-wait {
+    background-color: rgba(0, 0, 0, 0.36) !important;
+  }
+  .cus-steps-item-process {
+    background-color: #0085d0 !important;
+  }
+  .cus-steps-item-child {
+    position: absolute;
+    top: 38px;
+    left: -20px;
+    z-index: 100;
+    padding: 5px 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 70px rgba(0, 0, 0, 0.15);
+    .child-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 0 10px;
+      padding: 5px 10px;
+      vertical-align: center;
+      .child-title {
+        width: calc(100% - 36px);
+        padding: 5px 0 5px;
+        font-size: 12px;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+      }
+      .child-detail-bridge{
+        position: absolute;
+        left: calc(100% + 10px);
+        width: 10px;
+        height: 100%;
+      }
+      .child-detail-caret-down {
+        position: absolute;
+        left: calc(100% + 10px);
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #fff;
+      }
+      .child-detail {
+        position: absolute;
+        top: -5px;
+        left: calc(100% + 20px);
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #f8f8f8;
+        border-radius: 8px;
+        box-shadow: 40px 40px 70px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@import '~hzero-front/lib/assets/styles/variables.less';
+
+:global {
+  .lov-modal {
+    word-break: break-all;
+
+    .ant-modal-title {
+      font-size: 18px;
+    }
+
+    .ant-modal-header {
+      padding: 16px 16px 0;
+      border-bottom: none;
+    }
+
+    .ant-modal-footer {
+      border-top: none;
+      padding: 0 16px 16px;
+      margin-top: 16px;
+    }
+
+    .ant-form-item {
+      display: flex;
+      margin-bottom: 0;
+    }
+
+    .ant-pagination-options-size-changer.ant-select {
+      margin-right: 0;
+    }
+
+    .lov-modal-btn-container {
+      flex-shrink: 0;
+      display: flex;
+      height: 40px;
+      align-items: center;
+    }
+  }
+
+  .lov-input {
+    .ant-input-group-wrapper {
+      vertical-align: middle;
+    }
+
+    .ant-input {
+      // 两个 icon 的位置
+      padding-right: 48px !important;
+      transition: padding 0s, background-color 0.3s, border 0.3s;
+    }
+
+    .ant-input-suffix {
+      > .lov-clear {
+        margin-right: 4px;
+        display: none;
+      }
+
+      // LOV 查询icon颜色和DatePicker等组件的icon颜色一样
+      .anticon-search:before {
+        color: rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  .lov-suffix {
+    .ant-input-suffix {
+      > .anticon {
+        // ICON
+      }
+
+      > .lov-clear {
+        display: none;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      .ant-input-suffix {
+        > .lov-clear {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .ant-form-item-required .lov-suffix {
+    &:hover {
+      .ant-input-suffix {
+        background: @hzero-form-required-color;
+        display: block;
+      }
+    }
+  }
+}
+
+.checkBoxLov-input-wrapper-spfm {
+  margin-top: -1px;
+  position: relative;
+  // border: 1px solid #d9d9d9;
+  //border-color: none !important;
+  border-radius: 4px;
+  line-height: 0px;
+
+  //input {
+    //border-color: #ffbc00 !important;
+    // height: 26px;
+  //}
+
+  #tagBox {
+    width: 90%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    // 将line-height设置为0px,不然dv包裹行内元素高度会变高
+    line-height: 0px;
+    top: -1px;
+    left: 5px;
+  }
+
+  .ant-tag {
+    position: relative;
+    font-size: 14px;
+    font-weight: normal !important;
+    padding-top: 0px !important;
+    margin-top: 4px;
+    margin-bottom: 3px;
+    padding-right: 14px;
+
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    i {
+      position: absolute;
+      right: 1px;
+      top: 5px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.price-entry-query {
+  :global {
+    .ant-form-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .ant-form-item-label {
+        text-align: right !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: flex;
+        label {
+          display: inline-block;
+          width: calc(100% - 10px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &.ant-form-item-required {
+            span {
+              max-width: calc(100% - 10px);
+            }
+          }
+          span {
+            display: inline-block;
+            max-width: 100%;
+            div {
+              display: flex;
+              div {
+                width: calc(100% - 20px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+              }
+              img {
+                width: 18px;
+                height: 18px;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-label-overflow {
+  :global {
+    .ant-form-item-label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap !important;
+    }
+    label {
+      display: inline !important;
+    }
+    .ant-form-item {
+      display: flex;
+      align-items: center;
+    }
+    .ant-input-number {
+      width: 100% !important;
+    }
+  }
+}
+
+.outer-link {
+  position: absolute;
+  left: 9px;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 19px;
+  display: block;
+  line-height: 19px;
+}

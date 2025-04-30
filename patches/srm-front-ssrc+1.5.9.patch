@@ -1,0 +1,2785 @@
+diff --git a/node_modules/srm-front-ssrc/.umi/entryCode.ts b/node_modules/srm-front-ssrc/.umi/entryCode.ts
+new file mode 100644
+index 0000000..3d140e0
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/.umi/entryCode.ts
+@@ -0,0 +1,5 @@
++
++    window.g_umi = {
++      version: '3.1.1',
++    };
++  
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/.umi/entryCodeAhead.ts b/node_modules/srm-front-ssrc/.umi/entryCodeAhead.ts
+new file mode 100644
+index 0000000..e69de29
+diff --git a/node_modules/srm-front-ssrc/lib/index.less b/node_modules/srm-front-ssrc/lib/index.less
+index 30359af..73ee65a 100644
+--- a/node_modules/srm-front-ssrc/lib/index.less
++++ b/node_modules/srm-front-ssrc/lib/index.less
+@@ -6,4 +6,7 @@
+   font-size: 14px;
+   margin-left: 20px;
+ }
++.ant-col-18 {
++  width: 75%;
++}
+  
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/lib/routes/index.js b/node_modules/srm-front-ssrc/lib/routes/index.js
+index 55aa07f..2b07699 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/index.js
++++ b/node_modules/srm-front-ssrc/lib/routes/index.js
+@@ -5,7 +5,7 @@ import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
+ import _inherits from "@babel/runtime/helpers/esm/inherits";
+ 
+ var _dec, _class;
+-
++//测试patch-package
+ import React, { Component } from 'react';
+ import { Route, Switch, Redirect } from 'dva/router';
+ import { connect } from 'dva';
+diff --git a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/BidScoreElementTable.js b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/BidScoreElementTable.js
+index 57f3029..35fdf7d 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/BidScoreElementTable.js
++++ b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/BidScoreElementTable.js
+@@ -24,7 +24,7 @@ import React, { Component } from 'react';
+ import { Bind } from 'lodash-decorators';
+ import intl from "srm-front-boot/lib/utils/intl";
+ import EditTable from "hzero-front/lib/components/EditTable";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ var PROMPT_CODE = 'ssrc.expertScoring';
+ var ScoreElementTable = (_dec = _Form.create({
+   fieldNameProp: null
+diff --git a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/ScoreElementTable.js b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/ScoreElementTable.js
+index 89c9feb..38dbe6b 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/ScoreElementTable.js
++++ b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/ScoreElementTable.js
+@@ -29,7 +29,7 @@ import { Bind } from 'lodash-decorators';
+ import intl from "srm-front-boot/lib/utils/intl";
+ import EditTable from "hzero-front/lib/components/EditTable";
+ import { scoreIntervalRender } from "../../../../utils/renderer";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ var PROMPT_CODE = 'ssrc.expertScoring';
+ var ScoreElementTable = (_dec = _Form.create({
+   fieldNameProp: null
+diff --git a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.js b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.js
+index 9ce9c3f..644b455 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.js
++++ b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.js
+@@ -50,7 +50,7 @@ import Upload from 'srm-front-boot/lib/components/Upload';
+ import formatterCollections from "srm-front-boot/lib/utils/intl/formatterCollections";
+ import intl from "srm-front-boot/lib/utils/intl";
+ import { numberRender } from "hzero-front/lib/utils/renderer";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ import ItemLineTable from "./ItemLineTable";
+ import ExpertDetailModal from "./ExpertDetailModal";
+ import BidExpertDetailModal from "./BidExpertDetailModal";
+diff --git a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.less b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.module.less
+similarity index 99%
+rename from node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.less
+rename to node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.module.less
+index 5456488..b8d6301 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.less
++++ b/node_modules/srm-front-ssrc/lib/routes/sbid/ExpertScoring/Update/index.module.less
+@@ -11,7 +11,7 @@
+   .itemListHeaderInfo {
+     float: left;
+     margin-right: 10px;
+-    height: 30px;
++    // height: 30px;
+     width: 100%;
+     .itemListHeader {
+       width: 100%;
+diff --git a/node_modules/srm-front-ssrc/lib/routes/sbid/common.less b/node_modules/srm-front-ssrc/lib/routes/sbid/common.less
+index c8d7ddf..301a891 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/sbid/common.less
++++ b/node_modules/srm-front-ssrc/lib/routes/sbid/common.less
+@@ -1,3 +1,6 @@
++.ant-col-18 {
++  width: 75%;
++}
+ .fixed-form-row {
+   :global {
+     .ant-form-item {
+diff --git a/node_modules/srm-front-ssrc/lib/routes/sbid/dist/common.css b/node_modules/srm-front-ssrc/lib/routes/sbid/dist/common.css
+new file mode 100644
+index 0000000..a6b583a
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/sbid/dist/common.css
+@@ -0,0 +1,279 @@
++.ant-col-18 {
++  width: 75%;
++}
++.fixed-form-row :global .ant-form-item {
++  margin: 0 0 16px;
++  text-align: left;
++  line-height: 28px;
++  color: #666;
++  margin-left: 16px;
++  margin-right: 16px;
++}
++.fixed-form-row :global .ant-form-item-label {
++  text-align: left;
++  line-height: 28px;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++  overflow: hidden;
++}
++.fixed-form-row :global .ant-form-item-label label {
++  color: #666 !important;
++}
++.fixed-form-row :global .margin-read-row {
++  margin-bottom: 16px;
++}
++.fixed-form-row :global .half-row {
++  display: flex;
++  margin-bottom: 16px;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item {
++  margin-bottom: 0;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-label {
++  width: 25%;
++  margin-right: -6px;
++  float: left;
++  line-height: 28px;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-label label {
++  color: #666;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-control-wrapper {
++  width: 75%;
++  float: left;
++  color: #333;
++  line-height: 28px;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-control-wrapper .ant-form-item-control {
++  line-height: 28px;
++}
++.fixed-form-row :global .read-row {
++  color: #666;
++}
++.fixed-form-row :global .read-row div {
++  line-height: 20px;
++}
++.fixed-form-row :global .read-row > div:nth-child(2) {
++  color: #333;
++  float: left;
++}
++.fixed-form-row :global .read-row > div:first-child {
++  float: left;
++}
++.fixed-form-row :global .read-row > div:first-child::after {
++  content: ':';
++  margin: 0 8px 0 2px;
++  position: relative;
++  top: -0.5px;
++}
++.fixed-form-row :global .ant-form-item-control-wrapper {
++  text-align: left;
++  line-height: 28px;
++  color: #333;
++}
++.fixed-form-row :global .ant-form-item-control-wrapper > .ant-form-item-control {
++  line-height: 28px;
++}
++.fix-col-8-item {
++  margin-left: 16px !important;
++}
++.fix-col-8-item :global .ant-form-item-control-wrapper::after {
++  content: '';
++  display: none;
++}
++.padding-16 {
++  padding: 16px;
++}
++.btn-icon + span {
++  margin-left: 8px;
++}
++.headerInfo :global .ant-form-item .ant-form-item-label {
++  text-align: left;
++  line-height: 28px;
++}
++.headerInfo :global .ant-form-item .ant-form-item-control {
++  line-height: 28px;
++}
++.headerInfo :global .ant-form-item .ant-form-item-control .ant-form-explain {
++  margin: 0;
++}
++.radius-button-group .radius-button-item {
++  min-width: 40px;
++  height: 30px;
++  line-height: 30px;
++  text-align: center;
++  border-radius: 12px;
++  border: 1px solid #f0f0f0;
++  color: #666;
++  padding: 6px 10px;
++}
++.radius-button-group .radius-button-item:nth-child(1) {
++  margin-right: 10px;
++}
++.detail-standard .exclude-content-card {
++  width: calc(100% - 32px);
++  margin: -8px 16px 0;
++  padding: 32px 24px;
++  background: #fff;
++}
++.detail-standard .exclude-content-card.p-t-n {
++  padding-top: 0;
++}
++.detail-standard .collapse-title {
++  padding-left: 16px;
++  font-size: 14px;
++}
++.detail-standard :global .ant-form-item-label {
++  line-height: 28px;
++}
++.detail-standard :global .ant-form-item-control {
++  line-height: 28px;
++}
++.detail-standard .m-r-m {
++  margin-right: 10px;
++}
++.detail-standard .display-none {
++  display: none;
++}
++.detail-standard .p-n {
++  padding: 0 !important;
++}
++.page-content-custom {
++  min-height: 280px;
++  padding: 24px;
++}
++.page-content-custom.form-collapse-include {
++  min-height: auto;
++}
++.page-content-custom.default-margin-bottom {
++  margin-bottom: 8px;
++}
++.page-content-custom.zero-margin-bottom {
++  margin-bottom: 0;
++}
++.page-content-custom :global {
++  margin-bottom: 8px;
++}
++.page-content-custom :global .ant-tabs-content {
++  padding: 0 8px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item > .ant-form-item-label {
++  text-align: left;
++  line-height: 28px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item > .ant-form-item-label label {
++  color: #666;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper {
++  color: #333;
++  line-height: 28px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control {
++  line-height: 28px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control.has-error .ant-form-explain {
++  margin-top: 2px;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item {
++  margin-bottom: 16px;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .ant-form-item-label {
++  text-align: left;
++  height: 20px;
++  line-height: 20px;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item > .ant-form-item-control-wrapper {
++  color: #333;
++  line-height: 20px !important;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++  overflow: hidden;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item > .ant-form-item-control-wrapper > .ant-form-item-control {
++  line-height: 20px;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++  overflow: hidden;
++}
++.page-content-custom :global .ant-form.read-row-custom > .ant-row.read-row {
++  margin-bottom: 16px;
++}
++.page-content-custom :global .ant-collapse .ant-collapse-item {
++  margin-bottom: 8px;
++}
++.page-content-custom .ssrc-text-ellipsis {
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++}
++.m-r-m {
++  margin-right: 16px;
++}
++.display-none {
++  display: none;
++}
++.p-n {
++  padding: 0;
++}
++.m-n {
++  margin: 0;
++}
++.accept-notice {
++  padding: 48px 20px;
++}
++.accept-notice .notice-title {
++  color: #333;
++  text-align: center;
++  font-size: 20px;
++}
++.accept-notice .notice-title .notice-time {
++  font-size: 14px;
++  margin-top: 8px;
++}
++.accept-notice .notice-item-wrap {
++  margin-top: 32px;
++}
++.accept-notice .notice-item-wrap .notice-item-title {
++  color: #333;
++  padding-left: 13px;
++  font-size: 16px;
++  line-height: 16px;
++  border-left: solid 3px #29bece;
++}
++.accept-notice .notice-item-wrap .notice-item {
++  margin: 25px 16px 8px;
++}
++.accept-notice .notice-item-wrap .notice-item .notice-attachment {
++  font-size: 14px;
++}
++.accept-notice .notice-item-wrap .notice-item :global .ant-form-item-label {
++  text-align: left;
++  line-height: 14px;
++}
++.accept-notice .notice-item-wrap .notice-item :global .ant-form-item-label label {
++  color: #666;
++}
++.accept-notice .notice-item-wrap .notice-item :global .ant-form-item-control {
++  line-height: 14px;
++}
++.accept-notice .notice-item-wrap .notice-item :global .ant-form-item {
++  font-size: 14px;
++  margin-bottom: 16px;
++}
++.accept-notice .notice-item-wrap .purchase-demand {
++  margin: 24px 16px;
++}
++.accept-notice .notice-item-wrap .purchase-demand .section-title {
++  margin-bottom: 10px;
++  font-size: 14px;
++  color: #333;
++}
++.accept-notice .notice-item-wrap .other-item {
++  color: #333;
++  font-size: 16px;
++  margin: 24px 16px;
++  line-height: 24px;
++}
++.accept-notice :global .ant-divider-horizontal {
++  margin: 14px 0 0;
++}
+diff --git a/node_modules/srm-front-ssrc/lib/routes/sbid/dist/common.min.css b/node_modules/srm-front-ssrc/lib/routes/sbid/dist/common.min.css
+new file mode 100644
+index 0000000..eef4622
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/sbid/dist/common.min.css
+@@ -0,0 +1 @@
++.ant-col-18{width:75%}.fixed-form-row :global .ant-form-item{margin:0 16px 16px;text-align:left;line-height:28px;color:#666}.fixed-form-row :global .ant-form-item-label{text-align:left;line-height:28px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.fixed-form-row :global .ant-form-item-label label{color:#666!important}.fixed-form-row :global .margin-read-row{margin-bottom:16px}.fixed-form-row :global .half-row{display:flex;margin-bottom:16px}.detail-standard .display-none,.display-none{display:none}.fixed-form-row :global .half-row .ant-row.ant-form-item{margin-bottom:0}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-label{width:25%;margin-right:-6px;float:left;line-height:28px}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-label label{color:#666}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-control-wrapper{width:75%;float:left;color:#333;line-height:28px}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-control-wrapper .ant-form-item-control{line-height:28px}.fixed-form-row :global .read-row{color:#666}.fixed-form-row :global .read-row div{line-height:20px}.fixed-form-row :global .read-row>div:nth-child(2){color:#333;float:left}.fixed-form-row :global .read-row>div:first-child{float:left}.fixed-form-row :global .read-row>div:first-child::after{content:':';margin:0 8px 0 2px;position:relative;top:-.5px}.fixed-form-row :global .ant-form-item-control-wrapper{text-align:left;line-height:28px;color:#333}.fixed-form-row :global .ant-form-item-control-wrapper>.ant-form-item-control{line-height:28px}.fix-col-8-item{margin-left:16px!important}.fix-col-8-item :global .ant-form-item-control-wrapper::after{content:'';display:none}.padding-16{padding:16px}.btn-icon+span{margin-left:8px}.headerInfo :global .ant-form-item .ant-form-item-label{text-align:left;line-height:28px}.headerInfo :global .ant-form-item .ant-form-item-control{line-height:28px}.headerInfo :global .ant-form-item .ant-form-item-control .ant-form-explain{margin:0}.radius-button-group .radius-button-item{min-width:40px;height:30px;line-height:30px;text-align:center;border-radius:12px;border:1px solid #f0f0f0;color:#666;padding:6px 10px}.radius-button-group .radius-button-item:nth-child(1){margin-right:10px}.detail-standard .exclude-content-card{width:calc(100% - 32px);margin:-8px 16px 0;padding:32px 24px;background:#fff}.detail-standard .exclude-content-card.p-t-n{padding-top:0}.detail-standard .collapse-title{padding-left:16px;font-size:14px}.detail-standard :global .ant-form-item-control,.detail-standard :global .ant-form-item-label{line-height:28px}.detail-standard .m-r-m{margin-right:10px}.detail-standard .p-n{padding:0!important}.page-content-custom{min-height:280px;padding:24px}.page-content-custom.form-collapse-include{min-height:auto}.page-content-custom.default-margin-bottom{margin-bottom:8px}.page-content-custom.zero-margin-bottom{margin-bottom:0}.page-content-custom :global{margin-bottom:8px}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item,.page-content-custom :global .ant-form.read-row-custom>.ant-row.read-row{margin-bottom:16px}.page-content-custom :global .ant-tabs-content{padding:0 8px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item>.ant-form-item-label{text-align:left;line-height:28px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item>.ant-form-item-label label{color:#666}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper{color:#333;line-height:28px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control{line-height:28px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control.has-error .ant-form-explain{margin-top:2px}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .ant-form-item-label{text-align:left;height:20px;line-height:20px}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item>.ant-form-item-control-wrapper{color:#333;line-height:20px!important;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item>.ant-form-item-control-wrapper>.ant-form-item-control{line-height:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.page-content-custom :global .ant-collapse .ant-collapse-item{margin-bottom:8px}.page-content-custom .ssrc-text-ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.m-r-m{margin-right:16px}.p-n{padding:0}.m-n{margin:0}.accept-notice{padding:48px 20px}.accept-notice .notice-title{color:#333;text-align:center;font-size:20px}.accept-notice .notice-title .notice-time{font-size:14px;margin-top:8px}.accept-notice .notice-item-wrap{margin-top:32px}.accept-notice .notice-item-wrap .notice-item-title{color:#333;padding-left:13px;font-size:16px;line-height:16px;border-left:solid 3px #29bece}.accept-notice .notice-item-wrap .notice-item{margin:25px 16px 8px}.accept-notice .notice-item-wrap .notice-item .notice-attachment{font-size:14px}.accept-notice .notice-item-wrap .notice-item :global .ant-form-item-label{text-align:left;line-height:14px}.accept-notice .notice-item-wrap .notice-item :global .ant-form-item-label label{color:#666}.accept-notice .notice-item-wrap .notice-item :global .ant-form-item-control{line-height:14px}.accept-notice .notice-item-wrap .notice-item :global .ant-form-item{font-size:14px;margin-bottom:16px}.accept-notice .notice-item-wrap .purchase-demand{margin:24px 16px}.accept-notice .notice-item-wrap .purchase-demand .section-title{margin-bottom:10px;font-size:14px;color:#333}.accept-notice .notice-item-wrap .other-item{color:#333;font-size:16px;margin:24px 16px;line-height:24px}.accept-notice :global .ant-divider-horizontal{margin:14px 0 0}
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/ItemLineList.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/ItemLineList.js
+index 0cd1988..1d6f06c 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/ItemLineList.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/ItemLineList.js
+@@ -38,7 +38,7 @@ import Upload from 'srm-front-boot/lib/components/Upload';
+ import { getCurrentOrganizationId } from "hzero-front/lib/utils/utils";
+ import { dateRender } from "hzero-front/lib/utils/renderer";
+ import annexImg from "../../../../assets/item-icon.svg";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ import ItemLineTable from "./ItemLineTable";
+ import LadderLevel from "../../components/LadderLevel";
+ import PriceCharts from "../../components/PriceCharts";
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/PricingModal.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/PricingModal.js
+index c2bb750..16fbee6 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/PricingModal.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/PricingModal.js
+@@ -38,7 +38,7 @@ import intl from "srm-front-boot/lib/utils/intl";
+ import notification from "hzero-front/lib/utils/notification";
+ import { getCurrentOrganizationId, getEditTableData } from "hzero-front/lib/utils/utils";
+ import EditTable from "hzero-front/lib/components/EditTable";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ var formItemLayout = {
+   labelCol: {
+     span: 10
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/SupplierLineList.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/SupplierLineList.js
+index b29e2c6..120d54a 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/SupplierLineList.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/SupplierLineList.js
+@@ -37,7 +37,7 @@ import { Bind } from 'lodash-decorators';
+ import { connect } from 'dva';
+ import intl from "srm-front-boot/lib/utils/intl";
+ import { getCurrentOrganizationId } from "hzero-front/lib/utils/utils";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ import SupplierLineTable from "./SupplierLineTable";
+ import Attachment from "../../components/Attachment";
+ import LadderLevel from "../../components/LadderLevel";
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/index.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/index.js
+index d89718f..244740b 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/index.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/index.js
+@@ -76,7 +76,7 @@ import SupplierLineList from "./SupplierLineList";
+ import QuoteLineTable from "./QuoteLineTable";
+ import ExchangeEditModal from "../../components/ExchangeEditModals/ExchangeEditModal";
+ import QuoteExchangeMainDateModal from "../../components/ExchangeEditModals/QuoteExchangeMainDateModal";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ import Iconfont from "../../components/Icons"; // 下载至本地的icon
+ 
+ import OperationRecord from "../../components/OperationRecord";
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/index.module.less b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/index.module.less
+new file mode 100644
+index 0000000..5a18293
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/CheckPrice/index.module.less
+@@ -0,0 +1,532 @@
++// 核价页面供应商tab的样式
++.itemList {
++  width: 100%;
++  min-width: 890px;
++  height: 44px;
++  padding: 5px;
++  display: flex;
++  align-items: center;
++
++  .itemListImg {
++    height: 44px;
++    margin-right: 8px;
++    width: 44px;
++  }
++
++  .itemListHeaderInfo {
++    margin-right: 4px;
++    height: 44px;
++    display: flex;
++    flex: 1;
++    overflow: hidden;
++
++    .itemListHeader {
++      display: flex;
++      width: 320px;
++      flex-direction: column;
++
++      .itemListHeaderTop {
++        width: 100%;
++        display: flex;
++        font-size: 12px;
++        overflow: hidden;
++        text-overflow: ellipsis;
++        white-space: nowrap;
++
++        .companyIpRate {
++          margin-left: 8px;
++
++          .companyIpRate-red {
++            color: #f13131;
++          }
++
++          .companyIpRate-grey {
++            color: #666;
++          }
++        }
++
++        .allcandidate {
++          margin-left: 8px;
++        }
++      }
++
++      .itemListHeaderBottom {
++        width: 100%;
++        font-size: 12px;
++        overflow: hidden;
++        text-overflow: ellipsis;
++        white-space: nowrap;
++
++        .itemListDesItem {
++          margin: 0 2px;
++          font-size: 12px;
++          color: #666;
++          letter-spacing: 0;
++          line-height: 20px;
++        }
++
++        .feedbackStatus {
++          background: #d0e8ff;
++          border-radius: 2px;
++          font-size: 12px;
++          color: #0687ff;
++          letter-spacing: 0;
++          // width: 48px;
++          border: 0;
++        }
++
++        .lineNumber {
++          background: #d0e8ff;
++          border-radius: 2px;
++          font-size: 12px;
++          color: #0687ff;
++          letter-spacing: 0;
++          // width: 100px;
++          border: 0;
++        }
++
++        .feedbackStatus-invalid {
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          // width: 48px;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++
++        .lineNumber-invalid {
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          // width: 100px;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++
++        .itemListDesItem-invalid {
++          margin: 0 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          line-height: 20px;
++          color: rgba(0, 0, 0, 0.25);
++        }
++      }
++    }
++
++    .headerTag {
++      flex: 1;
++      display: flex;
++      align-items: center;
++      justify-content: space-between;
++      margin-left: 8px;
++      overflow: hidden;
++
++      .lineTag {
++        display: flex;
++        .sumScore-invalid {
++          // width: 85px;
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++
++        .sumScore {
++          // width: 85px;
++          background: #fff1d3;
++          border-radius: 2px;
++          font-size: 12px;
++          color: #ffbc00;
++          letter-spacing: 0;
++          border: 0;
++        }
++
++        .supplierTotalAmount {
++          max-width: 118px;
++          background-color: #fdd6d7;
++          border-radius: 2px;
++          font-size: 12px;
++          color: #f13131;
++          letter-spacing: 0;
++          border: 0;
++          overflow: hidden;
++          text-overflow: ellipsis;
++          white-space: nowrap;
++        }
++
++        .supplierTotalAmount-invalid {
++          min-width: 120px;
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++      }
++
++      .lineOption {
++        flex: 1;
++        display: flex;
++        flex-direction: row-reverse;
++        align-items: center;
++        overflow: hidden;
++
++        .wholePackage {
++          top: 20px;
++          // position: absolute;
++          // right: 5%;
++          width: 120px;
++          flex-shrink: 0;
++
++          > div {
++            border: 0;
++            background: white;
++          }
++
++          .selectedPolicyItemStyle {
++            display: inline-block;
++            margin-bottom: 0;
++
++            > div {
++              margin-top: 0;
++            }
++
++            > div > div {
++              line-height: 22px;
++            }
++
++            :global {
++              .ant-form-explain {
++                margin-top: 0 !important;
++              }
++            }
++
++            .selectStyle {
++              width: 120px;
++              //   >div >div >div{
++              //     display: inline-block;
++              // }
++            }
++          }
++
++          .wholePackageStyle {
++            margin-bottom: 0;
++
++            > div {
++              line-height: 19.9999px;
++            }
++
++            > div + div {
++              display: inline-block;
++            }
++
++            > div + div > div {
++              line-height: 19.9999px;
++            }
++          }
++        }
++
++        .riskScan {
++          flex-shrink: 0;
++          font-size: 12px;
++          color: #29bece;
++          letter-spacing: 0;
++          text-align: right;
++          width: 50px;
++        }
++
++        .modelInfo {
++          display: flex;
++          flex: 1;
++          align-items: center;
++          text-align: left;
++          justify-content: flex-end;
++
++          .suggestedReason {
++            max-width: 142px;
++            text-align: left;
++            overflow: hidden;
++            text-overflow: ellipsis;
++            white-space: nowrap;
++          }
++
++          .rate {
++            padding-left: 8px;
++            width: 99px;
++            flex-shrink: 0;
++          }
++        }
++      }
++    }
++
++    .itemListNum {
++      float: left;
++      font-size: 12px;
++      line-height: 20px;
++      overflow: hidden;
++      text-overflow: ellipsis;
++      white-space: nowrap;
++      /* width: 158px; */
++      margin-right: 8px;
++      max-width: 220px;
++    }
++
++    .tagstyle {
++      position: absolute;
++      left: 32%;
++      top: 22px;
++    }
++
++    .line {
++      display: inline-block;
++      width: 75px;
++      background: #d0e8ff;
++      border-radius: 2px;
++      font-size: 12px;
++      color: #0687ff;
++      letter-spacing: 0;
++      border: 0;
++    }
++
++    .rfxQuantity {
++      min-width: 120px;
++      display: inline-block;
++      width: 90px;
++      background: #fdd6d7;
++      border-radius: 2px;
++      font-size: 12px;
++      color: #f13131;
++      letter-spacing: 0;
++      border: 0;
++    }
++
++    .candidate {
++      font-size: 12px;
++      color: #0687ff;
++      letter-spacing: 0;
++      line-height: 20px;
++      margin-left: 4px;
++    }
++
++    .other {
++      background: #fff1d3;
++      border-radius: 2px;
++      font-size: 12px;
++      color: #ffbc00;
++      letter-spacing: 0;
++      border: 0;
++    }
++
++    .itemListTag {
++      top: 22px;
++      position: absolute;
++      right: 1%;
++
++      .historical-low {
++        margin-right: 32px;
++      }
++
++      .selectedPolicyItemStyle {
++        display: inline-block;
++        margin-bottom: 0;
++
++        > div {
++          margin-top: 0;
++        }
++
++        > div > div {
++          line-height: 19.9999px;
++        }
++
++        :global {
++          .ant-form-explain {
++            margin-top: 0 !important;
++          }
++        }
++
++        .selectStyle {
++          width: 120px;
++
++          // > div {
++          //   border: 0;
++          // }
++          .ant-select-selection {
++            box-shadow: 0 !important;
++          }
++
++          //   >div >div >div{
++          //     display: inline-block;
++          // }
++        }
++      }
++
++      .wholePackageStyle {
++        margin-bottom: 0;
++
++        > div {
++          line-height: 19.9999px;
++        }
++
++        > div + div {
++          display: inline-block;
++        }
++
++        > div + div > div {
++          line-height: 19.9999px;
++        }
++      }
++    }
++  }
++}
++
++.pagination {
++  margin: 16px 0;
++  float: right;
++  z-index: 3;
++}
++
++.arrowStyle {
++  border-bottom: 0 !important;
++
++  :global {
++    .ant-collapse-header {
++      padding: 8px 0 8px 16px !important;
++    }
++
++    .ant-collapse-header .arrow {
++      top: 2px !important;
++      left: auto !important;
++      -webkit-transform: rotate(90deg) !important;
++      transform: rotate(90deg) !important;
++      right: 12px;
++    }
++
++    .ant-collapse-header[aria-expanded='true'] .arrow {
++      top: 2px !important;
++      left: auto !important;
++      -webkit-transform: rotate(270deg) !important;
++      transform: rotate(270deg) !important;
++      right: 12px;
++    }
++
++    .ant-collapse-content {
++      overflow: inherit;
++    }
++
++    .ant-collapse-content-box {
++      padding: 4px 0 8px 0;
++    }
++  }
++}
++
++.formStyle {
++  :global {
++    .ant-form-item {
++      margin-bottom: 0 !important;
++    }
++  }
++}
++
++.rfxRemarkStyle {
++  margin-bottom: 10px;
++}
++
++.tabStyle > div {
++  margin-bottom: 0;
++}
++
++.inquiry-hall-basic-info-form {
++  :global {
++    div.ant-row.items-row {
++      border-bottom: 1px #dcdcdc dashed;
++      padding-bottom: 4px;
++      margin-bottom: 20px;
++
++      .item-label {
++        color: #999;
++        font-weight: bold;
++        text-align: left;
++      }
++
++      .item-label::after {
++        content: ':';
++        margin: 0 8px 0 2px;
++      }
++
++      .remark-context {
++        font-family: 'Monospaced Number', sans-serif;
++        font-size: 12px;
++        line-height: 1.5;
++        color: #333;
++        max-height: 200px;
++        overflow-y: auto;
++      }
++    }
++  }
++}
++
++.collapse-form {
++  :global {
++    div.ant-row.items-row {
++      .item-label::after {
++        content: ':';
++      }
++    }
++  }
++}
++
++.supplierRelationship {
++  :global {
++    font-size: 12px;
++    color: #29bece;
++    letter-spacing: 0;
++    text-align: right;
++    line-height: 20px;
++  }
++}
++
++.m-r-m {
++  line-height: 2;
++  display: inline-block;
++  font-weight: 400;
++  text-align: center;
++  touch-action: manipulation;
++  cursor: pointer;
++  background-image: none;
++  border: 1px solid transparent;
++  white-space: nowrap;
++  padding: 0 15px;
++  font-size: 12px;
++  border-radius: 2px;
++  height: 28px;
++  user-select: none;
++  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
++  position: relative;
++  color: #333;
++  background-color: #fff;
++  border-color: #d9d9d9;
++}
++
++.m-r-m > a {
++  color: #333;
++}
++
++.footerline {
++  :global {
++    .ant-modal-footer {
++      border-top: 0;
++    }
++  }
++}
++
++.disabledElementA {
++  :global {
++    opacity: 0.2;
++    pointer-events: none;
++  }
++}
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/BidOpenerCartridge.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/BidOpenerCartridge.js
+index b488aca..56c5fb9 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/BidOpenerCartridge.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/BidOpenerCartridge.js
+@@ -23,7 +23,7 @@ import classNames from 'classnames';
+ import formatterCollections from "srm-front-boot/lib/utils/intl/formatterCollections";
+ import intl from "srm-front-boot/lib/utils/intl";
+ import { enableRender } from "hzero-front/lib/utils/renderer";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ var BidOpenerCartridge = (_dec = formatterCollections({
+   code: ['ssrc.inquiryHall', 'ssrc.common']
+ }), _dec(_class =
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/CheckPrice.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/CheckPrice.js
+index 2e07980..3fe6d72 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/CheckPrice.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/CheckPrice.js
+@@ -38,7 +38,7 @@ import QuoteLineTable from "./QuoteLineTable";
+ import ItemLineTable from "./ItemLineTable";
+ import SupplierLineTable from "./SupplierLineTable";
+ import CPopover from "../../../components/CPopover";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ import annexImg from "../../../../assets/item-icon.svg";
+ 
+ var validSupplierImg = require("../../../../assets/supplier-inline-valid.svg");
+@@ -253,7 +253,7 @@ function (_PureComponent) {
+       var _this$props$supplierL = this.props.supplierLineListProps,
+           fetchSupplierLineTableList = _this$props$supplierL.fetchSupplierLineTableList,
+           showCheckPriceSupplierAttachModal = _this$props$supplierL.showCheckPriceSupplierAttachModal;
+-      return React.createElement(_Row, {
++      return React.createElement(_Row,{
+         className: styles.itemHeaderItem,
+         onClick: function onClick() {
+           return fetchSupplierLineTableList({}, item.rfxLineSupplierId);
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ProfessionalTable.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ProfessionalTable.js
+index c5bfeac..8147303 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ProfessionalTable.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ProfessionalTable.js
+@@ -21,7 +21,7 @@ import React, { PureComponent } from 'react';
+ import intl from "srm-front-boot/lib/utils/intl";
+ import EditTable from "hzero-front/lib/components/EditTable";
+ import CPopover from "../../components/CPopover";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ 
+ var ProfessionalTable =
+ /*#__PURE__*/
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ScoringElementsTable.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ScoringElementsTable.js
+index 3056fe9..63953e1 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ScoringElementsTable.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/ScoringElementsTable.js
+@@ -25,7 +25,7 @@ import React, { PureComponent } from 'react';
+ import { scoreIntervalRender } from "../../../../utils/renderer";
+ import intl from "srm-front-boot/lib/utils/intl";
+ import EditTable from "hzero-front/lib/components/EditTable";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ 
+ var ScoringElementsTable =
+ /*#__PURE__*/
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.js
+index e343d10..8cd14e8 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.js
+@@ -52,7 +52,7 @@ import ItemQutationDetailModal from "../../components/QutationDetailModal";
+ import BidOpenerCartridge from "./BidOpenerCartridge";
+ import notification from "hzero-front/lib/utils/notification";
+ import SSU from "../../../components/SessionStorageUrl";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ import common from "../../common.less";
+ var Step = _Steps.Step;
+ var FormItem = _Form.Item;
+@@ -1777,7 +1777,7 @@ function (_PureComponent) {
+         onClick: this.playView,
+         type: "primary"
+       }, intl.get("ssrc.inquiryHall.view.message.button.record").d('操作记录'))), this.renderStep(rfxDetailProcessList), React.createElement(Content, {
+-        className: classnames(common['page-content-custom'], common['zero-margin-bottom'], 'ued-detail-wrapper')
++        className: classnames( common['zero-margin-bottom'], 'ued-detail-wrapper')
+       }, React.createElement(_Spin, {
+         spinning: fetchHeaderInfoLoading || fetchInquiryHallUpdateLoading
+       }, React.createElement("div", {
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.less b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.less
+index bce93f7..db57360 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.less
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.less
+@@ -578,6 +578,9 @@
+   border-bottom: 0 !important;
+ 
+   :global {
++    .arrowStyle > .ant-collapse > .ant-collapse-item {
++      margin-bottom: 20px;
++    }
+     .arrowStyle > .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+       padding: 8px 0 8px 16px !important;
+       height: 24px;
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.module.less b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.module.less
+new file mode 100644
+index 0000000..47fcf91
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Detail/index.module.less
+@@ -0,0 +1,643 @@
++/*
++* style - 询价大厅-RFx明细--基本信息
++* @author LC <chao.li03@hand-china.com>
++* @version 0.0.1
++* @copyright Copyright (c) 2019, Hand
++*/
++
++.page-content {
++  :global {
++    .ant-calendar-picker {
++      width: 100%;
++    }
++    .ant-col-24 {
++      & .ant-col-22 {
++        width: 90.6%;
++      }
++      & .ant-col-2 {
++        width: 9.4%;
++      }
++      & .ant-col-3 {
++        width: 13.9%;
++      }
++      & .ant-col-21 {
++        width: 86.1%;
++      }
++      & .ant-col-offset-3 {
++        margin-left: 13.9%;
++      }
++    }
++  }
++}
++.col-wrapper {
++  :global {
++    .ant-form-item-label {
++      text-align: left;
++    }
++  }
++}
++
++.white-bg {
++  background: #fff;
++}
++
++.pagination {
++  display: flex;
++  justify-content: flex-end;
++  margin-top: 16px;
++}
++
++.rfx-detail-layout-button-group {
++  :global {
++    display: flex;
++    justify-content: flex-end;
++    margin: 8px 0;
++  }
++}
++
++.inquiry-hall-basic-info-form {
++  :global {
++    div.ant-row.items-row {
++      border-bottom: 1px #dcdcdc dashed;
++      padding-bottom: 4px;
++      margin-bottom: 20px;
++      .item-label {
++        color: #999;
++        font-weight: bold;
++        text-align: left;
++      }
++      .item-label::after {
++        content: ':';
++        margin: 0 8px 0 2px;
++      }
++      .remark-context {
++        font-family: 'Monospaced Number', sans-serif;
++        font-size: 12px;
++        line-height: 1.5;
++        color: #333;
++        max-height: 200px;
++        overflow-y: auto;
++      }
++    }
++  }
++}
++
++.monitorHeader {
++  :global {
++    .ant-collapse-header {
++      padding-bottom: 16px !important;
++    }
++  }
++}
++.steps {
++  margin: 8px 16px 0;
++  padding: 24px 32px;
++  background-color: #fff;
++}
++
++.itemList {
++  width: 98%;
++  min-width: 890px;
++  height: 44px;
++  padding: 5px;
++
++  .itemListImg {
++    float: left;
++    height: 44px;
++    margin-right: 8px;
++  }
++
++  .itemListHeaderInfo {
++    float: left;
++    margin-right: 10px;
++    height: 44px;
++    width: 90%;
++
++    .itemListHeader {
++      width: 100%;
++
++      .itemListNum {
++        float: left;
++        font-size: 12px;
++        line-height: 20px;
++        overflow: hidden;
++        text-overflow: ellipsis;
++        white-space: nowrap;
++        /* width: 158px; */
++        margin-right: 8px;
++        max-width: 220px;
++      }
++
++      .tagstyle {
++        position: absolute;
++        left: 32%;
++        top: 22px;
++      }
++
++      .lineTag {
++        position: absolute;
++        left: 45%;
++
++        .feedbackStatus-invalid {
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          // width: 48px;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++
++        .lineNumber-invalid {
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          // width: 100px;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++
++        .sumScore-invalid {
++          // width: 85px;
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++
++        .supplierTotalAmount-invalid {
++          min-width: 120px;
++          border-radius: 2px;
++          font-size: 12px;
++          letter-spacing: 0;
++          border: 0;
++          cursor: not-allowed;
++          color: rgba(0, 0, 0, 0.25);
++        }
++      }
++
++      .line {
++        display: inline-block;
++        width: 75px;
++        background: #d0e8ff;
++        border-radius: 2px;
++        font-size: 12px;
++        color: #0687ff;
++        letter-spacing: 0;
++        border: 0;
++      }
++
++      .rfxQuantity {
++        min-width: 120px;
++        display: inline-block;
++        width: 90px;
++        background: #fdd6d7;
++        border-radius: 2px;
++        font-size: 12px;
++        color: #f13131;
++        letter-spacing: 0;
++        border: 0;
++      }
++
++      .allcandidate {
++        margin-left: 24px;
++      }
++
++      .candidate {
++        font-size: 12px;
++        color: #0687ff;
++        letter-spacing: 0;
++        line-height: 20px;
++        margin-left: 4px;
++      }
++
++      .feedbackStatus {
++        background: #d0e8ff;
++        border-radius: 2px;
++        font-size: 12px;
++        color: #0687ff;
++        letter-spacing: 0;
++        // width: 48px;
++        border: 0;
++      }
++
++      .lineNumber {
++        background: #d0e8ff;
++        border-radius: 2px;
++        font-size: 12px;
++        color: #0687ff;
++        letter-spacing: 0;
++        // width: 100px;
++        border: 0;
++      }
++
++      .sumScore {
++        // width: 85px;
++        background: #fff1d3;
++        border-radius: 2px;
++        font-size: 12px;
++        color: #ffbc00;
++        letter-spacing: 0;
++        border: 0;
++      }
++
++      .supplierTotalAmount {
++        min-width: 120px;
++        background-color: #fdd6d7;
++        border-radius: 2px;
++        font-size: 12px;
++        color: #f13131;
++        letter-spacing: 0;
++        border: 0;
++      }
++
++      .other {
++        background: #fff1d3;
++        border-radius: 2px;
++        font-size: 12px;
++        color: #ffbc00;
++        letter-spacing: 0;
++        border: 0;
++      }
++
++      .riskScan {
++        top: 22px;
++        position: absolute;
++        right: 1%;
++        font-size: 12px;
++        color: #29bece;
++        letter-spacing: 0;
++        text-align: right;
++        line-height: 20px;
++      }
++
++      .companyIpRate {
++        margin-left: 24px;
++
++        .companyIpRate-red {
++          color: #f13131;
++        }
++
++        .companyIpRate-grey {
++          color: #666;
++        }
++      }
++
++      .wholePackage {
++        top: 20px;
++        position: absolute;
++        right: 5%;
++
++        > div {
++          border: 0;
++          background: white;
++        }
++
++        .selectedPolicyItemStyle {
++          display: inline-block;
++          margin-bottom: 0;
++
++          > div {
++            margin-top: 0;
++          }
++
++          > div > div {
++            line-height: 19.9999px;
++          }
++
++          :global {
++            .ant-form-explain {
++              margin-top: 0 !important;
++            }
++          }
++
++          .selectStyle {
++            width: 120px;
++            //   >div >div >div{
++            //     display: inline-block;
++            // }
++          }
++        }
++
++        .wholePackageStyle {
++          margin-bottom: 0;
++
++          > div {
++            line-height: 19.9999px;
++          }
++
++          > div + div {
++            display: inline-block;
++          }
++
++          > div + div > div {
++            line-height: 19.9999px;
++          }
++        }
++      }
++
++      .itemListTag {
++        top: 22px;
++        position: absolute;
++        right: 1%;
++
++        .selectedPolicyItemStyle {
++          display: inline-block;
++          margin-bottom: 0;
++
++          > div {
++            margin-top: 0;
++          }
++
++          > div > div {
++            line-height: 19.9999px;
++          }
++
++          :global {
++            .ant-form-explain {
++              margin-top: 0 !important;
++            }
++          }
++
++          .selectStyle {
++            width: 120px;
++
++            // > div {
++            //   border: 0;
++            // }
++            .ant-select-selection {
++              box-shadow: 0 !important;
++            }
++
++            //   >div >div >div{
++            //     display: inline-block;
++            // }
++          }
++        }
++
++        .wholePackageStyle {
++          margin-bottom: 0;
++
++          > div {
++            line-height: 19.9999px;
++          }
++
++          > div + div {
++            display: inline-block;
++          }
++
++          > div + div > div {
++            line-height: 19.9999px;
++          }
++        }
++      }
++    }
++
++    .itemListDes {
++      margin-bottom: 0;
++      height: 28px;
++      font-size: 12px;
++      overflow: hidden;
++      text-overflow: ellipsis;
++      white-space: nowrap;
++    }
++
++    .itemListDesItem {
++      margin: 0 2px;
++      font-size: 12px;
++      color: #666;
++      letter-spacing: 0;
++      line-height: 20px;
++    }
++
++    .itemListDesItem-invalid {
++      margin: 0 2px;
++      font-size: 12px;
++      letter-spacing: 0;
++      line-height: 20px;
++      color: rgba(0, 0, 0, 0.25);
++    }
++  }
++}
++
++// 物品头信息
++.itemHeaderItem {
++  .ant-row {
++    height: 24px;
++    line-height: 24px;
++    margin: 4px 4px;
++  }
++
++  .itemListImg {
++    height: 44px;
++    width: 44px;
++    margin-right: 8px;
++  }
++
++  .textEllipsis {
++    overflow: hidden;
++    text-overflow: ellipsis;
++    white-space: nowrap;
++  }
++
++  .itemNameCode {
++    font-size: inherit;
++    .textEllipsis();
++  }
++
++  .itemNumber {
++    display: inline-block;
++    width: 75px;
++    background: #d0e8ff;
++    border-radius: 2px;
++    font-size: 12px;
++    color: #0687ff;
++    letter-spacing: 0;
++    border: 0;
++    margin-bottom: 4px;
++  }
++
++  .rfxQuantity {
++    padding: 2px 6px;
++    display: inline-block;
++    width: 90px;
++    background: #fdd6d7;
++    border-radius: 2px;
++    font-size: 12px;
++    color: #f13131;
++    letter-spacing: 0;
++    border: 0;
++    margin-bottom: 4px;
++  }
++
++  .candidate {
++    font-size: 12px;
++    color: #0687ff;
++    letter-spacing: 0;
++    line-height: 20px;
++    margin-left: 4px;
++  }
++
++  .feedbackStatus {
++    background: #d0e8ff;
++    border-radius: 2px;
++    font-size: 12px;
++    color: #0687ff;
++    letter-spacing: 0;
++    border: 0;
++    .textEllipsis();
++  }
++
++  .lineNumber {
++    background: #d0e8ff;
++    border-radius: 2px;
++    font-size: 12px;
++    color: #0687ff;
++    letter-spacing: 0;
++    border: 0;
++  }
++
++  .sumScore {
++    background: #fff1d3;
++    border-radius: 2px;
++    font-size: 12px;
++    color: #ffbc00;
++    letter-spacing: 0;
++    border: 0;
++  }
++
++  .supplierTotalAmount {
++    min-width: 120px;
++    background-color: #fdd6d7;
++    border-radius: 2px;
++    font-size: 12px;
++    color: #f13131;
++    letter-spacing: 0;
++    border: 0;
++    .textEllipsis();
++  }
++
++  .others {
++    background: #fff1d3;
++    border-radius: 2px;
++    font-size: 12px;
++    color: #ffbc00;
++    letter-spacing: 0;
++    border: 0;
++    .textEllipsis();
++  }
++
++  .riskScan {
++    top: 22px;
++    position: absolute;
++    right: 1%;
++    font-size: 12px;
++    color: #29bece;
++    letter-spacing: 0;
++    text-align: right;
++    line-height: 20px;
++  }
++
++  .companyIpRate {
++    margin-left: 24px;
++
++    .companyIpRate-red {
++      color: #f13131;
++    }
++
++    .companyIpRate-grey {
++      color: #666;
++    }
++  }
++
++  .itemListDes {
++    line-height: 24px;
++    font-size: 12px;
++    .textEllipsis();
++  }
++
++  .itemListDesItem {
++    font-size: 12px;
++    color: #666;
++    letter-spacing: 0;
++    line-height: 20px;
++  }
++
++  .itemListDesItem-invalid {
++    font-size: 12px;
++    letter-spacing: 0;
++    line-height: 20px;
++    color: rgba(0, 0, 0, 0.25);
++  }
++}
++
++.arrowStyle {
++  border-bottom: 0 !important;
++
++  :global {
++    .arrowStyle > .ant-collapse > .ant-collapse-item {
++      margin-bottom: 20px;
++    }
++    .arrowStyle > .ant-collapse > .ant-collapse-item > .ant-collapse-header {
++      padding: 8px 0 8px 16px !important;
++      height: 24px;
++    }
++
++    .ant-collapse-header .arrow {
++      top: 2px !important;
++      left: auto !important;
++      -webkit-transform: rotate(90deg) !important;
++      transform: rotate(90deg) !important;
++      right: 12px;
++    }
++
++    .ant-collapse-header[aria-expanded='true'] .arrow {
++      top: 2px !important;
++      left: auto !important;
++      -webkit-transform: rotate(270deg) !important;
++      transform: rotate(270deg) !important;
++      right: 12px;
++    }
++
++    .ant-collapse-content {
++      overflow: inherit;
++
++      .ant-collapse-content-box {
++        padding: 8px 0;
++      }
++    }
++  }
++}
++
++.rfx-detail-page {
++  :global {
++    .check-price-wait-forward {
++      font-size: 36px;
++      font-weight: bold;
++      text-align: center;
++      margin-top: 100px;
++    }
++
++    .cursor-pointer {
++      cursor: pointer;
++    }
++
++    .rfx-detail-steps-active-text {
++      color: #29bece;
++    }
++
++    .rfx-detail-check-price-override-ued {
++      .ant-collapse-header {
++        .white-bg();
++        line-height: 34px !important;
++      }
++
++      .ant-collapse-content {
++        .white-bg();
++      }
++    }
++  }
++}
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/CounterOffersBulk.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/CounterOffersBulk.js
+index ac5c8c6..6c6a079 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/CounterOffersBulk.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/CounterOffersBulk.js
+@@ -20,7 +20,7 @@ var _dec, _dec2, _dec3, _dec4, _class, _class2;
+ import React, { PureComponent } from 'react';
+ import { Bind } from 'lodash-decorators';
+ import intl from "srm-front-boot/lib/utils/intl";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ var FormItem = _Form.Item;
+ var Option = _Select.Option;
+ var formLayout = {
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/index.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/index.js
+index 0ea36c7..f993a07 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/index.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/index.js
+@@ -58,7 +58,7 @@ import notification from "hzero-front/lib/utils/notification";
+ import formatterCollections from "srm-front-boot/lib/utils/intl/formatterCollections";
+ import { getCurrentOrganizationId, getEditTableData } from "hzero-front/lib/utils/utils";
+ import { dateRender } from "hzero-front/lib/utils/renderer";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ import ItemLineTable from "./ItemLineTable";
+ import Iconfont from "../../components/Icons"; // 下载至本地的icon
+ 
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/index.module.less b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/index.module.less
+new file mode 100644
+index 0000000..6dd626e
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FeedbackBargain/index.module.less
+@@ -0,0 +1,112 @@
++.itemList {
++  width: 98%;
++  min-width: 890px;
++  padding: 0 0 0 16px;
++  position: relative;
++  z-index: 100;
++  margin-top: 8px;
++  float: left;
++  .itemListHeaderInfo {
++    float: left;
++    margin-right: 10px;
++    height: 44px;
++    width: 100%;
++    margin-bottom: 8px;
++    .itemListHeader {
++      width: 100%;
++      .itemListNum {
++        float: left;
++        font-size: 12px;
++        overflow: hidden;
++        text-overflow: ellipsis;
++        white-space: nowrap;
++        /* width: 158px; */
++        margin-right: 8px;
++        max-width: 300px;
++      }
++      .itemListTag {
++        float: right;
++      }
++      .itemMsg {
++        float: left;
++        height: 44px;
++      }
++      .itemMsgSub {
++        float: left;
++        height: 44px;
++        width: 550px;
++      }
++      .itemListImg {
++        float: left;
++        width: 44px;
++        height: 44px;
++        margin-right: 8px;
++      }
++    }
++    .itemListDes {
++      height: 28px;
++      font-size: 14px;
++      overflow: hidden;
++      text-overflow: ellipsis;
++      white-space: nowrap;
++    }
++    .itemListDesItem {
++      margin: 0 2px;
++      height: 28px;
++      line-height: 20px;
++      font-size: 12px;
++      overflow: hidden;
++      text-overflow: ellipsis;
++      white-space: nowrap;
++      margin-right: 8px;
++    }
++    .itemLxr {
++      width: '96px';
++      overflow: 'hidden';
++      text-overflow: 'ellipsis';
++      white-space: 'nowrap';
++      margin-right: '12px';
++      display: 'inline-block';
++    }
++  }
++}
++
++.pagination {
++  margin: 16px 0;
++  float: right;
++  z-index: 3;
++}
++
++.arrowStyle {
++  :global {
++    .ant-collapse-header .arrow {
++      top: 10px !important;
++      left: auto !important;
++      -webkit-transform: rotate(90deg) !important;
++      transform: rotate(90deg) !important;
++      right: 8px;
++    }
++    .ant-collapse-header[aria-expanded='true'] .arrow {
++      top: 10px !important;
++      left: auto !important;
++      -webkit-transform: rotate(270deg) !important;
++      transform: rotate(270deg) !important;
++      right: 8px;
++    }
++  }
++}
++
++.tabStyle > div {
++  margin-bottom: 0;
++}
++
++.counterOffersBulk-label {
++  :global {
++    .ant-form-item-label {
++      line-height: 28px;
++    }
++    .ant-form-item-control {
++      line-height: 28px;
++    }
++  }
++}
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FilterForm.js
+index 40c8dd6..d820c25 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/FilterForm.js
+@@ -132,7 +132,10 @@ function (_Component) {
+       }, React.createElement(_Row, {
+         gutter: 12
+       }, React.createElement(_Col, {
+-        span: 18
++        span: 18,  
++        style: {
++                width: '75%' 
++              }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(FormItem, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.js
+index 7a4d2af..2ad3a51 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.js
+@@ -190,6 +190,7 @@ function (_PureComponent) {
+   }, {
+     key: "initWebSocket",
+     value: function initWebSocket(m) {
++    
+       var _this2 = this;
+ 
+       var state = this.props.location.state;
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.less b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.less
+index 7f7cf1e..077044e 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.less
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/InquiryHall/Monitor/index.less
+@@ -33,8 +33,8 @@
+       }
+       .tagstylem {
+         position: absolute;
+-        left: 40%;
+-        padding-top: 12px;
++        //left: 40%;
++        padding-top: 20px;
+       }
+       .lineTag {
+         position: absolute;
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/OfflineResultEntry/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/OfflineResultEntry/FilterForm.js
+index 6ab3a41..96acaee 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/OfflineResultEntry/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/OfflineResultEntry/FilterForm.js
+@@ -125,7 +125,10 @@ function (_PureComponent) {
+       }, React.createElement(_Row, {
+         gutter: 12
+       }, React.createElement(_Col, {
+-        span: 18
++        span: 18,
++        style: {
++              width: '75%' 
++        }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(FormItem, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryQuotation/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryQuotation/FilterForm.js
+index 15d5859..7372418 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryQuotation/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryQuotation/FilterForm.js
+@@ -127,7 +127,10 @@ function (_Component) {
+         layout: "inline",
+         className: "more-fields-form"
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+-        span: 18
++        span: 18,
++        style: {
++              width: '75%' 
++        }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(_Form.Item, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryRfq/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryRfq/FilterForm.js
+index 09a8e75..a159135 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryRfq/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/QueryRfq/FilterForm.js
+@@ -164,7 +164,10 @@ function (_Component) {
+         layout: "inline",
+         className: "more-fields-form"
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+-        span: 18
++        span: 18,
++        style: {
++              width: '75%' 
++        }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(FormItem, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/QuotationController/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/QuotationController/FilterForm.js
+index 99e6824..a09217d 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/QuotationController/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/QuotationController/FilterForm.js
+@@ -126,7 +126,10 @@ function (_Component) {
+         layout: "inline",
+         className: "more-fields-form"
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+-        span: 18
++        span: 18,
++        style: {
++              width: '75%' 
++        }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(FormItem, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/FilterForm.js
+index eb684a2..22e07a8 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/FilterForm.js
+@@ -130,7 +130,10 @@ function (_PureComponent) {
+       }, React.createElement(_Row, {
+         gutter: 12
+       }, React.createElement(_Col, {
+-        span: 18
++        span: 18,
++        style:{
++          width:'75%',
++        }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(_Form.Item, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/dist/FilterForm.dev.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/dist/FilterForm.dev.js
+new file mode 100644
+index 0000000..e30685c
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/dist/FilterForm.dev.js
+@@ -0,0 +1,239 @@
++"use strict";
++
++function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
++
++Object.defineProperty(exports, "__esModule", {
++  value: true
++});
++exports["default"] = void 0;
++
++require("hzero-ui/lib/button/style");
++
++var _button = _interopRequireDefault(require("hzero-ui/lib/button"));
++
++require("hzero-ui/lib/row/style");
++
++var _row = _interopRequireDefault(require("hzero-ui/lib/row"));
++
++require("hzero-ui/lib/col/style");
++
++var _col = _interopRequireDefault(require("hzero-ui/lib/col"));
++
++require("hzero-ui/lib/input/style");
++
++var _Input2 = _interopRequireDefault(require("@hzero-front-ui/hzero-ui/lib/Input"));
++
++var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/classCallCheck"));
++
++var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/createClass"));
++
++var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/possibleConstructorReturn"));
++
++var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/getPrototypeOf"));
++
++var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/assertThisInitialized"));
++
++var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/inherits"));
++
++var _applyDecoratedDescriptor2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/applyDecoratedDescriptor"));
++
++require("hzero-ui/lib/form/style");
++
++var _form = _interopRequireDefault(require("hzero-ui/lib/form"));
++
++require("hzero-ui/lib/select/style");
++
++var _select = _interopRequireDefault(require("hzero-ui/lib/select"));
++
++var _react = _interopRequireWildcard(require("react"));
++
++var _lodashDecorators = require("lodash-decorators");
++
++var _CacheComponent = _interopRequireDefault(require("hzero-front/lib/components/CacheComponent"));
++
++var _formatterCollections = _interopRequireDefault(require("srm-front-boot/lib/utils/intl/formatterCollections"));
++
++var _intl = _interopRequireDefault(require("srm-front-boot/lib/utils/intl"));
++
++function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
++
++function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
++
++function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
++
++var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2;
++
++var Option = _select["default"].Option;
++var promptCode = 'ssrc.score';
++/**
++ * 评分要素表单
++ * @extends {PureComponent} - React.PureComponent
++ * @reactProps {Function} onSearch - 表单查询
++ * @reactProps {Object} form - 表单对象
++ * @return React.element
++ */
++
++var FilterForm = (_dec = (0, _formatterCollections["default"])({
++  code: ['ssrc.score']
++}), _dec2 = _form["default"].create({
++  fieldNameProp: null
++}), _dec3 = (0, _CacheComponent["default"])({
++  cacheKey: '/ssrc/score-template'
++}), _dec4 = (0, _lodashDecorators.Bind)(), _dec5 = (0, _lodashDecorators.Bind)(), _dec6 = (0, _lodashDecorators.Bind)(), _dec(_class = _dec2(_class = _dec3(_class = (_class2 =
++/*#__PURE__*/
++function (_PureComponent) {
++  (0, _inherits2["default"])(FilterForm, _PureComponent);
++
++  function FilterForm(props) {
++    var _this;
++
++    (0, _classCallCheck2["default"])(this, FilterForm);
++    _this = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(FilterForm).call(this, props));
++    var onRef = props.onRef;
++    if (onRef) onRef((0, _assertThisInitialized2["default"])(_this));
++    _this.state = {
++      display: true
++    };
++    return _this;
++  }
++  /**
++   * 查询
++   */
++
++
++  (0, _createClass2["default"])(FilterForm, [{
++    key: "handleSearch",
++    value: function handleSearch() {
++      var _this$props = this.props,
++          onSearch = _this$props.onSearch,
++          form = _this$props.form;
++
++      if (onSearch) {
++        form.validateFields(function (err, values) {
++          if (!err) {
++            // 如果验证成功,则执行onSearch
++            onSearch(values);
++          }
++        });
++      }
++    }
++    /**
++     * 重置
++     */
++
++  }, {
++    key: "handleFormReset",
++    value: function handleFormReset() {
++      this.props.form.resetFields();
++    }
++    /**
++     * 多查询条件展示
++     */
++
++  }, {
++    key: "toggleForm",
++    value: function toggleForm() {
++      var display = this.state.display;
++      this.setState({
++        display: !display
++      });
++    }
++    /**
++     * render
++     * @returns React.element
++     */
++
++  }, {
++    key: "render",
++    value: function render() {
++      var _this$props2 = this.props,
++          getFieldDecorator = _this$props2.form.getFieldDecorator,
++          _this$props2$scoreMod = _this$props2.scoreModeList,
++          scoreModeList = _this$props2$scoreMod === void 0 ? [] : _this$props2$scoreMod,
++          _this$props2$template = _this$props2.templatePurposeList,
++          templatePurposeList = _this$props2$template === void 0 ? [] : _this$props2$template;
++      var display = this.state.display;
++      var formItemLayout = {
++        labelCol: {
++          span: 10
++        },
++        wrapperCol: {
++          span: 14
++        }
++      };
++      return _react["default"].createElement(_form["default"], {
++        layout: "inline",
++        className: "more-fields-form"
++      }, _react["default"].createElement(_row["default"], {
++        gutter: 12
++      }, _react["default"].createElement(_col["default"], {
++        span: 18,
++        style: {
++          width: '75%'
++        }
++      }, _react["default"].createElement(_row["default"], null, _react["default"].createElement(_col["default"], {
++        span: 8
++      }, _react["default"].createElement(_form["default"].Item, Object.assign({
++        label: _intl["default"].get("".concat(promptCode, ".model.score.templateCode")).d('评分模板编码')
++      }, formItemLayout), getFieldDecorator('templateCode')(_react["default"].createElement(_Input2["default"], {
++        typeCase: "upper",
++        inputChinese: false
++      })))), _react["default"].createElement(_col["default"], {
++        span: 8
++      }, _react["default"].createElement(_form["default"].Item, Object.assign({
++        label: _intl["default"].get("".concat(promptCode, ".model.score.scoreTemplateName")).d('评分模板名称')
++      }, formItemLayout), getFieldDecorator('templateName')(_react["default"].createElement(_Input2["default"], null)))), _react["default"].createElement(_col["default"], {
++        span: 8
++      }, _react["default"].createElement(_form["default"].Item, Object.assign({
++        label: _intl["default"].get("".concat(promptCode, ".model.score.scoreMode")).d('评分模式')
++      }, formItemLayout), getFieldDecorator('scoreMode')(_react["default"].createElement(_select["default"], {
++        allowClear: true
++      }, scoreModeList.map(function (item) {
++        return _react["default"].createElement(Option, {
++          value: item.value,
++          key: item.value
++        }, item.meaning);
++      })))))), _react["default"].createElement(_row["default"], {
++        style: {
++          display: display ? 'none' : 'block'
++        }
++      }, _react["default"].createElement(_col["default"], {
++        span: 8
++      }, _react["default"].createElement(_form["default"].Item, Object.assign({}, formItemLayout, {
++        label: _intl["default"].get("".concat(promptCode, ".model.score.templatePurpose")).d('模板用途')
++      }), getFieldDecorator('templatePurpose')(_react["default"].createElement(_select["default"], {
++        allowClear: true
++      }, templatePurposeList.map(function (item) {
++        return _react["default"].createElement(Option, {
++          value: item.value,
++          key: item.value
++        }, item.meaning);
++      }))))))), _react["default"].createElement(_col["default"], {
++        span: 6,
++        className: "search-btn-more"
++      }, _react["default"].createElement(_form["default"].Item, null, _react["default"].createElement(_button["default"], {
++        style: {
++          marginLeft: 8,
++          display: display ? 'inline-block' : 'none'
++        },
++        onClick: this.toggleForm
++      }, _intl["default"].get('hzero.common.button.viewMore').d('更多查询')), _react["default"].createElement(_button["default"], {
++        style: {
++          marginLeft: 8,
++          display: display ? 'none' : 'inline-block'
++        },
++        onClick: this.toggleForm
++      }, _intl["default"].get('hzero.common.button.collected').d('收起查询')), _react["default"].createElement(_button["default"], {
++        "data-code": "reset",
++        onClick: this.handleFormReset
++      }, _intl["default"].get('hzero.common.button.reset').d('重置')), _react["default"].createElement(_button["default"], {
++        "data-code": "search",
++        type: "primary",
++        htmlType: "submit",
++        onClick: this.handleSearch
++      }, _intl["default"].get('hzero.common.button.search').d('查询'))))));
++    }
++  }]);
++  return FilterForm;
++}(_react.PureComponent), ((0, _applyDecoratedDescriptor2["default"])(_class2.prototype, "handleSearch", [_dec4], Object.getOwnPropertyDescriptor(_class2.prototype, "handleSearch"), _class2.prototype), (0, _applyDecoratedDescriptor2["default"])(_class2.prototype, "handleFormReset", [_dec5], Object.getOwnPropertyDescriptor(_class2.prototype, "handleFormReset"), _class2.prototype), (0, _applyDecoratedDescriptor2["default"])(_class2.prototype, "toggleForm", [_dec6], Object.getOwnPropertyDescriptor(_class2.prototype, "toggleForm"), _class2.prototype)), _class2)) || _class) || _class) || _class);
++exports["default"] = FilterForm;
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/dist/FilterForm.prod.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/dist/FilterForm.prod.js
+new file mode 100644
+index 0000000..f097987
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/Score/Template/dist/FilterForm.prod.js
+@@ -0,0 +1 @@
++"use strict";function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0,require("hzero-ui/lib/button/style");var _button=_interopRequireDefault(require("hzero-ui/lib/button"));require("hzero-ui/lib/row/style");var _row=_interopRequireDefault(require("hzero-ui/lib/row"));require("hzero-ui/lib/col/style");var _col=_interopRequireDefault(require("hzero-ui/lib/col"));require("hzero-ui/lib/input/style");var _Input2=_interopRequireDefault(require("@hzero-front-ui/hzero-ui/lib/Input")),_classCallCheck2=_interopRequireDefault(require("@babel/runtime/helpers/esm/classCallCheck")),_createClass2=_interopRequireDefault(require("@babel/runtime/helpers/esm/createClass")),_possibleConstructorReturn2=_interopRequireDefault(require("@babel/runtime/helpers/esm/possibleConstructorReturn")),_getPrototypeOf2=_interopRequireDefault(require("@babel/runtime/helpers/esm/getPrototypeOf")),_assertThisInitialized2=_interopRequireDefault(require("@babel/runtime/helpers/esm/assertThisInitialized")),_inherits2=_interopRequireDefault(require("@babel/runtime/helpers/esm/inherits")),_applyDecoratedDescriptor2=_interopRequireDefault(require("@babel/runtime/helpers/esm/applyDecoratedDescriptor"));require("hzero-ui/lib/form/style");var _form=_interopRequireDefault(require("hzero-ui/lib/form"));require("hzero-ui/lib/select/style");var _dec,_dec2,_dec3,_dec4,_dec5,_dec6,_class,_class2,_select=_interopRequireDefault(require("hzero-ui/lib/select")),_react=_interopRequireWildcard(require("react")),_lodashDecorators=require("lodash-decorators"),_CacheComponent=_interopRequireDefault(require("hzero-front/lib/components/CacheComponent")),_formatterCollections=_interopRequireDefault(require("srm-front-boot/lib/utils/intl/formatterCollections")),_intl=_interopRequireDefault(require("srm-front-boot/lib/utils/intl"));function _getRequireWildcardCache(){if("function"!=typeof WeakMap)return null;var e=new WeakMap;return _getRequireWildcardCache=function(){return e},e}function _interopRequireWildcard(e){if(e&&e.__esModule)return e;if(null===e||"object"!==_typeof(e)&&"function"!=typeof e)return{default:e};var t=_getRequireWildcardCache();if(t&&t.has(e))return t.get(e);var r,l={},a=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var o in e){Object.prototype.hasOwnProperty.call(e,o)&&((r=a?Object.getOwnPropertyDescriptor(e,o):null)&&(r.get||r.set)?Object.defineProperty(l,o,r):l[o]=e[o])}return l.default=e,t&&t.set(e,l),l}function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}var Option=_select.default.Option,promptCode="ssrc.score",FilterForm=(_dec=(0,_formatterCollections.default)({code:["ssrc.score"]}),_dec2=_form.default.create({fieldNameProp:null}),_dec3=(0,_CacheComponent.default)({cacheKey:"/ssrc/score-template"}),_dec4=(0,_lodashDecorators.Bind)(),_dec5=(0,_lodashDecorators.Bind)(),_dec6=(0,_lodashDecorators.Bind)(),_dec(_class=_dec2(_class=_dec3((_class2=function(e){function l(e){var t;(0,_classCallCheck2.default)(this,l),t=(0,_possibleConstructorReturn2.default)(this,(0,_getPrototypeOf2.default)(l).call(this,e));var r=e.onRef;return r&&r((0,_assertThisInitialized2.default)(t)),t.state={display:!0},t}return(0,_inherits2.default)(l,e),(0,_createClass2.default)(l,[{key:"handleSearch",value:function(){var e=this.props,r=e.onSearch,t=e.form;r&&t.validateFields(function(e,t){e||r(t)})}},{key:"handleFormReset",value:function(){this.props.form.resetFields()}},{key:"toggleForm",value:function(){var e=this.state.display;this.setState({display:!e})}},{key:"render",value:function(){var e=this.props,t=e.form.getFieldDecorator,r=e.scoreModeList,l=void 0===r?[]:r,a=e.templatePurposeList,o=void 0===a?[]:a,u=this.state.display,i={labelCol:{span:10},wrapperCol:{span:14}};return _react.default.createElement(_form.default,{layout:"inline",className:"more-fields-form"},_react.default.createElement(_row.default,{gutter:12},_react.default.createElement(_col.default,{span:18,style:{width:"75%"}},_react.default.createElement(_row.default,null,_react.default.createElement(_col.default,{span:8},_react.default.createElement(_form.default.Item,Object.assign({label:_intl.default.get("".concat(promptCode,".model.score.templateCode")).d("评分模板编码")},i),t("templateCode")(_react.default.createElement(_Input2.default,{typeCase:"upper",inputChinese:!1})))),_react.default.createElement(_col.default,{span:8},_react.default.createElement(_form.default.Item,Object.assign({label:_intl.default.get("".concat(promptCode,".model.score.scoreTemplateName")).d("评分模板名称")},i),t("templateName")(_react.default.createElement(_Input2.default,null)))),_react.default.createElement(_col.default,{span:8},_react.default.createElement(_form.default.Item,Object.assign({label:_intl.default.get("".concat(promptCode,".model.score.scoreMode")).d("评分模式")},i),t("scoreMode")(_react.default.createElement(_select.default,{allowClear:!0},l.map(function(e){return _react.default.createElement(Option,{value:e.value,key:e.value},e.meaning)})))))),_react.default.createElement(_row.default,{style:{display:u?"none":"block"}},_react.default.createElement(_col.default,{span:8},_react.default.createElement(_form.default.Item,Object.assign({},i,{label:_intl.default.get("".concat(promptCode,".model.score.templatePurpose")).d("模板用途")}),t("templatePurpose")(_react.default.createElement(_select.default,{allowClear:!0},o.map(function(e){return _react.default.createElement(Option,{value:e.value,key:e.value},e.meaning)}))))))),_react.default.createElement(_col.default,{span:6,className:"search-btn-more"},_react.default.createElement(_form.default.Item,null,_react.default.createElement(_button.default,{style:{marginLeft:8,display:u?"inline-block":"none"},onClick:this.toggleForm},_intl.default.get("hzero.common.button.viewMore").d("更多查询")),_react.default.createElement(_button.default,{style:{marginLeft:8,display:u?"none":"inline-block"},onClick:this.toggleForm},_intl.default.get("hzero.common.button.collected").d("收起查询")),_react.default.createElement(_button.default,{"data-code":"reset",onClick:this.handleFormReset},_intl.default.get("hzero.common.button.reset").d("重置")),_react.default.createElement(_button.default,{"data-code":"search",type:"primary",htmlType:"submit",onClick:this.handleSearch},_intl.default.get("hzero.common.button.search").d("查询"))))))}}]),l}(_react.PureComponent),(0,_applyDecoratedDescriptor2.default)(_class2.prototype,"handleSearch",[_dec4],Object.getOwnPropertyDescriptor(_class2.prototype,"handleSearch"),_class2.prototype),(0,_applyDecoratedDescriptor2.default)(_class2.prototype,"handleFormReset",[_dec5],Object.getOwnPropertyDescriptor(_class2.prototype,"handleFormReset"),_class2.prototype),(0,_applyDecoratedDescriptor2.default)(_class2.prototype,"toggleForm",[_dec6],Object.getOwnPropertyDescriptor(_class2.prototype,"toggleForm"),_class2.prototype),_class=_class2))||_class)||_class)||_class);exports.default=FilterForm;
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/FilterForm.js
+index 8687f72..5536685 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/FilterForm.js
+@@ -100,7 +100,10 @@ function (_Component) {
+       }, React.createElement(_Row, {
+         gutter: 12
+       }, React.createElement(_Col, {
+-        span: 18
++        span: 18,
++        style:{
++          width:'75%',
++        }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(_Form.Item, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/dist/FilterForm.dev.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/dist/FilterForm.dev.js
+new file mode 100644
+index 0000000..f97d858
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/dist/FilterForm.dev.js
+@@ -0,0 +1,186 @@
++"use strict";
++
++function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
++
++Object.defineProperty(exports, "__esModule", {
++  value: true
++});
++exports["default"] = void 0;
++
++require("hzero-ui/lib/button/style");
++
++var _button = _interopRequireDefault(require("hzero-ui/lib/button"));
++
++require("hzero-ui/lib/row/style");
++
++var _row = _interopRequireDefault(require("hzero-ui/lib/row"));
++
++require("hzero-ui/lib/select/style");
++
++var _select = _interopRequireDefault(require("hzero-ui/lib/select"));
++
++require("hzero-ui/lib/col/style");
++
++var _col = _interopRequireDefault(require("hzero-ui/lib/col"));
++
++require("hzero-ui/lib/input/style");
++
++var _Input2 = _interopRequireDefault(require("@hzero-front-ui/hzero-ui/lib/Input"));
++
++var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/classCallCheck"));
++
++var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/createClass"));
++
++var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/possibleConstructorReturn"));
++
++var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/getPrototypeOf"));
++
++var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/assertThisInitialized"));
++
++var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/inherits"));
++
++var _applyDecoratedDescriptor2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/applyDecoratedDescriptor"));
++
++require("hzero-ui/lib/form/style");
++
++var _form = _interopRequireDefault(require("hzero-ui/lib/form"));
++
++var _react = _interopRequireWildcard(require("react"));
++
++var _lodashDecorators = require("lodash-decorators");
++
++var _CacheComponent = _interopRequireDefault(require("hzero-front/lib/components/CacheComponent"));
++
++var _intl = _interopRequireDefault(require("srm-front-boot/lib/utils/intl"));
++
++function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
++
++function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
++
++function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
++
++var _dec, _dec2, _dec3, _dec4, _class, _class2;
++
++var formLayout = {
++  labelCol: {
++    span: 10
++  },
++  wrapperCol: {
++    span: 14
++  }
++};
++var promptCode = 'ssrc.sourceTemplate';
++var FilterForm = (_dec = _form["default"].create({
++  fieldNameProp: null
++}), _dec2 = (0, _CacheComponent["default"])({
++  cacheKey: '/ssrc/source-template/list'
++}), _dec3 = (0, _lodashDecorators.Bind)(), _dec4 = (0, _lodashDecorators.Bind)(), _dec(_class = _dec2(_class = (_class2 =
++/*#__PURE__*/
++function (_Component) {
++  (0, _inherits2["default"])(FilterForm, _Component);
++
++  function FilterForm(props) {
++    var _this;
++
++    (0, _classCallCheck2["default"])(this, FilterForm);
++    _this = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(FilterForm).call(this, props));
++    props.onRef((0, _assertThisInitialized2["default"])(_this));
++    return _this;
++  }
++  /**
++   * 表单查询
++   */
++
++
++  (0, _createClass2["default"])(FilterForm, [{
++    key: "handleSearch",
++    value: function handleSearch() {
++      var _this$props = this.props,
++          onSearch = _this$props.onSearch,
++          form = _this$props.form;
++
++      if (onSearch) {
++        form.validateFields(function (err) {
++          if (!err) {
++            // 如果验证成功,则执行onSearch
++            onSearch();
++          }
++        });
++      }
++    }
++    /**
++     * 表单重置
++     */
++
++  }, {
++    key: "handleFormReset",
++    value: function handleFormReset() {
++      this.props.form.resetFields();
++    }
++    /**
++     * render
++     * @returns React.element
++     */
++
++  }, {
++    key: "render",
++    value: function render() {
++      var _this$props2 = this.props,
++          form = _this$props2.form,
++          _this$props2$sourceCa = _this$props2.sourceCategory,
++          sourceCategory = _this$props2$sourceCa === void 0 ? [] : _this$props2$sourceCa;
++      var getFieldDecorator = form.getFieldDecorator;
++      return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_form["default"], {
++        layout: "inline",
++        className: "more-fields-form"
++      }, _react["default"].createElement(_row["default"], {
++        gutter: 12
++      }, _react["default"].createElement(_col["default"], {
++        span: 18,
++        style: {
++          width: '75%'
++        }
++      }, _react["default"].createElement(_row["default"], null, _react["default"].createElement(_col["default"], {
++        span: 8
++      }, _react["default"].createElement(_form["default"].Item, Object.assign({
++        label: _intl["default"].get("".concat(promptCode, ".model.template.templateNum")).d('模板编码')
++      }, formLayout), getFieldDecorator('templateNum', {})(_react["default"].createElement(_Input2["default"], {
++        trim: true,
++        typeCase: "upper",
++        inputChinese: false,
++        maxLength: 40
++      })))), _react["default"].createElement(_col["default"], {
++        span: 8
++      }, _react["default"].createElement(_form["default"].Item, Object.assign({
++        label: _intl["default"].get("".concat(promptCode, ".model.template.templateName")).d('模板名称')
++      }, formLayout), getFieldDecorator('templateName', {})(_react["default"].createElement(_Input2["default"], {
++        trim: true,
++        maxLength: 40
++      })))), _react["default"].createElement(_col["default"], {
++        span: 8
++      }, _react["default"].createElement(_form["default"].Item, Object.assign({
++        label: _intl["default"].get("".concat(promptCode, ".model.template.sourcingCategory")).d('寻源类别')
++      }, formLayout), getFieldDecorator('sourceCategory', {})(_react["default"].createElement(_select["default"], {
++        allowClear: true
++      }, sourceCategory.map(function (item) {
++        return _react["default"].createElement(_select["default"].Option, {
++          key: item.value,
++          value: item.value
++        }, item.meaning);
++      }))))))), _react["default"].createElement(_col["default"], {
++        span: 6,
++        className: "search-btn-more"
++      }, _react["default"].createElement(_form["default"].Item, null, _react["default"].createElement(_button["default"], {
++        "data-code": "reset",
++        onClick: this.handleFormReset
++      }, _intl["default"].get('hzero.common.button.reset').d('重置')), _react["default"].createElement(_button["default"], {
++        "data-code": "search",
++        type: "primary",
++        htmlType: "submit",
++        onClick: this.handleSearch
++      }, _intl["default"].get('hzero.common.button.search').d('查询')))))));
++    }
++  }]);
++  return FilterForm;
++}(_react.Component), ((0, _applyDecoratedDescriptor2["default"])(_class2.prototype, "handleSearch", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "handleSearch"), _class2.prototype), (0, _applyDecoratedDescriptor2["default"])(_class2.prototype, "handleFormReset", [_dec4], Object.getOwnPropertyDescriptor(_class2.prototype, "handleFormReset"), _class2.prototype)), _class2)) || _class) || _class);
++exports["default"] = FilterForm;
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/dist/FilterForm.prod.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/dist/FilterForm.prod.js
+new file mode 100644
+index 0000000..17e241b
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/SourceTemplate/dist/FilterForm.prod.js
+@@ -0,0 +1 @@
++"use strict";function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0,require("hzero-ui/lib/button/style");var _button=_interopRequireDefault(require("hzero-ui/lib/button"));require("hzero-ui/lib/row/style");var _row=_interopRequireDefault(require("hzero-ui/lib/row"));require("hzero-ui/lib/select/style");var _select=_interopRequireDefault(require("hzero-ui/lib/select"));require("hzero-ui/lib/col/style");var _col=_interopRequireDefault(require("hzero-ui/lib/col"));require("hzero-ui/lib/input/style");var _Input2=_interopRequireDefault(require("@hzero-front-ui/hzero-ui/lib/Input")),_classCallCheck2=_interopRequireDefault(require("@babel/runtime/helpers/esm/classCallCheck")),_createClass2=_interopRequireDefault(require("@babel/runtime/helpers/esm/createClass")),_possibleConstructorReturn2=_interopRequireDefault(require("@babel/runtime/helpers/esm/possibleConstructorReturn")),_getPrototypeOf2=_interopRequireDefault(require("@babel/runtime/helpers/esm/getPrototypeOf")),_assertThisInitialized2=_interopRequireDefault(require("@babel/runtime/helpers/esm/assertThisInitialized")),_inherits2=_interopRequireDefault(require("@babel/runtime/helpers/esm/inherits")),_applyDecoratedDescriptor2=_interopRequireDefault(require("@babel/runtime/helpers/esm/applyDecoratedDescriptor"));require("hzero-ui/lib/form/style");var _dec,_dec2,_dec3,_dec4,_class,_class2,_form=_interopRequireDefault(require("hzero-ui/lib/form")),_react=_interopRequireWildcard(require("react")),_lodashDecorators=require("lodash-decorators"),_CacheComponent=_interopRequireDefault(require("hzero-front/lib/components/CacheComponent")),_intl=_interopRequireDefault(require("srm-front-boot/lib/utils/intl"));function _getRequireWildcardCache(){if("function"!=typeof WeakMap)return null;var e=new WeakMap;return _getRequireWildcardCache=function(){return e},e}function _interopRequireWildcard(e){if(e&&e.__esModule)return e;if(null===e||"object"!==_typeof(e)&&"function"!=typeof e)return{default:e};var t=_getRequireWildcardCache();if(t&&t.has(e))return t.get(e);var r,a={},l=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var o in e){Object.prototype.hasOwnProperty.call(e,o)&&((r=l?Object.getOwnPropertyDescriptor(e,o):null)&&(r.get||r.set)?Object.defineProperty(a,o,r):a[o]=e[o])}return a.default=e,t&&t.set(e,a),a}function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}var formLayout={labelCol:{span:10},wrapperCol:{span:14}},promptCode="ssrc.sourceTemplate",FilterForm=(_dec=_form.default.create({fieldNameProp:null}),_dec2=(0,_CacheComponent.default)({cacheKey:"/ssrc/source-template/list"}),_dec3=(0,_lodashDecorators.Bind)(),_dec4=(0,_lodashDecorators.Bind)(),_dec(_class=_dec2((_class2=function(e){function r(e){var t;return(0,_classCallCheck2.default)(this,r),t=(0,_possibleConstructorReturn2.default)(this,(0,_getPrototypeOf2.default)(r).call(this,e)),e.onRef((0,_assertThisInitialized2.default)(t)),t}return(0,_inherits2.default)(r,e),(0,_createClass2.default)(r,[{key:"handleSearch",value:function(){var e=this.props,t=e.onSearch,r=e.form;t&&r.validateFields(function(e){e||t()})}},{key:"handleFormReset",value:function(){this.props.form.resetFields()}},{key:"render",value:function(){var e=this.props,t=e.form,r=e.sourceCategory,a=void 0===r?[]:r,l=t.getFieldDecorator;return _react.default.createElement(_react.default.Fragment,null,_react.default.createElement(_form.default,{layout:"inline",className:"more-fields-form"},_react.default.createElement(_row.default,{gutter:12},_react.default.createElement(_col.default,{span:18,style:{width:"75%"}},_react.default.createElement(_row.default,null,_react.default.createElement(_col.default,{span:8},_react.default.createElement(_form.default.Item,Object.assign({label:_intl.default.get("".concat(promptCode,".model.template.templateNum")).d("模板编码")},formLayout),l("templateNum",{})(_react.default.createElement(_Input2.default,{trim:!0,typeCase:"upper",inputChinese:!1,maxLength:40})))),_react.default.createElement(_col.default,{span:8},_react.default.createElement(_form.default.Item,Object.assign({label:_intl.default.get("".concat(promptCode,".model.template.templateName")).d("模板名称")},formLayout),l("templateName",{})(_react.default.createElement(_Input2.default,{trim:!0,maxLength:40})))),_react.default.createElement(_col.default,{span:8},_react.default.createElement(_form.default.Item,Object.assign({label:_intl.default.get("".concat(promptCode,".model.template.sourcingCategory")).d("寻源类别")},formLayout),l("sourceCategory",{})(_react.default.createElement(_select.default,{allowClear:!0},a.map(function(e){return _react.default.createElement(_select.default.Option,{key:e.value,value:e.value},e.meaning)}))))))),_react.default.createElement(_col.default,{span:6,className:"search-btn-more"},_react.default.createElement(_form.default.Item,null,_react.default.createElement(_button.default,{"data-code":"reset",onClick:this.handleFormReset},_intl.default.get("hzero.common.button.reset").d("重置")),_react.default.createElement(_button.default,{"data-code":"search",type:"primary",htmlType:"submit",onClick:this.handleSearch},_intl.default.get("hzero.common.button.search").d("查询")))))))}}]),r}(_react.Component),(0,_applyDecoratedDescriptor2.default)(_class2.prototype,"handleSearch",[_dec3],Object.getOwnPropertyDescriptor(_class2.prototype,"handleSearch"),_class2.prototype),(0,_applyDecoratedDescriptor2.default)(_class2.prototype,"handleFormReset",[_dec4],Object.getOwnPropertyDescriptor(_class2.prototype,"handleFormReset"),_class2.prototype),_class=_class2))||_class)||_class);exports.default=FilterForm;
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/FilterForm.js b/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/FilterForm.js
+index 24f4f82..161349b 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/FilterForm.js
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/FilterForm.js
+@@ -124,7 +124,10 @@ function (_Component) {
+         layout: "inline",
+         className: "more-fields-form"
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+-        span: 18
++        span: 18,
++        style: {
++              width: '75%' 
++        }
+       }, React.createElement(_Row, null, React.createElement(_Col, {
+         span: 8
+       }, React.createElement(_Form.Item, Object.assign({
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/InquiryPrice/Header.less b/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/InquiryPrice/Header.less
+index bc858d3..587acd9 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/InquiryPrice/Header.less
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/SupplierQuotation/InquiryPrice/Header.less
+@@ -86,7 +86,7 @@
+     }
+     .detailRight {
+       float: left;
+-      width: 74%;
++      width: 73%;
+       border: 1px solid #e8e8e8;
+       > div + div {
+         background: #fff;
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/common.less b/node_modules/srm-front-ssrc/lib/routes/ssrc/common.less
+index 55c4618..163942f 100644
+--- a/node_modules/srm-front-ssrc/lib/routes/ssrc/common.less
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/common.less
+@@ -358,3 +358,6 @@
+     pointer-events: none;
+   }
+ }
++.ant-col-18 {
++  width: 75%;
++}
+\ No newline at end of file
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/dist/common.css b/node_modules/srm-front-ssrc/lib/routes/ssrc/dist/common.css
+new file mode 100644
+index 0000000..51aee9e
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/dist/common.css
+@@ -0,0 +1,256 @@
++.fixed-form-row :global .ant-form-item {
++  margin: 0 16px 16px 16px;
++  text-align: left;
++  line-height: 28px;
++  color: #666;
++}
++.fixed-form-row :global .ant-form-item-label {
++  text-align: left;
++  line-height: 28px;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++  overflow: hidden;
++}
++.fixed-form-row :global .ant-form-item-label label {
++  color: #666 !important;
++}
++.fixed-form-row :global .margin-read-row {
++  margin-bottom: 16px;
++}
++.fixed-form-row :global .half-row {
++  display: flex;
++  margin-bottom: 16px;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item {
++  margin-bottom: 0;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-label {
++  width: 25%;
++  margin-right: -6px;
++  float: left;
++  line-height: 28px;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-label label {
++  color: #666;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-control-wrapper {
++  width: 75%;
++  float: left;
++  color: #333;
++  line-height: 28px;
++}
++.fixed-form-row :global .half-row .ant-row.ant-form-item > .ant-form-item-control-wrapper .ant-form-item-control {
++  line-height: 28px;
++}
++.fixed-form-row :global .read-row {
++  margin-bottom: 16px;
++  color: #666;
++}
++.fixed-form-row :global .read-row div {
++  line-height: 20px;
++}
++.fixed-form-row :global .read-row > div:nth-child(2) {
++  color: #333;
++  float: left;
++}
++.fixed-form-row :global .read-row > div:first-child {
++  float: left;
++}
++.fixed-form-row :global .read-row > div:first-child::after {
++  content: ':';
++  margin: 0 8px 0 2px;
++  position: relative;
++  top: -0.5px;
++}
++.fixed-form-row :global .ant-form-item-control-wrapper {
++  text-align: left;
++  line-height: 28px;
++  color: #333;
++}
++.fixed-form-row :global .ant-form-item-control-wrapper > .ant-form-item-control {
++  line-height: 28px;
++}
++.fixed-form-row :global .ant-form-item-control-wrapper > .ant-form-item-control .ant-form-explain,
++.fixed-form-row :global .ant-form-item-control-wrapper > .ant-form-item-control .ant-form-extra {
++  line-height: 2.5;
++}
++.fix-col-8-item {
++  margin-left: 16px !important;
++}
++.fix-col-8-item :global .ant-form-item-control-wrapper::after {
++  content: '';
++  display: none;
++}
++.headerInfo :global .ant-form-item .ant-form-item-label {
++  text-align: left;
++  line-height: 28px;
++}
++.headerInfo :global .ant-form-item .ant-form-item-control {
++  line-height: 28px;
++  width: 100%;
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++}
++.headerInfo :global .ant-form-item .ant-form-item-control .ant-form-explain {
++  margin: 0;
++}
++.detail-standard .exclude-content-card {
++  width: calc(100% - 32px);
++  margin: -8px 16px 0;
++  padding: 32px 24px;
++  background: #fff;
++}
++.detail-standard .collapse-title {
++  padding-left: 16px;
++  font-size: 14px;
++}
++.detail-standard :global .ant-form-item-label {
++  line-height: 28px;
++}
++.detail-standard :global .ant-form-item-control {
++  line-height: 28px;
++}
++.detail-standard .m-r-m {
++  margin-right: 10px;
++}
++.detail-standard .display-none {
++  display: none;
++}
++.detail-standard .p-n {
++  padding: 0 !important;
++}
++.margin-top-fix {
++  margin-top: -1.766px;
++}
++.padding-16 {
++  padding: 16px;
++}
++.btn-icon + span {
++  margin-left: 8px;
++}
++.page-content-wrapper-custome .page-content-wrap {
++  overflow: visible;
++}
++.hzero-ui-override .ant-input-number {
++  width: 100% !important;
++}
++.page-content-custom {
++  min-height: 280px;
++  padding: 24px;
++}
++.page-content-custom.default-margin-bottom {
++  margin-bottom: 8px;
++}
++.page-content-custom.zero-margin-bottom {
++  margin-bottom: 0;
++}
++.page-content-custom :global {
++  margin-bottom: 8px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item > .ant-form-item-label {
++  text-align: left;
++  line-height: 28px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item > .ant-form-item-label label {
++  color: #666;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper {
++  color: #333;
++  line-height: 28px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control {
++  line-height: 28px;
++}
++.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control .ant-form-explain {
++  margin-top: 2px;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item {
++  margin-bottom: 16px;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .ant-form-item-label {
++  text-align: left;
++  height: 20px;
++  line-height: 20px;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .ant-form-item-label label {
++  color: #666;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item > .ant-form-item-control-wrapper {
++  color: #333;
++  line-height: 20px !important;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++  overflow: hidden;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item > .ant-form-item-control-wrapper > .ant-form-item-control {
++  line-height: 20px;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++  overflow: hidden;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item.no-text-ellipsis > .ant-col-21.ant-form-item-control-wrapper {
++  white-space: normal;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item.no-text-ellipsis > .ant-col-21.ant-form-item-control-wrapper > .ant-form-item-control {
++  white-space: normal;
++}
++.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .n-m-b {
++  margin-bottom: 0;
++}
++.page-content-custom :global .ant-form.read-row-custom > .ant-row.read-row {
++  margin-bottom: 16px;
++}
++.m-r-m {
++  margin-right: 16px;
++}
++.display-none {
++  display: none;
++}
++.p-n {
++  padding: 0;
++}
++.m-n {
++  margin: 0;
++}
++.template-detail :global .ant-drawer-body {
++  padding-top: 16px;
++}
++.template-detail .text-hidden {
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++}
++.template-detail .template-detail-btn {
++  text-align: right;
++  margin-bottom: 16px;
++}
++.template-detail .template-detail-btn button {
++  margin-left: 8px;
++}
++.category-modal :global .ant-modal-body,
++.copy-template-modal :global .ant-modal-body {
++  padding-top: 16px;
++}
++.category-modal :global .ant-table .ant-table-content .ant-table-scroll .ant-table-body,
++.copy-template-modal :global .ant-table .ant-table-content .ant-table-scroll .ant-table-body {
++  border-right: 0;
++  border-bottom: solid 1px #e8e8e8;
++}
++.category-modal :global .ant-modal-footer,
++.copy-template-modal :global .ant-modal-footer {
++  border: none;
++  padding-top: 0;
++  padding-bottom: 24px;
++}
++.category-modal :global .ant-form-item-control,
++.copy-template-modal :global .ant-form-item-control {
++  line-height: 18px;
++}
++.disabledElementA :global {
++  opacity: 0.2;
++  pointer-events: none;
++}
++.ant-col-18 {
++  width: 75%;
++}
+diff --git a/node_modules/srm-front-ssrc/lib/routes/ssrc/dist/common.min.css b/node_modules/srm-front-ssrc/lib/routes/ssrc/dist/common.min.css
+new file mode 100644
+index 0000000..da1cdf4
+--- /dev/null
++++ b/node_modules/srm-front-ssrc/lib/routes/ssrc/dist/common.min.css
+@@ -0,0 +1 @@
++.fixed-form-row :global .ant-form-item{margin:0 16px 16px;text-align:left;line-height:28px;color:#666}.fixed-form-row :global .ant-form-item-label{text-align:left;line-height:28px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.fixed-form-row :global .ant-form-item-label label{color:#666!important}.fixed-form-row :global .margin-read-row{margin-bottom:16px}.fixed-form-row :global .half-row{display:flex;margin-bottom:16px}.detail-standard .display-none,.display-none{display:none}.fixed-form-row :global .half-row .ant-row.ant-form-item{margin-bottom:0}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-label{width:25%;margin-right:-6px;float:left;line-height:28px}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-label label{color:#666}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-control-wrapper{width:75%;float:left;color:#333;line-height:28px}.fixed-form-row :global .half-row .ant-row.ant-form-item>.ant-form-item-control-wrapper .ant-form-item-control{line-height:28px}.fixed-form-row :global .read-row{margin-bottom:16px;color:#666}.fixed-form-row :global .read-row div{line-height:20px}.fixed-form-row :global .read-row>div:nth-child(2){color:#333;float:left}.fixed-form-row :global .read-row>div:first-child{float:left}.fixed-form-row :global .read-row>div:first-child::after{content:':';margin:0 8px 0 2px;position:relative;top:-.5px}.fixed-form-row :global .ant-form-item-control-wrapper{text-align:left;line-height:28px;color:#333}.fixed-form-row :global .ant-form-item-control-wrapper>.ant-form-item-control{line-height:28px}.fixed-form-row :global .ant-form-item-control-wrapper>.ant-form-item-control .ant-form-explain,.fixed-form-row :global .ant-form-item-control-wrapper>.ant-form-item-control .ant-form-extra{line-height:2.5}.fix-col-8-item{margin-left:16px!important}.fix-col-8-item :global .ant-form-item-control-wrapper::after{content:'';display:none}.headerInfo :global .ant-form-item .ant-form-item-label{text-align:left;line-height:28px}.headerInfo :global .ant-form-item .ant-form-item-control{line-height:28px;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.headerInfo :global .ant-form-item .ant-form-item-control .ant-form-explain{margin:0}.detail-standard .exclude-content-card{width:calc(100% - 32px);margin:-8px 16px 0;padding:32px 24px;background:#fff}.detail-standard .collapse-title{padding-left:16px;font-size:14px}.detail-standard :global .ant-form-item-control,.detail-standard :global .ant-form-item-label{line-height:28px}.detail-standard .m-r-m{margin-right:10px}.detail-standard .p-n{padding:0!important}.margin-top-fix{margin-top:-1.77px}.padding-16{padding:16px}.btn-icon+span{margin-left:8px}.page-content-wrapper-custome .page-content-wrap{overflow:visible}.hzero-ui-override .ant-input-number{width:100%!important}.page-content-custom{min-height:280px;padding:24px}.page-content-custom.default-margin-bottom{margin-bottom:8px}.page-content-custom.zero-margin-bottom{margin-bottom:0}.page-content-custom :global{margin-bottom:8px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item>.ant-form-item-label{text-align:left;line-height:28px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item>.ant-form-item-label label{color:#666}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper{color:#333;line-height:28px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control{line-height:28px}.page-content-custom :global .ant-form.writable-row-custom .ant-row.ant-form-item .ant-form-item-control-wrapper .ant-form-item-control .ant-form-explain{margin-top:2px}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item{margin-bottom:16px}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .ant-form-item-label{text-align:left;height:20px;line-height:20px}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .ant-form-item-label label{color:#666}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item>.ant-form-item-control-wrapper{color:#333;line-height:20px!important;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item>.ant-form-item-control-wrapper>.ant-form-item-control{line-height:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item.no-text-ellipsis>.ant-col-21.ant-form-item-control-wrapper,.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item.no-text-ellipsis>.ant-col-21.ant-form-item-control-wrapper>.ant-form-item-control{white-space:normal}.page-content-custom :global .ant-form.read-row-custom .ant-row.ant-form-item .n-m-b{margin-bottom:0}.page-content-custom :global .ant-form.read-row-custom>.ant-row.read-row{margin-bottom:16px}.m-r-m{margin-right:16px}.p-n{padding:0}.category-modal :global .ant-modal-body,.copy-template-modal :global .ant-modal-body,.template-detail :global .ant-drawer-body{padding-top:16px}.m-n{margin:0}.template-detail .text-hidden{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.template-detail .template-detail-btn{text-align:right;margin-bottom:16px}.template-detail .template-detail-btn button{margin-left:8px}.category-modal :global .ant-table .ant-table-content .ant-table-scroll .ant-table-body,.copy-template-modal :global .ant-table .ant-table-content .ant-table-scroll .ant-table-body{border-right:0;border-bottom:solid 1px #e8e8e8}.category-modal :global .ant-modal-footer,.copy-template-modal :global .ant-modal-footer{border:none;padding-top:0;padding-bottom:24px}.category-modal :global .ant-form-item-control,.copy-template-modal :global .ant-form-item-control{line-height:18px}.disabledElementA :global{opacity:.2;pointer-events:none}.ant-col-18{width:75%}
+\ No newline at end of file

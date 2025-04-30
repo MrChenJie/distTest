@@ -1,0 +1,133 @@
+/*
+ * 报价表样式 - index.less
+ * @date: 2019-06-05
+ * @author: HB <bin.huang02@hand-china.com>
+ * @version: 0.0.1
+ * @copyright Copyright (c) 2018, Hand
+ */
+ .formItemLabel {
+  :global {
+    .ant-form-item{ 
+       .ant-form-item-label{
+          line-height: 32px !important;
+          height: 32px;
+        }
+    }
+  }
+ }
+ .anchor-wrapper {
+    :global {
+      .ant-anchor-link {
+        & > .ant-anchor-link-title {
+          font-size: 13px;
+        }
+  
+        & > a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
+  .panel-list-wrapper {
+    :global {
+      .ant-collapse-content-box {
+        padding: 16px 0 0 0;
+      }
+    }
+  }
+  
+  .online-edit-collapse-item.online-edit-collapse-item.online-edit-collapse-item.online-edit-collapse-item {
+    margin-bottom: 0;
+  }
+  
+  // 头wrapper
+  .header-wrapper {
+    :global {
+      .ant-calendar-picker {
+        width: 100%;
+      }
+    }
+  }
+  
+  .button-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 16px;
+  }
+  
+  .full-modal-wrapper {
+    :global {
+      .ant-modal {
+        top: 0;
+      }
+  
+      .ant-modal-body {
+        padding: 0;
+      }
+  
+      .ant-modal-header {
+        overflow: hidden;
+        padding: 5px 20px;
+      }
+    }
+  }
+  
+  .contract-maintain-spin-wrapper {
+    :global {
+      .ant-card.ued-detail-card > .ant-card-body {
+        padding: 16px 0;
+      }
+    }
+  }
+  
+  .header-form {
+    :global {
+      .ant-form-explain {
+        margin-top: 2px;
+      }
+      .ant-input {
+        overflow: hidden;
+      }
+      .ant-textarea {
+        display: inline-block;
+        width: 100%;
+        word-break: break-all;
+      }
+    }
+  }
+  .customize-buttons {
+    display: flex;
+    text-align: right;
+    button {
+      border: none;
+      padding-right: 0;
+      background-color: transparent !important;
+      &:hover {
+        border: none;
+      }
+      img {
+        margin-right: 5px;
+        width: 15px;
+      }
+    }
+  }
+  .effective-time {
+    :global {
+      .ant-col-15 > .ant-form-item-control > .ant-form-item-children > div:first-of-type {
+        width: 100px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .table-thead-required > span:first-child::before {
+    display: inline-block;
+    color: #f5222d;
+    font-family: SimSun;
+    line-height: 1;
+    margin-right: 4px;
+    font-size: 12px;
+    content: '*';
+  }
+  

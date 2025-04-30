@@ -1,0 +1,37 @@
+.list-info-message {
+  display: flex;
+  .info-message-all {
+    &:nth-of-type(1) {
+      margin-left: 0;
+    }
+    margin-left: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    .info-message-label {
+      padding-right: 4px;
+      color: #1F2329;
+    }
+    .info-message-value {
+      color: #1F2329;
+    }
+  }
+}
+
+// 嵌套Tabs覆盖样式
+.tabs-wrapper {
+  .ant-tabs-nav {
+    display: block!important;
+    margin: 0 0!important;
+    .ant-tabs-nav-list {
+      margin-left: 32px!important;
+      display: block!important;
+      .ant-tabs-tab {
+        background-color: transparent!important;
+        border-width: 0!important;
+      }
+    }
+    .ant-tabs-ink-bar {
+      display: block!important;
+    }
+  }
+}

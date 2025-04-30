@@ -1,0 +1,707 @@
+diff --git a/node_modules/srm-front-spfm/lib/components/ReportView/dist/index.css b/node_modules/srm-front-spfm/lib/components/ReportView/dist/index.css
+new file mode 100644
+index 0000000..0603f7b
+--- /dev/null
++++ b/node_modules/srm-front-spfm/lib/components/ReportView/dist/index.css
+@@ -0,0 +1,30 @@
++:global .report-view {
++  display: flex;
++  width: 100%;
++  min-height: 100%;
++  flex-direction: column;
++  justify-content: center;
++}
++:global .report-view .select-wrap {
++  margin: auto;
++  display: flex;
++}
++:global .report-view .select-wrap .x-data-select {
++  flex: 1;
++}
++:global .report-view .select-wrap .select-item {
++  margin-bottom: 15px;
++  display: flex;
++}
++:global .report-view .select-wrap .select-item .echarts-select-text {
++  width: 100px;
++  height: 30px;
++  line-height: 30px;
++  text-align: right;
++  overflow: hidden;
++  text-overflow: ellipsis;
++  white-space: nowrap;
++}
++.ant-col-18 {
++  width: 75%;
++}
+diff --git a/node_modules/srm-front-spfm/lib/components/ReportView/dist/index.min.css b/node_modules/srm-front-spfm/lib/components/ReportView/dist/index.min.css
+new file mode 100644
+index 0000000..7506a97
+--- /dev/null
++++ b/node_modules/srm-front-spfm/lib/components/ReportView/dist/index.min.css
+@@ -0,0 +1 @@
++:global .report-view{display:flex;width:100%;min-height:100%;flex-direction:column;justify-content:center}:global .report-view .select-wrap{margin:auto;display:flex}:global .report-view .select-wrap .x-data-select{flex:1}:global .report-view .select-wrap .select-item{margin-bottom:15px;display:flex}:global .report-view .select-wrap .select-item .echarts-select-text{width:100px;height:30px;line-height:30px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ant-col-18{width:75%}
+\ No newline at end of file
+diff --git a/node_modules/srm-front-spfm/lib/components/ReportView/index.less b/node_modules/srm-front-spfm/lib/components/ReportView/index.less
+index cb19567..b963404 100644
+--- a/node_modules/srm-front-spfm/lib/components/ReportView/index.less
++++ b/node_modules/srm-front-spfm/lib/components/ReportView/index.less
+@@ -27,3 +27,6 @@
+     }
+   }
+ }
++.ant-col-18 {
++  width: 75%;
++}
+diff --git a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Common/index.js b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Common/index.js
+index 193dcfd..90ab853 100644
+--- a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Common/index.js
++++ b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Common/index.js
+@@ -20,7 +20,7 @@ import classnames from 'classnames';
+ import intl from "srm-front-boot/lib/utils/intl";
+ import Menu from "../Menu";
+ import Common from "./Common";
+-import styles from "../index.less";
++import styles from "../index.module.less";
+ var CommonIndex = (_dec = connect(function (_ref) {
+   var configServer = _ref.configServer;
+   return {
+diff --git a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Purchaser/index.js b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Purchaser/index.js
+index 9abf7b7..6dcc39a 100644
+--- a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Purchaser/index.js
++++ b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Purchaser/index.js
+@@ -52,7 +52,7 @@ import AutoDeductNoteModal from "./SubPage/AutoDeductNoteModal";
+ import GroupManagement from "./SubPage/GroupManagement";
+ import EnableAutomaticOrderCreationModal from "./SubPage/EnableAutomaticOrderCreationModal";
+ import MergeSourceSetModal from "./SubPage/MergeSourceSetModal";
+-import styles from "../index.less";
++import styles from "../index.module.less";
+ var tenantId = getCurrentOrganizationId();
+ var PurchaserIndex = (_dec = connect(function (_ref) {
+   var configServer = _ref.configServer,
+diff --git a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/SubPage/DirectInvoice.js b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/SubPage/DirectInvoice.js
+index f739867..3d312cc 100644
+--- a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/SubPage/DirectInvoice.js
++++ b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/SubPage/DirectInvoice.js
+@@ -31,7 +31,7 @@ import { Bind } from 'lodash-decorators';
+ import { withRouter } from 'dva/router';
+ import { isFunction } from 'util';
+ import Checkbox from "hzero-front/lib/components/Checkbox";
+-import styles from "../../index.less";
++import styles from "../../index.module.less";
+ import SubMessage from "../../components/SubMessage";
+ var DirectInvoice = (_dec = connect(function (_ref) {
+   var configServer = _ref.configServer;
+diff --git a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/index.js b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/index.js
+index 9ccbb6c..91ca9de 100644
+--- a/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/index.js
++++ b/node_modules/srm-front-spfm/lib/routes/ConfigServer/Supplier/index.js
+@@ -23,7 +23,7 @@ import { connect } from 'dva';
+ import { Bind } from 'lodash-decorators';
+ import intl from "srm-front-boot/lib/utils/intl";
+ import Menu from "../Menu/index";
+-import styles from "../index.less";
++import styles from "../index.module.less";
+ import DirectInvoice from "./SubPage/DirectInvoice";
+ import DiectInvoiceModal from "./SubPage/DirectInvoiceModal";
+ import DirectInvoiceBaseInfoModal from "./SubPage/DirectInvoiceBaseInfoModal";
+diff --git a/node_modules/srm-front-spfm/lib/routes/ConfigServer/index.js b/node_modules/srm-front-spfm/lib/routes/ConfigServer/index.js
+index 13c07ec..eb9ec35 100644
+--- a/node_modules/srm-front-spfm/lib/routes/ConfigServer/index.js
++++ b/node_modules/srm-front-spfm/lib/routes/ConfigServer/index.js
+@@ -33,7 +33,7 @@ import { Content, Header } from "hzero-front/lib/components/Page";
+ import PurchaserIndex from "./Purchaser/index";
+ import SupplierIndex from "./Supplier/index";
+ import CommonIndex from "./Common/index";
+-import styles from "./index.less";
++import styles from "./index.module.less";
+ var TabPane = _Tabs.TabPane;
+ var ConfigIndex = (_dec = connect(function (_ref) {
+   var loading = _ref.loading,
+diff --git a/node_modules/srm-front-spfm/lib/routes/ConfigServer/index.module.less b/node_modules/srm-front-spfm/lib/routes/ConfigServer/index.module.less
+new file mode 100644
+index 0000000..c8248cb
+--- /dev/null
++++ b/node_modules/srm-front-spfm/lib/routes/ConfigServer/index.module.less
+@@ -0,0 +1,198 @@
++/*
++ * style - 配置中心
++ * @date: 2018-11-23
++ * @author: HB <bin.huang02@hand-china.com>
++ * @version: 0.0.1
++ * @copyright Copyright (c) 2018, Hand
++ */
++
++/* 配置中心样式 */
++.config-server-content {
++  padding: 0;
++  margin: 0;
++  line-height: 1.5;
++  height: 100%;
++  .content {
++    display: flex;
++    height: 100%;
++  }
++  .left-wrapper {
++    width: 150px;
++    min-width: 150px;
++    overflow: auto;
++    background-color: #f5f5f5;
++  }
++  .right-wrapper {
++    height: 100%;
++    width: 100%;
++    overflow: auto;
++  }
++  :global {
++    /* 内容块的高度配置 */
++    .page-content {
++      padding: 0;
++      border: 1px solid #e4e4e4;
++      overflow: hidden;
++      height: calc(~'100% - 16px - 8px');
++      .ant-tabs.ant-tabs-top.ant-tabs-line.ant-tabs-no-animation {
++        height: 100%;
++        .ant-tabs-bar {
++          margin: 0;
++        }
++        .ant-tabs-content.ant-tabs-content-no-animated {
++          height: calc(~'100% - 47px');
++          .ant-tabs-tabpane.ant-tabs-tabpane-active {
++            height: 100%;
++          }
++        }
++      }
++    }
++    a {
++      text-decoration: none;
++      transition: none;
++    }
++    a:focus {
++      text-decoration: none;
++    }
++    .ant-affix {
++      z-index: 1;
++    }
++    // 锚点样式覆盖
++    .ant-anchor-wrapper {
++      // margin-top: 8px;
++      padding-left: 0;
++      margin-left: 0;
++      background-color: #f5f5f5;
++      overflow: hidden;
++      .ant-anchor {
++        font-size: 14px;
++        padding-left: 0;
++        &-wrapper {
++          margin-left: 0;
++        }
++        &-ink {
++          &:before {
++            display: none;
++          }
++          &-ball {
++            display: none;
++          }
++        }
++        &-link {
++          width: 150px;
++          padding: 0;
++          &-title {
++            padding: 13px 0 13px 32px;
++            display: block;
++            color: #000;
++            line-height: 1;
++            font-size: 14px;
++          }
++          &-active {
++            background-color: #fff;
++          }
++        }
++        &-link-active {
++          .ant-anchor-link-title-active {
++            color: #29bece;
++            // font-weight: bold;
++          }
++        }
++      }
++    }
++  }
++}
++.config-content {
++  font-size: 14px;
++  line-height: 14px;
++  :global {
++    // .ant-checkbox-wrapper {
++    //   .ant-checkbox-checked {
++    //     background-color: #ccc;
++    //   }
++    // }
++    .ant-col-24:not(:last-child) {
++      margin-bottom: 24px;
++    }
++    .ant-checkbox-wrapper {
++      font-size: 14px !important;
++    }
++    // tab的主体内容
++    .first-tab-content {
++      padding-top: 32px;
++      padding-bottom: 32px;
++      border-bottom: 1px solid #e1e6eb;
++      margin-left: 24px;
++      margin-right: 24px;
++    }
++    .tab-content {
++      padding-top: 32px;
++      padding-bottom: 32px;
++      border-bottom: 1px solid #e1e6eb;
++      margin-left: 24px;
++      margin-right: 24px;
++      &:last-child {
++        border-bottom: none;
++      }
++    }
++    .last-tab-content {
++      padding-top: 32px;
++      padding-bottom: 32px;
++      margin-left: 24px;
++      margin-right: 24px;
++    }
++    // tab项的左侧主体名称
++    .label-col {
++      font-weight: bold;
++      border-left: 2px solid #223252;
++      text-indent: 10px;
++      display: inline-block;
++      line-height: 14px;
++    }
++    // tab中的每个小块
++    .sub-item {
++      padding-top: 48px;
++    }
++    .sub-item-right {
++      padding-right: 80px;
++    }
++    .sub-item-fields {
++      padding-left: 30px;
++    }
++    // 提示文字
++    .sub-message {
++      margin-top: -14px;
++      padding-left: 29px;
++      color: #999;
++      font-size: 12px;
++    }
++    // 提示文字
++    .sub-right-message {
++      margin-top: -14px;
++      padding-left: 14px;
++      color: #999;
++      font-size: 12px;
++    }
++    .sub-item-relate-fields {
++      padding-left: 48px;
++    }
++    .operate-item-link {
++      margin-left: 16px;
++    }
++    .ant-form-item label {
++      font-size: 14px;
++      font-weight: normal;
++    }
++    .write-row {
++      line-height: 29px;
++      margin-top: -4px;
++      .ant-form-item-label {
++        line-height: 28px;
++      }
++      .ant-form-item-control {
++        line-height: 28px;
++        height: 28px;
++      }
++    }
++  }
++}
+diff --git a/node_modules/srm-front-spfm/lib/routes/Enterprise/Edit/BussinessForm.js b/node_modules/srm-front-spfm/lib/routes/Enterprise/Edit/BussinessForm.js
+index fa2de21..97ae9d5 100644
+--- a/node_modules/srm-front-spfm/lib/routes/Enterprise/Edit/BussinessForm.js
++++ b/node_modules/srm-front-spfm/lib/routes/Enterprise/Edit/BussinessForm.js
+@@ -70,12 +70,12 @@ var formItemLayout = {
+     span: 6
+   },
+   wrapperCol: {
+-    span: 18
++    span: 16
+   }
+ };
+ var submitFormLayout = {
+   wrapperCol: {
+-    span: 18,
++    span: 16,
+     offset: 6
+   }
+ };
+diff --git a/node_modules/srm-front-spfm/lib/routes/Enterprise/Register/ProcessInfo.less b/node_modules/srm-front-spfm/lib/routes/Enterprise/Register/ProcessInfo.less
+index a4651cc..025407e 100644
+--- a/node_modules/srm-front-spfm/lib/routes/Enterprise/Register/ProcessInfo.less
++++ b/node_modules/srm-front-spfm/lib/routes/Enterprise/Register/ProcessInfo.less
+@@ -7,7 +7,9 @@
+ .clear-fix {
+   .clearfix();
+ }
+-
++.ant-col-18{
++  width: 75%;
++}
+ .tuple {
+   line-height: 16px;
+   height: 16px;
+diff --git a/node_modules/srm-front-spfm/lib/routes/InvitationList/FilterForm.js b/node_modules/srm-front-spfm/lib/routes/InvitationList/FilterForm.js
+index 8c528c4..3841a55 100644
+--- a/node_modules/srm-front-spfm/lib/routes/InvitationList/FilterForm.js
++++ b/node_modules/srm-front-spfm/lib/routes/InvitationList/FilterForm.js
+@@ -61,65 +61,65 @@ var formItemLayout = {
+ var FilterForm = (_dec = _Form.create({
+   fieldNameProp: null
+ }), _dec2 = Bind(), _dec3 = Bind(), _dec4 = Bind(), _dec5 = Bind(), _dec(_class = (_class2 =
+-/*#__PURE__*/
+-function (_PureComponent) {
+-  _inherits(FilterForm, _PureComponent);
++  /*#__PURE__*/
++  function (_PureComponent) {
++    _inherits(FilterForm, _PureComponent);
+ 
+-  function FilterForm(props) {
+-    var _this;
++    function FilterForm(props) {
++      var _this;
+ 
+-    _classCallCheck(this, FilterForm);
++      _classCallCheck(this, FilterForm);
+ 
+-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FilterForm).call(this, props));
+-    props.onRef(_assertThisInitialized(_this));
+-    _this.state = {
+-      expandForm: false,
+-      userOrganizationId: getUserOrganizationId()
+-    };
+-    return _this;
+-  }
+-  /**
+-   * 查询
+-   */
++      _this = _possibleConstructorReturn(this, _getPrototypeOf(FilterForm).call(this, props));
++      props.onRef(_assertThisInitialized(_this));
++      _this.state = {
++        expandForm: false,
++        userOrganizationId: getUserOrganizationId()
++      };
++      return _this;
++    }
++    /**
++     * 查询
++     */
+ 
+ 
+-  _createClass(FilterForm, [{
+-    key: "handleSearch",
+-    value: function handleSearch() {
+-      var onFilterChange = this.props.onFilterChange;
++    _createClass(FilterForm, [{
++      key: "handleSearch",
++      value: function handleSearch() {
++        var onFilterChange = this.props.onFilterChange;
+ 
+-      if (onFilterChange) {
+-        onFilterChange();
+-      }
+-    } // 查询条件展开/收起
++        if (onFilterChange) {
++          onFilterChange();
++        }
++      } // 查询条件展开/收起
+ 
+-  }, {
+-    key: "toggleForm",
+-    value: function toggleForm() {
+-      var expandForm = this.state.expandForm;
+-      this.setState({
+-        expandForm: !expandForm
+-      });
+-    }
+-    /**
+-     * 重置表单
+-     */
++    }, {
++      key: "toggleForm",
++      value: function toggleForm() {
++        var expandForm = this.state.expandForm;
++        this.setState({
++          expandForm: !expandForm
++        });
++      }
++      /**
++       * 重置表单
++       */
+ 
+-  }, {
+-    key: "handleFormReset",
+-    value: function handleFormReset() {
+-      var form = this.props.form;
+-      form.resetFields();
+-    }
+-    /**
+-     * 渲染所有的查询条件
+-     * @returns React.component
+-     */
++    }, {
++      key: "handleFormReset",
++      value: function handleFormReset() {
++        var form = this.props.form;
++        form.resetFields();
++      }
++      /**
++       * 渲染所有的查询条件
++       * @returns React.component
++       */
+ 
+-  }, {
+-    key: "renderAdvancedForm",
+-    value: function renderAdvancedForm() {
+-      var _this$props = this.props,
++    }, {
++      key: "renderAdvancedForm",
++      value: function renderAdvancedForm() {
++        var _this$props = this.props,
+           _this$props$form = _this$props.form,
+           getFieldDecorator = _this$props$form.getFieldDecorator,
+           getFieldValue = _this$props$form.getFieldValue,
+@@ -127,115 +127,120 @@ function (_PureComponent) {
+           inviteType = _this$props$inviteTyp === void 0 ? [] : _this$props$inviteTyp,
+           _this$props$processSt = _this$props.processStatus,
+           processStatus = _this$props$processSt === void 0 ? [] : _this$props$processSt;
+-      var _this$state = this.state,
++        var _this$state = this.state,
+           expandForm = _this$state.expandForm,
+           userOrganizationId = _this$state.userOrganizationId;
+-      return React.createElement(_Form, {
+-        layout: "inline",
+-        className: "more-fields-search-form"
+-      }, React.createElement(_Row, {
+-        gutter: 24
+-      }, React.createElement(_Col, {
+-        span: 18
+-      }, React.createElement(_Row, null, React.createElement(_Col, {
+-        span: 8
+-      }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
+-        label: intl.get("spfm.invitationList.model.invitationList.inviteType").d('邀请类型')
+-      }), getFieldDecorator('inviteType')(React.createElement(_Select, {
+-        style: {
+-          width: '100%'
+-        },
+-        allowClear: true
+-      }, (inviteType || []).map(function (n) {
+-        return (n || {}).value ? React.createElement(Option, {
+-          key: n.value,
+-          value: n.value
+-        }, n.meaning) : undefined;
+-      }))))), React.createElement(_Col, {
+-        span: 8
+-      }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
+-        label: intl.get("spfm.invitationList.model.invitationList.processStatus").d('邀约状态')
+-      }), getFieldDecorator('processStatus')(React.createElement(_Select, {
+-        style: {
+-          width: '100%'
+-        },
+-        allowClear: true
+-      }, (processStatus || []).map(function (n) {
+-        return (n || {}).value ? React.createElement(Option, {
+-          key: n.value,
+-          value: n.value
+-        }, n.meaning) : undefined;
+-      }))))), React.createElement(_Col, {
+-        span: 8
+-      }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
+-        label: intl.get("entity.company.tag").d('公司')
+-      }), getFieldDecorator('companyId')(React.createElement(Lov, {
+-        code: "SPFM.USER_AUTHORITY_COMPANY",
+-        queryParams: {
+-          organizationId: userOrganizationId
+-        }
+-      }))))), React.createElement(_Row, {
+-        style: {
+-          display: expandForm ? 'block' : 'none'
+-        }
+-      }, React.createElement(_Col, {
+-        span: 8
+-      }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
+-        label: intl.get("spfm.invitationList.model.invitationList.startDate").d('发出时间从')
+-      }), getFieldDecorator('startDate')(React.createElement(_DatePicker, {
+-        disabledDate: function disabledDate(currentDate) {
+-          return getFieldValue('endDate') && moment(getFieldValue('endDate')).isBefore(currentDate, 'day');
+-        },
+-        format: getDateFormat(),
+-        style: {
+-          width: '100%'
++        return React.createElement(_Form, {
++          layout: "inline",
++          className: "more-fields-search-form"
++        }, React.createElement(_Row, {
++          gutter: 24
+         },
+-        placeholder: null
+-      })))), React.createElement(_Col, {
+-        span: 8
+-      }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
+-        label: intl.get("spfm.invitationList.model.invitationList.endDate").d('发出时间到')
+-      }), getFieldDecorator('endDate')(React.createElement(_DatePicker, {
+-        disabledDate: function disabledDate(currentDate) {
+-          return getFieldValue('startDate') && moment(getFieldValue('startDate')).isAfter(currentDate, 'day');
+-        },
+-        format: getDateFormat(),
+-        style: {
+-          width: '100%'
+-        },
+-        placeholder: null
+-      })))), this.props.emit ? React.createElement(_Col, {
+-        span: 8
+-      }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
+-        label: intl.get("spfm.invitationList.model.invitationList.searchCompanyName").d('被邀请企业名称')
+-      }), getFieldDecorator('searchCompanyName')(React.createElement(_Input, null)))) : React.createElement(_Col, {
+-        span: 8
+-      }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
+-        label: intl.get("spfm.invitationList.model.invitationList.sendCompanyName").d('发出方企业')
+-      }), getFieldDecorator('searchCompanyName')(React.createElement(_Input, null)))))), React.createElement(_Col, {
+-        span: 6,
+-        className: "search-btn-more"
+-      }, React.createElement(FormItem, null, React.createElement(_Button, {
+-        onClick: this.toggleForm
+-      }, expandForm ? intl.get('hzero.common.button.collected').d('收起查询') : intl.get("hzero.common.button.viewMore").d('更多查询')), React.createElement(_Button, {
+-        "data-code": "reset",
+-        onClick: this.handleFormReset
+-      }, intl.get('hzero.common.button.reset').d('重置')), React.createElement(_Button, {
+-        "data-code": "search",
+-        type: "primary",
+-        htmlType: "submit",
+-        onClick: this.handleSearch
+-      }, intl.get('hzero.common.button.search').d('查询'))))));
+-    }
+-  }, {
+-    key: "render",
+-    value: function render() {
+-      return React.createElement("div", {
+-        className: "table-list-search"
+-      }, this.renderAdvancedForm());
+-    }
+-  }]);
++         React.createElement(_Col, {
++              span: 24
++            }, React.createElement(_Row, null, React.createElement(_Col, {
++              span: 6
++            }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
++              label: intl.get("spfm.invitationList.model.invitationList.inviteType").d('邀请类型')
++            }), getFieldDecorator('inviteType')(React.createElement(_Select, {
++              style: {
++                width: '100%'
++              },
++              allowClear: true
++            }, (inviteType || []).map(function (n) {
++              return (n || {}).value ? React.createElement(Option, {
++                key: n.value,
++                value: n.value
++              }, n.meaning) : undefined;
++            }))))), React.createElement(_Col, {
++              span: 6
++            }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
++              label: intl.get("spfm.invitationList.model.invitationList.processStatus").d('邀约状态')
++            }), getFieldDecorator('processStatus')(React.createElement(_Select, {
++              style: {
++                width: '100%'
++              },
++              allowClear: true
++            }, (processStatus || []).map(function (n) {
++              return (n || {}).value ? React.createElement(Option, {
++                key: n.value,
++                value: n.value
++              }, n.meaning) : undefined;
++            }))))), React.createElement(_Col, {
++              span: 6
++            }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
++              label: intl.get("entity.company.tag").d('公司')
++            }), getFieldDecorator('companyId')(React.createElement(Lov, {
++              code: "SPFM.USER_AUTHORITY_COMPANY",
++              queryParams: {
++                organizationId: userOrganizationId
++              }
++            })))), React.createElement(_Col, {
++              span: 6,
++              className: "search-btn-more"
++            }, React.createElement(FormItem, null, React.createElement(_Button, {
++              onClick: this.toggleForm
++            }, expandForm ? intl.get('hzero.common.button.collected').d('收起查询') : intl.get("hzero.common.button.viewMore").d('更多查询')), React.createElement(_Button, {
++              "data-code": "reset",
++              onClick: this.handleFormReset
++            }, intl.get('hzero.common.button.reset').d('重置')), React.createElement(_Button, {
++              "data-code": "search",
++              type: "primary",
++              htmlType: "submit",
++              onClick: this.handleSearch
++            }, intl.get('hzero.common.button.search').d('查询'))))), 
++            React.createElement(_Row, {
++                    style: {
++                      display: expandForm ? 'block' : 'none'
++                    }
++                  }, React.createElement(_Col, {
++                    span: 6
++                  }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
++                    label: intl.get("spfm.invitationList.model.invitationList.startDate").d('发出时间从')
++                  }), getFieldDecorator('startDate')(React.createElement(_DatePicker, {
++                    disabledDate: function disabledDate(currentDate) {
++                      return getFieldValue('endDate') && moment(getFieldValue('endDate')).isBefore(currentDate, 'day');
++                    },
++                    format: getDateFormat(),
++                    style: {
++                      width: '100%'
++                    },
++                    placeholder: null
++                  })))), React.createElement(_Col, {
++                    span: 6
++                  }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
++                    label: intl.get("spfm.invitationList.model.invitationList.endDate").d('发出时间到')
++                  }), getFieldDecorator('endDate')(React.createElement(_DatePicker, {
++                    disabledDate: function disabledDate(currentDate) {
++                      return getFieldValue('startDate') && moment(getFieldValue('startDate')).isAfter(currentDate, 'day');
++                    },
++                    format: getDateFormat(),
++                    style: {
++                      width: '100%'
++                    },
++                    placeholder: null
++                  })))), this.props.emit ? React.createElement(_Col, {
++                    span: 6
++                  }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
++                    label: intl.get("spfm.invitationList.model.invitationList.searchCompanyName").d('被邀请企业名称')
++                  }), getFieldDecorator('searchCompanyName')(React.createElement(_Input, null)))) :
++                    React.createElement(_Col, {
++                      span: 6
++                    }, React.createElement(FormItem, Object.assign({}, formItemLayout, {
++                      label: intl.get("spfm.invitationList.model.invitationList.sendCompanyName").d('发出方企业')
++                    }), getFieldDecorator('searchCompanyName')(React.createElement(_Input, null))))
++            )
++        )));
++      }
++    }, {
++      key: "render",
++      value: function render() {
++        return React.createElement("div", {
++          className: "table-list-search"
++        }, this.renderAdvancedForm());
++      }
++    }]);
+ 
+-  return FilterForm;
+-}(PureComponent), (_applyDecoratedDescriptor(_class2.prototype, "handleSearch", [_dec2], Object.getOwnPropertyDescriptor(_class2.prototype, "handleSearch"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "toggleForm", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "toggleForm"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "handleFormReset", [_dec4], Object.getOwnPropertyDescriptor(_class2.prototype, "handleFormReset"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "renderAdvancedForm", [_dec5], Object.getOwnPropertyDescriptor(_class2.prototype, "renderAdvancedForm"), _class2.prototype)), _class2)) || _class);
++    return FilterForm;
++  }(PureComponent), (_applyDecoratedDescriptor(_class2.prototype, "handleSearch", [_dec2], Object.getOwnPropertyDescriptor(_class2.prototype, "handleSearch"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "toggleForm", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "toggleForm"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "handleFormReset", [_dec4], Object.getOwnPropertyDescriptor(_class2.prototype, "handleFormReset"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "renderAdvancedForm", [_dec5], Object.getOwnPropertyDescriptor(_class2.prototype, "renderAdvancedForm"), _class2.prototype)), _class2)) || _class);
+ export { FilterForm as default };
+\ No newline at end of file

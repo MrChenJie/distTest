@@ -1,0 +1,109 @@
+.quill {
+  width: 99.1%;
+}
+.ql-toolbar {
+  border-radius: 4px 4px 0 0;
+  border-bottom: none !important;
+}
+.ql-container {
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid #ccc !important;
+  // Quill编辑器设置固定高度
+  .ql-editor{
+    height: 500px;
+    line-height: 30px;
+    font-family: 'SimSun', 'SimHei','Microsoft-YaHei','KaiTi','FangSong','Arial','Times-New-Roman','sans-serif' !important;
+    overflow-y: hidden; /* 初始隐藏滚动条 */
+    border-radius: 4px;
+    &:hover {
+      overflow-y: auto; /* 鼠标悬浮时允许滚动 */
+      padding-right: 7px;
+    }
+  }
+}
+.ql-snow .ql-picker-options .ql-picker-item {
+  line-height: 20px;
+}
+/* 禁止编辑的时候背景色eff0f1，不显示操作栏 */  
+.disabledEdit {
+  .ql-disabled {
+    border-radius: 4px !important;
+  }
+  .ql-toolbar {
+    display: none;
+  }
+  .ql-editor {
+    background-color: #eff0f1;
+  }
+}
+
+.ql-picker-label {
+  display: flex !important;
+}
+
+/* Quill编辑器的字体集合 */  
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=SimSun]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=SimSun]::before {
+  content: "宋体" !important;
+  font-family: "SimSun" !important;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=SimHei]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=SimHei]::before {
+  content: "黑体" !important;
+  font-family: "SimHei" !important;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=Microsoft-YaHei]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=Microsoft-YaHei]::before {
+  content: "微软雅黑" !important;
+  font-family: "Microsoft YaHei" !important;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=KaiTi]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=KaiTi]::before {
+  content: "楷体" !important;
+  font-family: "KaiTi" !important;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=FangSong]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=FangSong]::before {
+  content: "仿宋" !important;
+  font-family: "FangSong" !important;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=Arial]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=Arial]::before {
+  content: "Arial" !important;
+  font-family: "Arial" !important;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=Times-New-Roman]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=Times-New-Roman]::before {
+  content: "Times New Roman" !important;
+  font-family: "Times New Roman" !important;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=sans-serif]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=sans-serif]::before {
+  content: "sans-serif" !important;
+  font-family: "sans-serif" !important;
+}
+ 
+.ql-font-SimSun {
+  font-family: "SimSun" !important;
+}
+.ql-font-SimHei {
+  font-family: "SimHei" !important;
+}
+.ql-font-Microsoft-YaHei {
+  font-family: "Microsoft YaHei" !important;
+}
+.ql-font-KaiTi {
+  font-family: "KaiTi" !important;
+}
+.ql-font-FangSong {
+  font-family: "FangSong" !important;
+}
+.ql-font-Arial {
+  font-family: "Arial" !important;
+}
+.ql-font-Times-New-Roman {
+  font-family: "Times New Roman" !important;
+}
+.ql-font-sans-serif {
+  font-family: "sans-serif" !important;
+}

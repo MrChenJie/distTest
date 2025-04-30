@@ -1,0 +1,78 @@
+@import './variables.less';
+
+.antd-lov-modal {
+  .ant-input-affix-wrapper .ant-input-suffix {
+    right: 8px;
+  }
+
+  // 覆盖原逻辑高度
+  .ant-select-auto-complete.ant-select .ant-input {
+    height: 32px !important;
+  }
+
+  .lov-input {
+    border-radius: 4px;
+    top: 0 !important;
+    input {
+      cursor: pointer;
+    }
+    .ant-input-group-wrapper {
+      vertical-align: middle;
+    }
+
+    .ant-input {
+      // 两个 icon 的位置
+      padding-right: 48px !important;
+      transition: padding 0s, background-color 0.3s, border 0.3s;
+    }
+
+    .ant-input-suffix {
+      font-size: 12px;
+      > .lov-clear {
+        margin-right: 4px;
+        display: none;
+      }
+
+      // LOV 查询icon颜色和DatePicker等组件的icon颜色一样
+      .anticon-search:before {
+        color: rgba(0, 0, 0, 0.25);
+      }
+    }
+    .ant-input-disabled {
+      &:hover {
+        border-color: #e6d8d8 !important;
+        // border-right-width: 1px !important;
+      }
+    }
+  }
+
+  .lov-suffix {
+    .ant-input-suffix {
+      > .anticon {
+        // ICON
+      }
+
+      > .lov-clear {
+        display: none;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      .ant-input-suffix {
+        > .lov-clear {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .ant-form-item-required .lov-suffix {
+    &:hover {
+      .ant-input-suffix {
+        background: @hzero-form-required-color;
+        display: block;
+      }
+    }
+  }
+}

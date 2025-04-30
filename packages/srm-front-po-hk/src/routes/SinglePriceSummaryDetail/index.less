@@ -1,0 +1,39 @@
+.lov-input2 {
+  border-radius: 4px;
+  top: 0 !important;
+
+  input {
+    cursor: pointer;
+  }
+
+  .ant-input-group-wrapper {
+    vertical-align: middle;
+  }
+
+  .ant-input {
+    // 两个 icon 的位置
+    padding-right: 48px !important;
+    transition: padding 0s, background-color 0.3s, border 0.3s;
+    border: 1px solid #d0d3d6;
+  }
+
+  .ant-input-suffix {
+    >.cus-lov-clear {
+      display: none;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../../assets/clearIcon.svg');
+        background-size: cover;
+      }
+
+      &:hover:before {
+        background-image: url('../../assets/clearIcon_active.svg');
+      }
+    }
+  }
+}
